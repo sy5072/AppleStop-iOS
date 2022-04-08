@@ -6,10 +6,27 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct OnboardingView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            ScrollView(.vertical, showsIndicators: false){
+                VStack(alignment: .leading, spacing: 20){
+                    WebImage(url: URL(string: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/apple/325/dog-face_1f436.png"))
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(height:300)
+                        .cornerRadius(15)
+                    
+                    Text("Testing with Dog")
+                        .font(.title.bold())
+                }
+                .padding()
+            }
+            .navigationTitle("Latest")
+        }
+        .overlay(SplashScreenView())
     }
 }
 
