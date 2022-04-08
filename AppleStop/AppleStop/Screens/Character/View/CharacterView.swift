@@ -9,7 +9,12 @@ import SwiftUI
 
 struct CharacterView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            UserInfomationView()
+                .padding(.horizontal, 24)
+        }
+            .navigationTitle("캐릭터 보관함")
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
 
