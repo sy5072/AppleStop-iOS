@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5931E3E127FFD62E006B16B6 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */; };
+		5931E3E427FFDDCF006B16B6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5931E3E327FFDDCF006B16B6 /* SDWebImageSwiftUI */; };
 		B594065127FEAC94000D3CE8 /* AppleStopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594065027FEAC94000D3CE8 /* AppleStopApp.swift */; };
 		B594065527FEAC95000D3CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B594065427FEAC95000D3CE8 /* Assets.xcassets */; };
 		B594065827FEAC95000D3CE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B594065727FEAC95000D3CE8 /* Preview Assets.xcassets */; };
@@ -23,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		B594064D27FEAC94000D3CE8 /* AppleStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B594065027FEAC94000D3CE8 /* AppleStopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleStopApp.swift; sourceTree = "<group>"; };
 		B594065427FEAC95000D3CE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5931E3E427FFDDCF006B16B6 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				B594068327FEAF21000D3CE8 /* OnboardingView.swift */,
+				5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,6 +275,9 @@
 			dependencies = (
 			);
 			name = AppleStop;
+			packageProductDependencies = (
+				5931E3E327FFDDCF006B16B6 /* SDWebImageSwiftUI */,
+			);
 			productName = AppleStop;
 			productReference = B594064D27FEAC94000D3CE8 /* AppleStop.app */;
 			productType = "com.apple.product-type.application";
@@ -298,6 +306,9 @@
 				Base,
 			);
 			mainGroup = B594064427FEAC94000D3CE8;
+			packageReferences = (
+				5931E3E227FFDDCF006B16B6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = B594064E27FEAC94000D3CE8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -324,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5931E3E127FFD62E006B16B6 /* SplashScreenView.swift in Sources */,
 				B594068F27FEB26F000D3CE8 /* NavigationBackButton.swift in Sources */,
 				B594067F27FEAF04000D3CE8 /* CharacterView.swift in Sources */,
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
@@ -537,6 +549,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5931E3E227FFDDCF006B16B6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5931E3E327FFDDCF006B16B6 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5931E3E227FFDDCF006B16B6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B594064527FEAC94000D3CE8 /* Project object */;
 }
