@@ -89,6 +89,9 @@ struct SplashScreenView: View {
             }
             else{
                 finishedText = "!"
+               
+                //TODO: 스플래시 화면 카운트다운이 끝나면 해당 화면을 멈추고 메인화면으로 간다. (or onboarding화면으로)
+            
             }
         })
     }
