@@ -9,7 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        // ZStack을 이용해서 background와 foreground 구분하기
+        ZStack {
+            Color.backgroundGrey
+                .ignoresSafeArea()
+        }
     }
 }
 
