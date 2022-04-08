@@ -10,6 +10,7 @@ import SwiftUI
 struct UserInfomationView: View {
     var body: some View {
         Rectangle()
+            .foregroundColor(.white)
             .frame(height: 138)
             .cornerRadius(12)
             .shadow(color: .gray, radius: 6, x: 0, y: 2)

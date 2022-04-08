@@ -9,12 +9,17 @@ import SwiftUI
 
 struct CharacterView: View {
     var body: some View {
-        ScrollView {
-            UserInfomationView()
-                .padding(.horizontal, 24)
+        ZStack {
+            Color.backgroundGrey
+                .ignoresSafeArea()
+            
+            ScrollView {
+                UserInfomationView()
+                    .padding(.horizontal, 24)
+            }
         }
-            .navigationTitle("캐릭터 보관함")
-            .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("캐릭터 보관함")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
