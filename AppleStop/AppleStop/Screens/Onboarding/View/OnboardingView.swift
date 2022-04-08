@@ -16,7 +16,7 @@ struct OnboardingView: View {
                     WebImage(url: URL(string: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/apple/325/dog-face_1f436.png"))
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(height:300)
+                        //.frame(height:300)
                         .cornerRadius(15)
                     
                     Text("Testing with Dog")
@@ -26,7 +26,11 @@ struct OnboardingView: View {
             }
             .navigationTitle("Latest")
         }
-        .overlay(SplashScreenView())
+        
+        
+        
+        //using overlay instead of ZStack due to issues with animations
+        //.overlay(SplashScreenView())
     }
 }
 

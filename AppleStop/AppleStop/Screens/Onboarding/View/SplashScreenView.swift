@@ -26,27 +26,27 @@ struct SplashScreenView: View {
                     .ignoresSafeArea()
                 
                 VStack{
+                    Text("수거딱대\nC'mere Recycle")
+                        .font(.title2)
+                        .fontWeight(.heavy)
+                        .multilineTextAlignment(.center)
+                        .colorInvert()
+                        .opacity(startAnimation ? 1: 0)
+                    
                     Image("logo_barcode")
                         .resizable()
                         .frame(width: 260, height: 260)
                         .aspectRatio(contentMode: .fit)
                         .opacity(startAnimation ? 1: 0)
                         .rotationEffect(Angle(degrees: self.isAnimating ? 360.0 : 0.0))
-                        .animation(.linear(duration: 5), value: isAnimating)
+                        .animation(.linear(duration: 5.3), value: isAnimating)
                         .onAppear {
                             self.isAnimating = true
                         }
                     
-                    Text("수거딱대\nC'mere Recycle\n")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .colorInvert()
-                        .opacity(startAnimation ? 1: 0)
-                    
                     Text(finishedText ?? "Let's") //if no finished string, insert count
-                        .font(.title3)
-                        .fontWeight(.bold)
+                        .font(.title2)
+                        .fontWeight(.heavy)
                         .multilineTextAlignment(.center)
                         .colorInvert()
                         .opacity(startAnimation ? 1: 0)
@@ -57,6 +57,7 @@ struct SplashScreenView: View {
                         .fontWeight(.bold)
                         .colorInvert()
                 }
+                //Text Movement Accoding to Time
                 .onReceive(timer, perform: {_ in
                     if count == 3{
                         finishedText = "Let's"
@@ -78,7 +79,7 @@ struct SplashScreenView: View {
                         startAnimation.toggle()
                     }
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 4){
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5){
                     withAnimation{
                         isFinished.toggle()
                     }
@@ -89,10 +90,9 @@ struct SplashScreenView: View {
 }
 
 
-
-
 struct SplashScreenView_Previews: PreviewProvider {
     static var previews: some View {
+        //SplashScreenView()
         OnboardingView()
     }
 }
