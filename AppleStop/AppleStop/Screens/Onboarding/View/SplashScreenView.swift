@@ -9,6 +9,11 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct SplashScreenView: View {
+    
+    let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
+    @State var count: Int = 3
+    @State var finishedText: String? = nil //optional string
+    
     //Animation Properties
     @State var isAnimating = false
     @State var startAnimation = false
@@ -26,8 +31,20 @@ struct SplashScreenView: View {
                         .frame(width: 260, height: 260)
                         .aspectRatio(contentMode: .fit)
                         .opacity(startAnimation ? 1: 0)
+                        .rotationEffect(Angle(degrees: self.isAnimating ? 360.0 : 0.0))
+                        .animation(.linear(duration: 5), value: isAnimating)
+                        .onAppear {
+                            self.isAnimating = true
+                        }
                     
                     Text("수거딱대\nC'mere Recycle\n")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        .colorInvert()
+                        .opacity(startAnimation ? 1: 0)
+                    
+                    Text(finishedText ?? "Let's") //if no finished string, insert count
                         .font(.title3)
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
@@ -40,14 +57,28 @@ struct SplashScreenView: View {
                         .fontWeight(.bold)
                         .colorInvert()
                 }
+                .onReceive(timer, perform: {_ in
+                    if count == 3{
+                        finishedText = "Let's"
+                        count -= 1
+                    }
+                    else if count == 2 {
+                        finishedText = "Let's Recycle"
+                        count -= 1
+                    }
+                    else {
+                        finishedText = "Let's Recycle Properly!"
+                        count -= 1
+                    }
+                })
             }
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
-                    withAnimation(.linear(duration: 2)){
+                    withAnimation(.spring()){  //.linear(duration: 2)
                         startAnimation.toggle()
                     }
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4){
                     withAnimation{
                         isFinished.toggle()
                     }
