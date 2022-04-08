@@ -10,6 +10,15 @@ import SDWebImageSwiftUI
 
 struct SplashScreenView: View {
     
+    //start this timer as soon as we initialize this view
+    let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
+    @State var currentDate: Date = Date() // current exact date of right now
+    var dateFormatter: DateFormatter{
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        return formatter
+    }
     @State var angle: Double = 0.0
     @State var isAnimating = false
     
@@ -34,7 +43,12 @@ struct SplashScreenView: View {
                     .onAppear {
                         self.isAnimating = true
                     }
-                Text("수거딱대\nC'mere Recycle")
+                Text("수거딱대\nC'mere Recycle\n")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .colorInvert()
+                Text(dateFormatter.string(from: currentDate))
                     .font(.title3)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
@@ -47,6 +61,9 @@ struct SplashScreenView: View {
                     .colorInvert()
             }
         }
+        .onReceive(timer, perform: {value in
+            currentDate = value
+        })
     }
 }
 
