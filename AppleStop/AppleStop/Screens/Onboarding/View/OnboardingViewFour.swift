@@ -7,7 +7,7 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct OnboardingViewThree: View {
+struct OnboardingViewFour: View {
     var body: some View {
         //NavigationView{
             //ScrollView(.vertical, showsIndicators: false){
@@ -16,7 +16,7 @@ struct OnboardingViewThree: View {
                         .font(.title.bold())
                         .multilineTextAlignment(.center)
                     
-                    WebImage(url: URL(string: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/apple/325/lion_1f981.png"))
+                    WebImage(url: URL(string: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/cat-face_1f431.png"))
                         .resizable()
                         //.aspectRatio(contentMode: .fill)
                         .frame(height:500)
@@ -24,12 +24,16 @@ struct OnboardingViewThree: View {
                     
                     
                     Spacer()
-                    NavigationLink(destination: OnboardingViewFour()) {
-                        Text("Next")
+                    /*
+                    //TODO: NagivateLink to "CreateNickname"
+                     
+                    NavigationLink(destination: OnboardingViewThree()) {
+                        Text("Go to make nickname")
                             .font(.title3)
                             .fontWeight(.bold)
                             .foregroundColor(Color.blue)
                     }
+                     */
                 }
                 .padding()
             //}
@@ -39,8 +43,8 @@ struct OnboardingViewThree: View {
     }
 }
 
-struct OnboardingViewThree_Previews: PreviewProvider {
+struct OnboardingViewFour_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingViewThree()
+        OnboardingViewFour()
     }
 }

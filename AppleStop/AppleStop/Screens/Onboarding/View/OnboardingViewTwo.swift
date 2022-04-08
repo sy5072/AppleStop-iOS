@@ -24,12 +24,12 @@ struct OnboardingViewTwo: View {
                     
                     
                     Spacer()
-                    //NavigationLink(destination: OnboardingViewThree()) {
+                    NavigationLink(destination: OnboardingViewThree()) {
                         Text("Next")
                             .font(.title3)
                             .fontWeight(.bold)
                             .foregroundColor(Color.blue)
-                    //}
+                    }
                 }
                 .padding()
             //}
