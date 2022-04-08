@@ -19,7 +19,7 @@ struct OnboardingViewOne: View {
                     WebImage(url: URL(string: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/apple/325/dog-face_1f436.png"))
                         .resizable()
                         //.aspectRatio(contentMode: .fill)
-                        .frame(height:400)
+                        .frame(height:500)
                         //.cornerRadius(15)
                     
                     

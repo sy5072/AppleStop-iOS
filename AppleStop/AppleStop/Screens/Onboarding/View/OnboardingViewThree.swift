@@ -7,7 +7,7 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
-struct OnboardingViewTwo: View {
+struct OnboardingViewThree: View {
     var body: some View {
         //NavigationView{
             //ScrollView(.vertical, showsIndicators: false){
@@ -19,17 +19,17 @@ struct OnboardingViewTwo: View {
                     WebImage(url: URL(string: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/apple/325/fox_1f98a.png"))
                         .resizable()
                         //.aspectRatio(contentMode: .fill)
-                        .frame(height:400)
+                        .frame(height:500)
                         //.cornerRadius(15)
                     
                     
                     Spacer()
-                    NavigationLink(destination: OnboardingViewThree()) {
+                    //NavigationLink(destination: OnboardingViewThree()) {
                         Text("Next")
                             .font(.title3)
                             .fontWeight(.bold)
                             .foregroundColor(Color.blue)
-                    }
+                    //}
                 }
                 .padding()
             //}
@@ -39,8 +39,8 @@ struct OnboardingViewTwo: View {
     }
 }
 
-struct OnboardingViewTwo_Previews: PreviewProvider {
+struct OnboardingViewThree_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingViewTwo()
+        OnboardingViewThree()
     }
 }
