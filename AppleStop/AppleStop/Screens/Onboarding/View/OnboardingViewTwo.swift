@@ -12,7 +12,7 @@ struct OnboardingViewTwo: View {
         //NavigationView{
             //ScrollView(.vertical, showsIndicators: false){
                 VStack{
-                    Text("멸종위기 동물과 함께 분리수거해봐요")
+                    Text("바코드 스캔은\n다음과 같이!")
                         .font(.title.bold())
                         .multilineTextAlignment(.center)
                     
