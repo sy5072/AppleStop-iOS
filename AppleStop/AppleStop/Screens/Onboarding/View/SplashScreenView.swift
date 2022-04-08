@@ -14,14 +14,14 @@ struct SplashScreenView: View {
     let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
     //Current time
     /*
-    @State var currentDate: Date = Date() // current exact date of right now
-    var dateFormatter: DateFormatter{
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .medium
-        return formatter
-    }
-*/
+     @State var currentDate: Date = Date() // current exact date of right now
+     var dateFormatter: DateFormatter{
+     let formatter = DateFormatter()
+     formatter.dateStyle = .medium
+     formatter.timeStyle = .medium
+     return formatter
+     }
+     */
     @State var count: Int = 3
     @State var finishedText: String? = nil //optional string
     //Countdown
@@ -55,13 +55,13 @@ struct SplashScreenView: View {
                     .multilineTextAlignment(.center)
                     .colorInvert()
                 /*
-                Text(dateFormatter.string(from: currentDate))
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .multilineTextAlignment(.center)
-                    .colorInvert()
-                */
-                Text(finishedText ?? "\(count)") //if no finished string, insert count
+                 Text(dateFormatter.string(from: currentDate))
+                 .font(.title3)
+                 .fontWeight(.bold)
+                 .multilineTextAlignment(.center)
+                 .colorInvert()
+                 */
+                Text(finishedText ?? "Let's") //if no finished string, insert count
                     .font(.title3)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
@@ -75,10 +75,20 @@ struct SplashScreenView: View {
             }
         }
         .onReceive(timer, perform: {_ in
-            if count < 1{
-                finishedText = "Now going to onboarding view!"
-            } else{
+            if count == 3{
+                finishedText = "Let's"
                 count -= 1
+            }
+            else if count == 2 {
+                finishedText = "Recycle"
+                count -= 1
+            }
+            else if count == 1{
+                finishedText = "Properly"
+                count -= 1
+            }
+            else{
+                finishedText = "!"
             }
         })
     }
