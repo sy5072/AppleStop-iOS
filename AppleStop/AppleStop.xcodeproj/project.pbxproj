@@ -21,6 +21,7 @@
 		B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068A27FEB1A6000D3CE8 /* Color+Extension.swift */; };
 		B594068F27FEB26F000D3CE8 /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */; };
 		B594069527FFDC08000D3CE8 /* UserInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594069427FFDC08000D3CE8 /* UserInformationView.swift */; };
+		B594069727FFDFE4000D3CE8 /* CharacterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594069627FFDFE4000D3CE8 /* CharacterCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		B594068A27FEB1A6000D3CE8 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
 		B594069427FFDC08000D3CE8 /* UserInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationView.swift; sourceTree = "<group>"; };
+		B594069627FFDFE4000D3CE8 /* CharacterCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				B594069427FFDC08000D3CE8 /* UserInformationView.swift */,
+				B594069627FFDFE4000D3CE8 /* CharacterCardView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				B594069527FFDC08000D3CE8 /* UserInformationView.swift in Sources */,
 				B594066C27FEAEB9000D3CE8 /* TabbarView.swift in Sources */,
 				B594065127FEAC94000D3CE8 /* AppleStopApp.swift in Sources */,
+				B594069727FFDFE4000D3CE8 /* CharacterCardView.swift in Sources */,
 				B594068927FEB0B3000D3CE8 /* ImageLiteral.swift in Sources */,
 				B594067727FEAEE3000D3CE8 /* CameraView.swift in Sources */,
 				B594068727FEAF32000D3CE8 /* SettingView.swift in Sources */,
