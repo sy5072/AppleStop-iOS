@@ -13,6 +13,30 @@ struct HomeView: View {
         ZStack {
             Color.backgroundGrey
                 .ignoresSafeArea()
+            
+            VStack {
+                LocationInformationView()
+                    .padding(.horizontal, 24)
+                
+                Spacer()
+                    .frame(height: 22)
+                
+                CharacterInformationView()
+                    .padding(.horizontal, 24)
+                
+                Spacer()
+                    .frame(height: 22)
+                
+                HStack(spacing: 0.0) {
+                    MiniInformationView()
+                        .padding(.leading, 24)
+                        .padding(.trailing, 12)
+                    
+                    MiniInformationView()
+                        .padding(.trailing, 24)
+                        .padding(.leading, 12)
+                }
+            }
         }
     }
 }
