@@ -1,5 +1,5 @@
 //
-//  CharacterFrontView.swift
+//  CharacterInformationView.swift
 //  AppleStop
 //
 //  Created by Mijoo Kim on 2022/04/08.
@@ -19,7 +19,7 @@ struct CharacterInformationView: View {
     }
 }
 
-struct CharacterFrontView_Previews: PreviewProvider {
+struct CharacterInformationView_Previews: PreviewProvider {
     static var previews: some View {
         CharacterInformationView()
     }
