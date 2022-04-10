@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350C0C6827FFDCFE0012CBFA /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350C0C6727FFDCFE0012CBFA /* CameraModel.swift */; };
+		350C0C6A27FFDD590012CBFA /* CustomToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350C0C6927FFDD590012CBFA /* CustomToggle.swift */; };
+		35A80A9F2802FBED00DD7721 /* CodeGuideLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80A9E2802FBED00DD7721 /* CodeGuideLineView.swift */; };
 		B594065127FEAC94000D3CE8 /* AppleStopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594065027FEAC94000D3CE8 /* AppleStopApp.swift */; };
 		B594065527FEAC95000D3CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B594065427FEAC95000D3CE8 /* Assets.xcassets */; };
 		B594065827FEAC95000D3CE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B594065727FEAC95000D3CE8 /* Preview Assets.xcassets */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		350C0C6727FFDCFE0012CBFA /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
+		350C0C6927FFDD590012CBFA /* CustomToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggle.swift; sourceTree = "<group>"; };
+		35A80A9E2802FBED00DD7721 /* CodeGuideLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGuideLineView.swift; sourceTree = "<group>"; };
 		B594064D27FEAC94000D3CE8 /* AppleStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B594065027FEAC94000D3CE8 /* AppleStopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleStopApp.swift; sourceTree = "<group>"; };
 		B594065427FEAC95000D3CE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */,
+				350C0C6927FFDD590012CBFA /* CustomToggle.swift */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -218,6 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				B594067627FEAEE3000D3CE8 /* CameraView.swift */,
+				350C0C6727FFDCFE0012CBFA /* CameraModel.swift */,
+				35A80A9E2802FBED00DD7721 /* CodeGuideLineView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,9 +333,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35A80A9F2802FBED00DD7721 /* CodeGuideLineView.swift in Sources */,
 				B594068F27FEB26F000D3CE8 /* NavigationBackButton.swift in Sources */,
 				B594067F27FEAF04000D3CE8 /* CharacterView.swift in Sources */,
+				350C0C6827FFDCFE0012CBFA /* CameraModel.swift in Sources */,
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
+				350C0C6A27FFDD590012CBFA /* CustomToggle.swift in Sources */,
 				B594067227FEAED0000D3CE8 /* HomeView.swift in Sources */,
 				B594066C27FEAEB9000D3CE8 /* TabbarView.swift in Sources */,
 				B594065127FEAC94000D3CE8 /* AppleStopApp.swift in Sources */,
@@ -465,8 +477,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppleStop/Preview Content\"";
+				DEVELOPMENT_TEAM = J85NQ6YL4V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -494,8 +509,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppleStop/Preview Content\"";
+				DEVELOPMENT_TEAM = J85NQ6YL4V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -8,8 +8,35 @@
 import SwiftUI
 
 struct TabbarView: View {
+    
+    @State private var isPresenting = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+        
+            Button {
+                isPresenting.toggle()
+            } label: {
+                Image("logo_camera")
+                    .resizable()
+                    .frame(width: 100, height: 100)
+            }
+            .fullScreenCover(isPresented: $isPresenting) {
+                NavigationView{
+                CameraView()
+                }
+            }
+
+            
+            
+//        NavigationLink {
+//            CameraView()
+//        } label: {
+//            Image("logo_camera")
+//                .resizable()
+//                .frame(width: 100, height: 100)
+//        }
+
+            }
     }
 }
 

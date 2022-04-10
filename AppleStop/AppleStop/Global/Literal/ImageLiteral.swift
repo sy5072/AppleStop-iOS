@@ -10,3 +10,6 @@ import SwiftUI
 enum ImageLiteral {
     static var exampleImage: Image = Image("exampleImage")
 }
+
+
+
