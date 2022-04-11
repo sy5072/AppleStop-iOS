@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Character {
-    var image: Image
-    var name: String
-    var info: String
+    var image: Image?
+    var name: String?
+    var info: String?
 }

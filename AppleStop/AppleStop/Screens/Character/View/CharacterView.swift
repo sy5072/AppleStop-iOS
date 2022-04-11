@@ -38,12 +38,17 @@ struct CharacterView: View {
                 
                 LazyVGrid(columns: columns, spacing: 29) {
                     ForEach(data, id: \.self) { index in
+                        let isMainCharacter: Binding<Bool> = markMainCharacter(index: index)
+                        
                         if index < characters.count {
                             CharacterCardView(characterImage: $characters[index].image,
                                               characterName: $characters[index].name,
-                                              isMainCharacter: markMainCharacter(index: index))
+                                              isMainCharacter: isMainCharacter)
+                        } else {
+                            CharacterCardView(characterImage: .constant(nil),
+                                              characterName: .constant(nil),
+                                              isMainCharacter: isMainCharacter)
                         }
-                        
                     }
                 }
                 .padding(.horizontal, 24)

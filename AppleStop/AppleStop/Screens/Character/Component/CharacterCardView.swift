@@ -14,8 +14,8 @@ struct CharacterCardView: View {
     
     // MARK: - properties
     
-    @Binding var characterImage: Image
-    @Binding var characterName: String
+    @Binding var characterImage: Image?
+    @Binding var characterName: String?
     @Binding var isMainCharacter: Bool
     
     var body: some View {
@@ -25,24 +25,29 @@ struct CharacterCardView: View {
             .cornerRadius(12)
             .shadow(color: .gray.opacity(0.5), radius: 1, x: 0, y: 2)
             .overlay {
-                innerView
+                selectCardStyle(name: characterName)
             }
     }
 }
 
 extension CharacterCardView {
-    var innerView: some View {
+    var characterInnerView: some View {
         VStack {
             checkMarkView
             .padding(.trailing, 11)
             
-            characterImage
+            characterImage?
                 .resizable()
                 .frame(width: 74, height: 95, alignment: .center)
             
-            Text(characterName)
+            Text(characterName ?? "")
                 .font(.system(size: 12, weight: .light, design: .default))
         }
+    }
+    
+    var secretInnerView: some View {
+        ImageLiteral.imgLock
+            .frame(width: 49, height: 49)
     }
     
     var checkMarkView: some View {
@@ -57,6 +62,17 @@ extension CharacterCardView {
                     .foregroundColor(.mainGreen)
                     .hidden()
             }
+        }
+    }
+}
+
+extension CharacterCardView {
+    @ViewBuilder
+    private func selectCardStyle(name: String?) -> some View {
+        if name == nil {
+            secretInnerView
+        } else {
+            characterInnerView
         }
     }
 }
