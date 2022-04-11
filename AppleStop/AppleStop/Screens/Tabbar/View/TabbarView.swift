@@ -11,32 +11,46 @@ struct TabbarView: View {
     
     @State private var isPresenting = false
     var body: some View {
-        VStack{
         
-            Button {
-                isPresenting.toggle()
-            } label: {
-                Image("logo_camera")
-                    .resizable()
-                    .frame(width: 100, height: 100)
+        ZStack {
+            
+            GeometryReader{ geometryProxy -> AnyView in
+
+                let height = geometryProxy.frame(in: .global)
+                return AnyView(
+                
+                    ZStack{
+                        BlurView(style: .systemMaterialDark)
+                    }
+                )
             }
-            .fullScreenCover(isPresented: $isPresenting) {
-                NavigationView{
-                CameraView()
+            VStack{
+            
+                Button {
+                    isPresenting.toggle()
+                } label: {
+                    Image("logo_camera")
+                        .resizable()
+                        .frame(width: 100, height: 100)
                 }
-            }
+                .fullScreenCover(isPresented: $isPresenting) {
+                    NavigationView{
+                    CameraView()
+                    }
+                }
 
-            
-            
-//        NavigationLink {
-//            CameraView()
-//        } label: {
-//            Image("logo_camera")
-//                .resizable()
-//                .frame(width: 100, height: 100)
-//        }
+                
+                
+    //        NavigationLink {
+    //            CameraView()
+    //        } label: {
+    //            Image("logo_camera")
+    //                .resizable()
+    //                .frame(width: 100, height: 100)
+    //        }
 
             }
+        }
     }
 }
 
