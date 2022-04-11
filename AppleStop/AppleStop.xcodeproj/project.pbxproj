@@ -25,6 +25,8 @@
 		B594068927FEB0B3000D3CE8 /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068827FEB0B3000D3CE8 /* ImageLiteral.swift */; };
 		B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068A27FEB1A6000D3CE8 /* Color+Extension.swift */; };
 		B594068F27FEB26F000D3CE8 /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */; };
+		B594069527FFDC08000D3CE8 /* UserInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594069427FFDC08000D3CE8 /* UserInformationView.swift */; };
+		B594069727FFDFE4000D3CE8 /* CharacterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594069627FFDFE4000D3CE8 /* CharacterCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		B594068827FEB0B3000D3CE8 /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
 		B594068A27FEB1A6000D3CE8 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
+		B594069427FFDC08000D3CE8 /* UserInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationView.swift; sourceTree = "<group>"; };
+		B594069627FFDFE4000D3CE8 /* CharacterCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,7 @@
 		B594066727FEAD68000D3CE8 /* Character */ = {
 			isa = PBXGroup;
 			children = (
+				B594069327FFDBFF000D3CE8 /* Component */,
 				B594067D27FEAEFE000D3CE8 /* View */,
 			);
 			path = Character;
@@ -268,6 +273,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B594069327FFDBFF000D3CE8 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				B594069427FFDC08000D3CE8 /* UserInformationView.swift */,
+				B594069627FFDFE4000D3CE8 /* CharacterCardView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -350,8 +364,10 @@
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
 				598127942800861200A3296A /* OnboardingViewTwo.swift in Sources */,
 				B594067227FEAED0000D3CE8 /* HomeView.swift in Sources */,
+				B594069527FFDC08000D3CE8 /* UserInformationView.swift in Sources */,
 				B594066C27FEAEB9000D3CE8 /* TabbarView.swift in Sources */,
 				B594065127FEAC94000D3CE8 /* AppleStopApp.swift in Sources */,
+				B594069727FFDFE4000D3CE8 /* CharacterCardView.swift in Sources */,
 				B594068927FEB0B3000D3CE8 /* ImageLiteral.swift in Sources */,
 				B594067727FEAEE3000D3CE8 /* CameraView.swift in Sources */,
 				5981279C2800989000A3296A /* OnboardingViewFour.swift in Sources */,
