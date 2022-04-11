@@ -15,8 +15,11 @@ struct CharacterView: View {
     
     // MARK: - properties
     
-    let data = Array(1...16).map { "목록 \($0)"}
-    let columns = [
+    @State private var characters: [Character] = [Character(image: Image(systemName: "moon.stars.fill"), name: "날아라다람쥐", info: "날아라 다람쥐는 귀엽습니다. 예쁘고 착한 편입니다. 날아라다람쥐야 행복해라~"), Character(image: Image(systemName: "wand.and.stars.inverse"), name: "담비손담비", info: "담비는 귀엽고 랩도 잘하고 머리부터 발끝까지 펄풱. 인생의 진리 어쩌구")]
+    @State private var mainCharacterIndex: Int = 1
+    
+    private let data = Array(0...15)
+    private let columns = [
         GridItem(.adaptive(minimum: Size.width), spacing: 16)
     ]
     
@@ -34,8 +37,13 @@ struct CharacterView: View {
                     .frame(height: 28)
                 
                 LazyVGrid(columns: columns, spacing: 29) {
-                    ForEach(data, id: \.self) { i in
-                        CharacterCardView()
+                    ForEach(data, id: \.self) { index in
+                        if index < characters.count {
+                            CharacterCardView(characterImage: $characters[index].image,
+                                              characterName: $characters[index].name,
+                                              isMainCharacter: markMainCharacter(index: index))
+                        }
+                        
                     }
                 }
                 .padding(.horizontal, 24)
@@ -52,6 +60,14 @@ struct CharacterView: View {
                 })
             }
         }
+    }
+}
+
+extension CharacterView {
+    private func markMainCharacter(index: Int) -> Binding<Bool> {
+        let isMainCharacter: Binding<Bool> = (mainCharacterIndex == index) ? .constant(true) : .constant(false)
+        
+        return isMainCharacter
     }
 }
 

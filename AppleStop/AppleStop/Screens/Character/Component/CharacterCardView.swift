@@ -12,6 +12,12 @@ struct CharacterCardView: View {
         static let width = (UIScreen.main.bounds.size.width - 24 * 2 - 16) / 2
     }
     
+    // MARK: - properties
+    
+    @Binding var characterImage: Image
+    @Binding var characterName: String
+    @Binding var isMainCharacter: Bool
+    
     var body: some View {
         Rectangle()
             .foregroundColor(.white)
@@ -27,24 +33,36 @@ struct CharacterCardView: View {
 extension CharacterCardView {
     var innerView: some View {
         VStack {
-            HStack {
-                Spacer()
-                Image(systemName: "checkmark.square.fill")
-                    .foregroundColor(.mainGreen)
-            }
+            checkMarkView
             .padding(.trailing, 11)
             
-            Rectangle()
+            characterImage
+                .resizable()
                 .frame(width: 74, height: 95, alignment: .center)
             
-            Text("하늘다람쥐")
+            Text(characterName)
                 .font(.system(size: 12, weight: .light, design: .default))
+        }
+    }
+    
+    var checkMarkView: some View {
+        HStack {
+            Spacer()
+                            
+            if isMainCharacter {
+                Image(systemName: "checkmark.square.fill")
+                    .foregroundColor(.mainGreen)
+            } else {
+                Image(systemName: "checkmark.square.fill")
+                    .foregroundColor(.mainGreen)
+                    .hidden()
+            }
         }
     }
 }
 
 struct CharacterCardView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterCardView()
+        CharacterCardView(characterImage: .constant(Image(systemName: "star.fill")), characterName: .constant("별따라다람쥐"), isMainCharacter: .constant(false))
     }
 }
