@@ -12,160 +12,163 @@ struct SettingView: View {
     @State var isNotificated = true
     
     var body: some View {
-        VStack{
-            ZStack{
-                HStack{
-                    Image(systemName: "multiply")
-                        .padding()
-                    
-                    Spacer()
-                }
-                
-                Text("설정")
-                    .font(.system(size: 16))
-               
-            }
-            
-            NavigationView {
-                List{
-                    ZStack{
-                        Rectangle()
-                            .fill(.white)
-                            .frame(width: 320, height: 45)
-                            .cornerRadius(10)
-                            .shadow(color: .gray, radius: 5, x: 2, y: 2)
-                        
-                        HStack{
-                            Text("알림 설정")
-                            Spacer()
-                            Toggle("notification", isOn: $isNotificated)
-                                .labelsHidden()
-                                .frame(height: 20)
-                        }
-                        .padding(12)
-                        .padding(.horizontal, 10)
-                    }
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
-                    
-                    ZStack{
-                        Rectangle()
-                            .fill(.white)
-                            .frame(width: 320, height: 45)
-                            .cornerRadius(10)
-                            .shadow(color: .gray, radius: 5, x: 2, y: 2)
-                        
-                        NavigationLink(destination: OnboardingViewOne()){
-                            HStack{
-                                Text("닉네임 변경")
-                                Spacer()
-                            }
-                            .padding(12)
-                        }
-                        .padding(.horizontal, 10)
-                    }
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
-                    
-                    
-                    ZStack{
-                        Rectangle()
-                            .fill(.white)
-                            .frame(width: 320, height: 45)
-                            .cornerRadius(10)
-                            .shadow(color: .gray, radius: 5, x: 2, y: 2)
-                        
-                        NavigationLink(destination: OnboardingViewOne()){
-                            HStack{
-                                Text("피드백 보내기")
-                                Spacer()
-                            }
-                            .padding(12)
-                        }
-                        .padding(.horizontal, 10)
-                    }
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
-                    
-                    ZStack{
-                        Rectangle()
-                            .fill(.white)
-                            .frame(width: 320, height: 45)
-                            .cornerRadius(10)
-                            .shadow(color: .gray, radius: 5, x: 2, y: 2)
-                        
-                        NavigationLink(destination: OnboardingViewOne()){
-                            HStack{
-                                Text("개인정보 처리방침")
-                                Spacer()
-                            }
-                            .padding(12)
-                        }
-                        .padding(.horizontal, 10)
-                    }
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
-                    
-                    ZStack{
-                        Rectangle()
-                            .fill(.white)
-                            .frame(width: 320, height: 45)
-                            .cornerRadius(10)
-                            .shadow(color: .gray, radius: 5, x: 2, y: 2)
-                        
-                        NavigationLink(destination: OnboardingViewOne()){
-                            HStack{
-                                Text("서비스 이용약관")
-                                Spacer()
-                            }
-                            .padding(12)
-                        }
-                        .padding(.horizontal, 10)
-                    }
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
-                    
-                    ZStack{
-                        Rectangle()
-                            .fill(.white)
-                            .frame(width: 320, height: 45)
-                            .cornerRadius(10)
-                            .shadow(color: .gray, radius: 5, x: 2, y: 2)
-                        
-                        NavigationLink(destination: OnboardingViewOne()){
-                            HStack{
-                                Text("수거딱대 가이드라인")
-                                Spacer()
-                            }
-                            .padding(12)
-                        }
-                        .padding(.horizontal, 10)
-                    }
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
-                    
-//                    ForEach (settings) { setting in
-//                        cardView(setting: setting)
-//                    }
-//                    .listRowBackground(.clear)
-                
-                }
-                .navigationBarTitle("")
-                        .navigationBarHidden(true)
-                
-                
-                
-            }
-//            aspectRatio(contentMode: <#T##ContentMode#>)
-//            .frame(width:400)
-        
+        ZStack{
+            Color.backgroundGrey
+                .ignoresSafeArea()
             
             VStack{
-                Text("Made by 애플스탑")
-                Text("v 1.0.0")
+                ZStack{
+                    
+                    HStack{
+                        Image(systemName: "multiply")
+                            .padding()
+                        
+                        Spacer()
+                    }
+                    
+                    Text("설정")
+                        .font(.system(size: 16))
+                   
+                }
+                
+                NavigationView {
+                    List{
+                        ZStack{
+                            Rectangle()
+                                .fill(.white)
+                                .frame(width: 320, height: 45)
+                                .cornerRadius(10)
+                                .shadow(color: .gray, radius: 5, x: 2, y: 2)
+                            
+                            HStack{
+                                Text("알림 설정")
+                                Spacer()
+                                Toggle("notification", isOn: $isNotificated)
+                                    .labelsHidden()
+                                    .frame(height: 20)
+                            }
+                            .padding(12)
+                            .padding(.horizontal, 10)
+                        }
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                        
+                        ZStack{
+                            Rectangle()
+                                .fill(.white)
+                                .frame(width: 320, height: 45)
+                                .cornerRadius(10)
+                                .shadow(color: .gray, radius: 5, x: 2, y: 2)
+                            
+                            NavigationLink(destination: OnboardingViewOne()){
+                                HStack{
+                                    Text("닉네임 변경")
+                                    Spacer()
+                                }
+                                .padding(12)
+                            }
+                            .padding(.horizontal, 10)
+                        }
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                        
+                        
+                        ZStack{
+                            Rectangle()
+                                .fill(.white)
+                                .frame(width: 320, height: 45)
+                                .cornerRadius(10)
+                                .shadow(color: .gray, radius: 5, x: 2, y: 2)
+                            
+                            NavigationLink(destination: FeedbackView()){
+                                HStack{
+                                    Text("피드백 보내기")
+                                    Spacer()
+                                }
+                                .padding(12)
+                            }
+                            .padding(.horizontal, 10)
+                        }
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                        
+                        ZStack{
+                            Rectangle()
+                                .fill(.white)
+                                .frame(width: 320, height: 45)
+                                .cornerRadius(10)
+                                .shadow(color: .gray, radius: 5, x: 2, y: 2)
+                            
+                            NavigationLink(destination: PrivacyPolicyView()){
+                                HStack{
+                                    Text("개인정보 처리방침")
+                                    Spacer()
+                                }
+                                .padding(12)
+                            }
+                            .padding(.horizontal, 10)
+                        }
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                        
+                        ZStack{
+                            Rectangle()
+                                .fill(.white)
+                                .frame(width: 320, height: 45)
+                                .cornerRadius(10)
+                                .shadow(color: .gray, radius: 5, x: 2, y: 2)
+                            
+                            NavigationLink(destination: ServiceTermView()){
+                                HStack{
+                                    Text("서비스 이용약관")
+                                    Spacer()
+                                }
+                                .padding(12)
+                            }
+                            .padding(.horizontal, 10)
+                        }
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                        
+                        ZStack{
+                            Rectangle()
+                                .fill(.white)
+                                .frame(width: 320, height: 45)
+                                .cornerRadius(10)
+                                .shadow(color: .gray, radius: 5, x: 2, y: 2)
+                            
+                            NavigationLink(destination: GuideView()){
+                                HStack{
+                                    Text("수거딱대 가이드라인")
+                                    Spacer()
+                                }
+                                .padding(12)
+                            }
+                            .padding(.horizontal, 10)
+                        }
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+                        
+    //                    ForEach (settings) { setting in
+    //                        cardView(setting: setting)
+    //                    }
+    //                    .listRowBackground(.clear)
+                    
+                    }
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                    
+                }
+                
+                
+                VStack{
+                    Text("Made by 애플스탑")
+                    Text("v 1.0.0")
+                }
+                .font(.system(size: 12, weight: .light))
             }
-            .font(.system(size: 12, weight: .light))
         }
+        
     }
 }
 
