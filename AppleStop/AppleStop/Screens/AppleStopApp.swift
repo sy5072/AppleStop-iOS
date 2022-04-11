@@ -12,7 +12,7 @@ struct AppleStopApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                TabbarView()
+                HomeView()
             }
         }
     }
