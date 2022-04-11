@@ -36,7 +36,7 @@ struct SettingListView: View {
               
             } else {
                 if navIndex==2 {
-                    NavigationLink(destination: OnboardingViewTwo() ){
+                    NavigationLink(destination: NicknameView() ){
                         HStack{
                             Text("\(title)")
                             Spacer()

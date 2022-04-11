@@ -30,6 +30,10 @@ extension Color {
     static var popupGrey: Color {
         return Color(hex: "#8E8E8E")
     }
+    
+    static var listGrey: Color {
+        return Color(hex: "#F2F2F7")
+    }
 }
 
 extension Color {
