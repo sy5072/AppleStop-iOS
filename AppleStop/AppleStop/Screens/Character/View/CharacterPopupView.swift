@@ -16,12 +16,14 @@ struct CharacterPopupView: View {
                 
                 Rectangle()
                     .foregroundColor(.white)
-                    .frame(height: geo.size.height / 2.5, alignment: .center)
+                    .frame(height: geo.size.height / 2, alignment: .center)
                     .cornerRadius(12)
                     .shadow(color: .gray.opacity(0.5), radius: 1, x: 0, y: 2)
                     .padding(.horizontal, 25)
                     .overlay {
                         CharacterDetailView()
+                            .padding(.leading, 50)
+                            .padding(.trailing, 45)
                     }
             }
         }
