@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MiniInformationView: View {
+struct LevelInformationView: View {
     
     var body: some View {
         Rectangle()
@@ -22,6 +22,6 @@ struct MiniInformationView: View {
 
 struct MiniInformationView_Previews: PreviewProvider {
     static var previews: some View {
-        MiniInformationView()
+        LevelInformationView()
     }
 }

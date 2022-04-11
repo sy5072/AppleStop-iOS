@@ -72,11 +72,11 @@ struct HomeView: View {
                     .frame(height: 22)
                 
                 HStack(spacing: 0.0) {
-                    MiniInformationView()
+                    WasteInformationView()
                         .padding(.leading, 24)
                         .padding(.trailing, 12)
                     
-                    MiniInformationView()
+                    LevelInformationView()
                         .padding(.trailing, 24)
                         .padding(.leading, 12)
                 }
