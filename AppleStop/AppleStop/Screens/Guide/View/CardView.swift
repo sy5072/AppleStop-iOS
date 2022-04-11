@@ -18,6 +18,21 @@ struct CardView: View {
     let card: GuideCard
 
     var body: some View {
+        VStack(alignment: .center){
+            Rectangle()
+                .frame(height: 280.0)
+                .foregroundColor(.white)
+                .cornerRadius(12)
+                .shadow(color: .gray.opacity(0.5), radius: 1, x: 0, y: 2)
+                .overlay {
+                    innerView
+                        .padding(.horizontal, 32)
+                }
+        }
+        
+    }
+    
+    var innerView: some View {
         
         VStack(alignment: .center) {
             Text(card.cardName)
@@ -25,9 +40,9 @@ struct CardView: View {
                     .system(size: 22)
                     .weight(.heavy)
                 )
-                .foregroundColor(.blue)
+                .foregroundColor(.green)
                 .multilineTextAlignment(.center)
-                .accessibilityAddTraits(.isHeader)
+                .accessibilityAddTraits([.isButton, .isHeader])
                 .font(/*@START_MENU_TOKEN@*/.headline/*@END_MENU_TOKEN@*/)
                 .padding(.top, cardPadding)
             
@@ -56,8 +71,7 @@ struct CardView: View {
                     .font(.system(size: 14))
                     .fontWeight(.thin)
                     .foregroundColor(.black)
-                    .padding(.horizontal, cardPadding)
-                    .padding(.bottom, cardPadding*2)
+                    .padding(cardPadding)
                     .frame(width: 260.0)
             }
         }
@@ -69,7 +83,6 @@ struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         CardView(card: card)
             .background(.white)
-            //.previewLayout(.sizeThatFits)
-            .previewLayout(.fixed(width: 280, height: 240))
+            .previewLayout(.sizeThatFits)
     }
 }
