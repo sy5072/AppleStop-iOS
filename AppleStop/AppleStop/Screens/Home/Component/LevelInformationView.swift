@@ -52,7 +52,7 @@ struct ProgressBarView: View {
                 .stroke(style: StrokeStyle(lineWidth: 6.0, lineCap: .round, lineJoin: .round))
                 .foregroundColor(.mainGreen)
                 .rotationEffect(.degrees(-90))
-            Text("LV.\(level)").font(.system(size: 14))
+            Text("LV.\(level)").font(.system(size: 14)).fontWeight(.semibold)
         }
     }
 }
