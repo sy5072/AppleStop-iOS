@@ -43,6 +43,15 @@ struct CharacterView: View {
         }
         .navigationTitle("캐릭터 보관함")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    print("Check")
+                }, label: {
+                    Image(systemName: "chevron.left")
+                }
+            }
+        }
     }
 }
 
