@@ -6,24 +6,16 @@
 //
 
 import SwiftUI
+import CoreMedia
 
 struct TabbarView: View {
     
     @State private var isPresenting = false
+
     var body: some View {
         
         ZStack {
             
-            GeometryReader{ geometryProxy -> AnyView in
-
-                let height = geometryProxy.frame(in: .global)
-                return AnyView(
-                
-                    ZStack{
-                        BlurView(style: .systemMaterialDark)
-                    }
-                )
-            }
             VStack{
             
                 Button {
@@ -39,19 +31,14 @@ struct TabbarView: View {
                     }
                 }
 
-                
-                
-    //        NavigationLink {
-    //            CameraView()
-    //        } label: {
-    //            Image("logo_camera")
-    //                .resizable()
-    //                .frame(width: 100, height: 100)
-    //        }
-
             }
-        }
+            
+ 
+
+            
+        }.background(.gray)
     }
+
 }
 
 struct TabbarView_Previews: PreviewProvider {
