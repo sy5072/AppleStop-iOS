@@ -22,6 +22,9 @@ extension Color {
     static var iconGrey: Color {
         return Color(hex: "#8A8A8A")
     }
+    static var chartGrey: Color {
+        return Color(hex: "#EFEFEF")
+    }
 }
 
 extension Color {

@@ -76,7 +76,7 @@ struct HomeView: View {
                         .padding(.leading, 24)
                         .padding(.trailing, 12)
                     
-                    LevelInformationView()
+                    LevelInformationView(nickname: "연일읍분리수거왕", userLevel: 10)
                         .padding(.trailing, 24)
                         .padding(.leading, 12)
                 }

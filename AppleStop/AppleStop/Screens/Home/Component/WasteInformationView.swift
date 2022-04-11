@@ -48,7 +48,7 @@ struct BarView: View {
     var body: some View {
         VStack{
             ZStack(alignment: .bottom){
-                Capsule().frame(width: 7, height: 60).foregroundColor(.backgroundGrey)
+                Capsule().frame(width: 7, height: 60).foregroundColor(.chartGrey)
                 Capsule().frame(width: 7, height: value).foregroundColor(.mainGreen)
                 
             }
