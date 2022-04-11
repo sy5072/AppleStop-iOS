@@ -16,9 +16,10 @@ struct CharacterView: View {
     // MARK: - properties
     
     @State private var characters: [Character] = [Character(image: Image(systemName: "moon.stars.fill"), name: "날아라다람쥐", info: "날아라 다람쥐는 귀엽습니다. 예쁘고 착한 편입니다. 날아라다람쥐야 행복해라~"), Character(image: Image(systemName: "wand.and.stars.inverse"), name: "담비손담비", info: "담비는 귀엽고 랩도 잘하고 머리부터 발끝까지 펄풱. 인생의 진리 어쩌구")]
-    @State private var mainCharacterIndex: Int = 1
+    @State private var user: User = User(nickname: "연일읍분리수거왕", days: 150, level: 10, exp: 60, mainCharacterIndex: 1)
+    @AppStorage("isLevelUp") var isLevelUp : Bool = UserDefaults.standard.bool(forKey: "isLevelUp")
     
-    private let data = Array(0...15)
+    private let data = Array(0...11)
     private let columns = [
         GridItem(.adaptive(minimum: Size.width), spacing: 16)
     ]
@@ -29,7 +30,10 @@ struct CharacterView: View {
                 .ignoresSafeArea()
             
             ScrollView {
-                UserInfomationView(nickname: "연일읍분리수거왕", usedDate: 150, userLevel: 10)
+                UserInfomationView(nickname: user.nickname,
+                                   usedDate: user.days,
+                                   userLevel: user.level,
+                                   userExp: user.exp)
                     .padding(.top, 22)
                     .padding(.horizontal, 24)
                 
@@ -41,18 +45,26 @@ struct CharacterView: View {
                         let isMainCharacter: Binding<Bool> = markMainCharacter(index: index)
                         
                         if index < characters.count {
-                            CharacterCardView(characterImage: $characters[index].image,
-                                              characterName: $characters[index].name,
+                            CharacterCardView(character: $characters[index],
                                               isMainCharacter: isMainCharacter)
+                                .onTapGesture {
+                                    if characters[index].name == nil {
+                                        let randomCharacter = selectRandomCharacter()
+                                        characters[characters.count - 1] = randomCharacter
+                                    }
+                                }
                         } else {
-                            CharacterCardView(characterImage: .constant(nil),
-                                              characterName: .constant(nil),
+                            CharacterCardView(character: .constant(Character(image: nil, name: nil, info: nil)),
                                               isMainCharacter: isMainCharacter)
                         }
                     }
                 }
                 .padding(.horizontal, 24)
             }
+        }
+        .onAppear {
+            isLevelUp = true
+            setupNewCharacterConfiguration()
         }
         .navigationTitle("캐릭터 보관함")
         .navigationBarTitleDisplayMode(.inline)
@@ -70,9 +82,23 @@ struct CharacterView: View {
 
 extension CharacterView {
     private func markMainCharacter(index: Int) -> Binding<Bool> {
-        let isMainCharacter: Binding<Bool> = (mainCharacterIndex == index) ? .constant(true) : .constant(false)
+        let isMainCharacter: Binding<Bool> = (user.mainCharacterIndex == index) ? .constant(true) : .constant(false)
         
         return isMainCharacter
+    }
+    
+    private func setupNewCharacterConfiguration() {
+        if user.level % 5 == 0 && isLevelUp {
+            characters.append(Character(image: ImageLiteral.imgNewcharacter, name: nil, info: nil))
+            isLevelUp = false
+        }
+    }
+    
+    private func selectRandomCharacter() -> Character {
+        let filteredCharacter = defaultCharacter.filter { !characters.map { $0.name }.contains($0.name) }
+        let randInt = Int.random(in: 0..<filteredCharacter.count)
+        
+        return filteredCharacter[randInt]
     }
 }
 

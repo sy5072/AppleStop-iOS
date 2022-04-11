@@ -11,4 +11,5 @@ enum ImageLiteral {
     static var exampleImage: Image = Image("exampleImage")
     
     static var imgLock: Image = Image("img_lock")
+    static var imgNewcharacter: Image = Image("img_newcharacter")
 }

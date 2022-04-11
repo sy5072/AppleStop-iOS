@@ -14,8 +14,7 @@ struct CharacterCardView: View {
     
     // MARK: - properties
     
-    @Binding var characterImage: Image?
-    @Binding var characterName: String?
+    @Binding var character: Character
     @Binding var isMainCharacter: Bool
     
     var body: some View {
@@ -25,7 +24,7 @@ struct CharacterCardView: View {
             .cornerRadius(12)
             .shadow(color: .gray.opacity(0.5), radius: 1, x: 0, y: 2)
             .overlay {
-                selectCardStyle(name: characterName)
+                selectCardStyle(with: character.name, image: character.image)
             }
     }
 }
@@ -36,11 +35,11 @@ extension CharacterCardView {
             checkMarkView
             .padding(.trailing, 11)
             
-            characterImage?
+            character.image?
                 .resizable()
                 .frame(width: 74, height: 95, alignment: .center)
             
-            Text(characterName ?? "")
+            Text(character.name ?? "")
                 .font(.system(size: 12, weight: .light, design: .default))
         }
     }
@@ -68,8 +67,8 @@ extension CharacterCardView {
 
 extension CharacterCardView {
     @ViewBuilder
-    private func selectCardStyle(name: String?) -> some View {
-        if name == nil {
+    private func selectCardStyle(with name: String?, image: Image?) -> some View {
+        if name == nil && image == nil {
             secretInnerView
         } else {
             characterInnerView
@@ -79,6 +78,6 @@ extension CharacterCardView {
 
 struct CharacterCardView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterCardView(characterImage: .constant(Image(systemName: "star.fill")), characterName: .constant("별따라다람쥐"), isMainCharacter: .constant(false))
+        CharacterCardView(character: .constant(Character(image: nil, name: nil, info: nil)), isMainCharacter: .constant(true))
     }
 }
