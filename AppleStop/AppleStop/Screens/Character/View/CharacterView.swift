@@ -8,8 +8,50 @@
 import SwiftUI
 
 struct CharacterView: View {
+    
+    private enum Size {
+        static let width = (UIScreen.main.bounds.size.width - 24 * 2 - 17) / 2
+    }
+    
+    // MARK: - properties
+    
+    let data = Array(1...16).map { "목록 \($0)"}
+    let columns = [
+        GridItem(.adaptive(minimum: Size.width), spacing: 16)
+    ]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.backgroundGrey
+                .ignoresSafeArea()
+            
+            ScrollView {
+                UserInfomationView(nickname: "연일읍분리수거왕", usedDate: 150, userLevel: 10)
+                    .padding(.top, 22)
+                    .padding(.horizontal, 24)
+                
+                Spacer()
+                    .frame(height: 28)
+                
+                LazyVGrid(columns: columns, spacing: 29) {
+                    ForEach(data, id: \.self) { i in
+                        CharacterCardView()
+                    }
+                }
+                .padding(.horizontal, 24)
+            }
+        }
+        .navigationTitle("캐릭터 보관함")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    print("back button")
+                }, label: {
+                    Image(systemName: "chevron.left")
+                })
+            }
+        }
     }
 }
 
