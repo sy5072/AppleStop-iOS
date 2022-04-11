@@ -15,8 +15,6 @@ struct HomeView: View {
     @State var frontDegree = 0.0
     @State var isFlipped = false
     
-    let width : CGFloat = 200
-    let height : CGFloat = 250
     let durationAndDelay : CGFloat = 0.2
     
     // MARK: Flip Card Function
