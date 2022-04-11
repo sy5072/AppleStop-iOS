@@ -21,7 +21,7 @@ struct SettingListView: View {
                 .fill(.white)
                 .frame(width: 320, height: 45)
                 .cornerRadius(10)
-                .shadow(color: .gray, radius: 5, x: 2, y: 2)
+                .customShadow()
             
             if hasAlarm {
                 HStack{
