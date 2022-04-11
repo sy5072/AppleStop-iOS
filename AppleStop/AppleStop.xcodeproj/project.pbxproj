@@ -25,6 +25,10 @@
 		B594068927FEB0B3000D3CE8 /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068827FEB0B3000D3CE8 /* ImageLiteral.swift */; };
 		B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068A27FEB1A6000D3CE8 /* Color+Extension.swift */; };
 		B594068F27FEB26F000D3CE8 /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */; };
+		B5E5ED5E2803C97A00074655 /* SeachBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED5B2803C97A00074655 /* SeachBar.swift */; };
+		B5E5ED5F2803C97A00074655 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED5C2803C97A00074655 /* CardView.swift */; };
+		B5E5ED602803C97A00074655 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED5D2803C97A00074655 /* ListView.swift */; };
+		B5E5ED622803C98F00074655 /* CardStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED612803C98F00074655 /* CardStruct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		B594068827FEB0B3000D3CE8 /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
 		B594068A27FEB1A6000D3CE8 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
+		B5E5ED5B2803C97A00074655 /* SeachBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeachBar.swift; sourceTree = "<group>"; };
+		B5E5ED5C2803C97A00074655 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		B5E5ED5D2803C97A00074655 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		B5E5ED612803C98F00074655 /* CardStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +195,7 @@
 		B594066827FEAD6C000D3CE8 /* Guide */ = {
 			isa = PBXGroup;
 			children = (
+				B5E5ED612803C98F00074655 /* CardStruct.swift */,
 				B594067927FEAEF0000D3CE8 /* View */,
 			);
 			path = Guide;
@@ -235,6 +244,9 @@
 		B594067927FEAEF0000D3CE8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B5E5ED5C2803C97A00074655 /* CardView.swift */,
+				B5E5ED5D2803C97A00074655 /* ListView.swift */,
+				B5E5ED5B2803C97A00074655 /* SeachBar.swift */,
 				B594067A27FEAEF7000D3CE8 /* GuideView.swift */,
 			);
 			path = View;
@@ -346,18 +358,22 @@
 			files = (
 				5931E3E127FFD62E006B16B6 /* SplashScreenView.swift in Sources */,
 				B594068F27FEB26F000D3CE8 /* NavigationBackButton.swift in Sources */,
+				B5E5ED5E2803C97A00074655 /* SeachBar.swift in Sources */,
 				B594067F27FEAF04000D3CE8 /* CharacterView.swift in Sources */,
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
 				598127942800861200A3296A /* OnboardingViewTwo.swift in Sources */,
 				B594067227FEAED0000D3CE8 /* HomeView.swift in Sources */,
 				B594066C27FEAEB9000D3CE8 /* TabbarView.swift in Sources */,
+				B5E5ED602803C97A00074655 /* ListView.swift in Sources */,
 				B594065127FEAC94000D3CE8 /* AppleStopApp.swift in Sources */,
 				B594068927FEB0B3000D3CE8 /* ImageLiteral.swift in Sources */,
+				B5E5ED622803C98F00074655 /* CardStruct.swift in Sources */,
 				B594067727FEAEE3000D3CE8 /* CameraView.swift in Sources */,
 				5981279C2800989000A3296A /* OnboardingViewFour.swift in Sources */,
 				B594068727FEAF32000D3CE8 /* SettingView.swift in Sources */,
 				B594067B27FEAEF7000D3CE8 /* GuideView.swift in Sources */,
 				5981279A280097EE00A3296A /* OnboardingViewThree.swift in Sources */,
+				B5E5ED5F2803C97A00074655 /* CardView.swift in Sources */,
 				B594068427FEAF21000D3CE8 /* OnboardingViewOne.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
