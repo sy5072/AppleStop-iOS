@@ -14,6 +14,7 @@ struct AppleStopApp: App {
         let appearance = UINavigationBarAppearance()
         appearance.titleTextAttributes = [.font: UIFont.systemFont(ofSize: 14, weight: .light)]
         
+        UINavigationBar.appearance().tintColor = .black
         UINavigationBar.appearance().layer.masksToBounds = false
         UINavigationBar.appearance().layer.shadowColor = UIColor.lightGray.cgColor
         UINavigationBar.appearance().layer.shadowOpacity = 0.8
@@ -28,6 +29,7 @@ struct AppleStopApp: App {
             NavigationView {
                 CharacterView()
             }
+            .navigationViewStyle(.stack)
         }
     }
 }

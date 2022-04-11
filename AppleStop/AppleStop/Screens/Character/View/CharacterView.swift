@@ -46,10 +46,10 @@ struct CharacterView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
-                    print("Check")
+                    print("back button")
                 }, label: {
                     Image(systemName: "chevron.left")
-                }
+                })
             }
         }
     }
