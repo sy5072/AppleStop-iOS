@@ -26,7 +26,7 @@ struct CharacterView: View {
                 .ignoresSafeArea()
             
             ScrollView {
-                UserInfomationView()
+                UserInfomationView(nickname: "연일읍분리수거왕", usedDate: 150, userLevel: 10)
                     .padding(.top, 22)
                     .padding(.horizontal, 24)
                 
