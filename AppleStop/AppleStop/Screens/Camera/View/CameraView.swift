@@ -9,7 +9,7 @@ import SwiftUI
 import AVFoundation
 
 struct CameraView: View {
-  
+    
     // MARK: - Properties
     @State private var isToggleOn = false
     
@@ -22,11 +22,15 @@ struct CameraView: View {
     @State var lastOffset : CGFloat = 0
     @GestureState var gestureOffset : CGFloat = 0
     
+    
+    
     // MARK: - CameraView
     var body: some View {
         ZStack{
+            
             CameraPreview(camera: camera)
-            codeGuideLineView
+            CodeGuideLineView()
+            
             bottomView
             bottomSheetView
             
@@ -46,8 +50,8 @@ struct CameraView: View {
             .onAppear {
                 camera.requestAndCheckPermissions()
             }
-            .background(.gray)
-            
+            .background(Color.backgroundGrey)
+        
     }
 }
 
@@ -61,7 +65,7 @@ struct CameraView_Previews: PreviewProvider {
 
 
 // MARK: - CameraPreview for UIkit
-    // 카메라미리보기창
+// 카메라미리보기창
 struct CameraPreview: UIViewRepresentable {
     
     @ObservedObject var camera : CameraModel
@@ -87,20 +91,6 @@ struct CameraPreview: UIViewRepresentable {
 
 // MARK: - Extension
 extension CameraView {
-    
-    // 바코드 가이드라인 뷰
-    var codeGuideLineView : some View {
-        GeometryReader{ geometryProxy in
-            VStack {
-                RoundedRectangle(cornerRadius: 20).stroke(style: StrokeStyle(lineWidth: 5, dash: [4]))
-                    .frame(width: geometryProxy.size.width / 2, height: geometryProxy.size.height / 10
-                           , alignment: .center)
-                    .foregroundColor(Color.yellow)
-                
-            }
-            .frame(width: geometryProxy.size.width, height: geometryProxy.size.height, alignment: .center)
-        }
-    }
     
     // 토글 및 버튼포함하는 뷰
     var bottomView : some View {
@@ -134,7 +124,7 @@ extension CameraView {
             
             Toggle(isOn: $isToggleOn) {}
             .toggleStyle(MyToggle())
-
+            
             Button {
                 // 카메라 촬영
                 if isToggleOn {
@@ -142,7 +132,13 @@ extension CameraView {
                 }
                 // 바코드 촬영
                 else{
-                    offset = -100 // 범위내 임의값 => 수정필요
+                    DispatchQueue.main.async {
+                        withAnimation(.easeInOut, {
+                            // TODO: -  디바이스 의존도 제거하기
+                            offset = -270 // 범위내 임의값
+                        })
+                    }
+                    
                 }
             } label: {
                 Image(isToggleOn ? "logo_camera" : "logo_barcode")
@@ -177,7 +173,7 @@ extension CameraView {
                         VStack(spacing: 10){
                             Text("플라스틱류")
                                 .font(.title)
-                            .foregroundColor(.green)
+                                .foregroundColor(.green)
                             
                             HStack{
                                 Image("plasticImage1")
@@ -190,14 +186,14 @@ extension CameraView {
                             Text("페트병과 플라스틱 용기에 든 내용물은 깨끗이 비우고 어쩌구 저쩌구 샬라샬라 재활용을 잘해라 제발.")
                                 .font(.subheadline)
                                 .foregroundColor(.black)
-
+                            
                         }
                         
                         
                     }
                     .frame(maxHeight : .infinity, alignment: .top)
-
-                    }
+                    
+                }
                     .offset(y: height - 70)
                     .offset(y: -offset > 0 ? (-offset <= (height - 70) ? offset : -(height - 70)) : 0)
                     .gesture(DragGesture().updating($gestureOffset, body: { value, out, _ in
@@ -227,19 +223,12 @@ extension CameraView {
         }
         .ignoresSafeArea(.all, edges: .bottom)
     }
-    
-    
-    // 바텀시트 오프셋변경함수
+    // 바텀시트 변경함수
     func onChange(){
         DispatchQueue.main.async {
             self.offset = gestureOffset + lastOffset
         }
     }
     
- 
     
-   
-
-
-   
 }

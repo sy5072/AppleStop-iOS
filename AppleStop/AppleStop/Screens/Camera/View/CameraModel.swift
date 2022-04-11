@@ -23,7 +23,13 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
     
     @Published var picData = Data(count:0)
     
+    private let sessionQueue = DispatchQueue(label: "camera session queue")
+    
+
+
     // MARK: - Custom Method
+    
+    //카메라 권한 요청
     func requestAndCheckPermissions(){
         
         switch AVCaptureDevice.authorizationStatus(for: .video){
@@ -49,9 +55,11 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
         }
     }
     
+    //카메라 세션 설정
     func setUp(){
         
         do {
+  
             self.session.beginConfiguration()
             
             guard let device = AVCaptureDevice.default(.builtInWideAngleCamera,for: .video,position: .back) else{
@@ -75,14 +83,20 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
             print(error.localizedDescription)
         }
         
+        
     }
     
+    // 카메라 찍기
     func takePic(){
         
-        DispatchQueue.global(qos: .background).async {
+        sessionQueue.async {
             self.output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
-            self.session.stopRunning()
-            
+            //캡쳐완료전에 중단해버리면 딜리게이트 메소드 호출 안됨 -> 딜레이 0.1초 주어서 해결
+            DispatchQueue.main.async {
+                       Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { (timer) in
+                           self.session.stopRunning()
+                       }
+                   }
             DispatchQueue.main.async {
                 withAnimation {
                     self.isTaken.toggle()
@@ -92,8 +106,9 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
         
     }
     
+    // 카메라 다시찍기
     func reTake(){
-        DispatchQueue.global(qos: .background).async {
+        sessionQueue.async {
             
             self.session.startRunning()
             
@@ -106,6 +121,7 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
         }
     }
     
+    // 캡쳐완료 시 호출되는 함수
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if error != nil {
             return
@@ -116,16 +132,22 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
         guard let imageData = photo.fileDataRepresentation() else {
             print("imageData nil")
             return}
+        
         self.picData = imageData
+        
     }
     
+    // 캡쳐 저장
     func savePic() {
         
         guard let image = UIImage(data: self.picData) else {
             print("error")
             return}
         
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        let watermark = UIImage(named: "character1")
+        let newImage = image.overlayWith(image: watermark ?? UIImage())
+        
+        UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
         
         self.isSaved = true
         print("save success")
