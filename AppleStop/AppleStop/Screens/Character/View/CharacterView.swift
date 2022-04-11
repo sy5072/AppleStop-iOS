@@ -27,6 +27,7 @@ struct CharacterView: View {
             
             ScrollView {
                 UserInfomationView()
+                    .padding(.top, 22)
                     .padding(.horizontal, 24)
                 
                 Spacer()
