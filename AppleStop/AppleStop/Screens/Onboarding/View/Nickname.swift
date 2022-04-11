@@ -35,6 +35,7 @@ struct Nickname: View {
                         ZStack{
                             VStack{
                                 TextField("  Enter your nickname", text: $name)
+                                    .ignoresSafeArea(.keyboard) //키보드가 올라오면 알아서 설정하기 버튼이 올라갑니다
                                     .onReceive(Just(name)) { _ in limitText(textLimit) }
                                     .multilineTextAlignment(.center)
                                     .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:2)
