@@ -15,30 +15,28 @@ struct HomeView: View {
     @State var frontDegree = 0.0
     @State var isFlipped = false
     
-    let width : CGFloat = 200
-    let height : CGFloat = 250
     let durationAndDelay : CGFloat = 0.2
     
     // MARK: Flip Card Function
     
-        func flipCard () {
-            isFlipped = !isFlipped
-            if isFlipped {
-                withAnimation(.linear(duration: durationAndDelay)) {
-                    backDegree = 90
-                }
-                withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
-                    frontDegree = 0
-                }
-            } else {
-                withAnimation(.linear(duration: durationAndDelay)) {
-                    frontDegree = -90
-                }
-                withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
-                    backDegree = 0
-                }
+    func flipCard () {
+        isFlipped = !isFlipped
+        if isFlipped {
+            withAnimation(.linear(duration: durationAndDelay)) {
+                backDegree = 90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
+                frontDegree = 0
+            }
+        } else {
+            withAnimation(.linear(duration: durationAndDelay)) {
+                frontDegree = -90
+            }
+            withAnimation(.linear(duration: durationAndDelay).delay(durationAndDelay)){
+                backDegree = 0
             }
         }
+    }
     
     var body: some View {
         ZStack {
@@ -52,14 +50,22 @@ struct HomeView: View {
                 Spacer()
                     .frame(height: 22)
                 
-                ZStack {
+                ZStack(alignment: .top) {
                     CharacterCardFrontView(degree: $frontDegree)
                         .padding(.horizontal, 24)
                     CharacterCardBackView(degree: $backDegree)
                         .padding(.horizontal, 24)
-                }
-                .onTapGesture {
-                    flipCard ()
+                    HStack {
+                        Rectangle().opacity(0)
+                            .frame(width: 80, height: 60)
+                            .contentShape(Rectangle())
+                        Spacer().frame(width: 180)
+                        Rectangle().opacity(0)
+                            .frame(width: 80, height: 60)
+                            .contentShape(Rectangle()).onTapGesture {
+                                flipCard ()
+                            }
+                    }.frame(width: 342)
                 }
                 
                 Spacer()
@@ -77,6 +83,7 @@ struct HomeView: View {
             }
         }
     }
+    
 }
 
 struct HomeView_Previews: PreviewProvider {
