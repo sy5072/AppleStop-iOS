@@ -26,7 +26,8 @@ struct CharacterView: View {
                 .ignoresSafeArea()
             
             ScrollView {
-                UserInfomationView()
+                UserInfomationView(nickname: "연일읍분리수거왕", usedDate: 150, userLevel: 10)
+                    .padding(.top, 22)
                     .padding(.horizontal, 24)
                 
                 Spacer()
@@ -42,6 +43,15 @@ struct CharacterView: View {
         }
         .navigationTitle("캐릭터 보관함")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    print("back button")
+                }, label: {
+                    Image(systemName: "chevron.left")
+                })
+            }
+        }
     }
 }
 
