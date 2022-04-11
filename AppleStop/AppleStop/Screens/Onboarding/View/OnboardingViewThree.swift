@@ -2,7 +2,7 @@
 //  OnboardingViewThree.swift
 //  AppleStop
 //
-//  Created by SHIN YOON AH on 2022/04/07.
+//  Created by Seik Oh on 2022/04/07.
 //
 import SwiftUI
 import SDWebImageSwiftUI
