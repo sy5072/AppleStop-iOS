@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5931E3E127FFD62E006B16B6 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */; };
 		5931E3E427FFDDCF006B16B6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5931E3E327FFDDCF006B16B6 /* SDWebImageSwiftUI */; };
+		597546402803C0C700F3CD36 /* Nickname.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975463F2803C0C700F3CD36 /* Nickname.swift */; };
 		598127942800861200A3296A /* OnboardingViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598127932800861200A3296A /* OnboardingViewTwo.swift */; };
 		5981279A280097EE00A3296A /* OnboardingViewThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59812799280097EE00A3296A /* OnboardingViewThree.swift */; };
 		5981279C2800989000A3296A /* OnboardingViewFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981279B2800989000A3296A /* OnboardingViewFour.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		5975463F2803C0C700F3CD36 /* Nickname.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nickname.swift; sourceTree = "<group>"; };
 		598127932800861200A3296A /* OnboardingViewTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewTwo.swift; sourceTree = "<group>"; };
 		59812799280097EE00A3296A /* OnboardingViewThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewThree.swift; sourceTree = "<group>"; };
 		5981279B2800989000A3296A /* OnboardingViewFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewFour.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				598127932800861200A3296A /* OnboardingViewTwo.swift */,
 				59812799280097EE00A3296A /* OnboardingViewThree.swift */,
 				5981279B2800989000A3296A /* OnboardingViewFour.swift */,
+				5975463F2803C0C700F3CD36 /* Nickname.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				B594067B27FEAEF7000D3CE8 /* GuideView.swift in Sources */,
 				5981279A280097EE00A3296A /* OnboardingViewThree.swift in Sources */,
 				B594068427FEAF21000D3CE8 /* OnboardingViewOne.swift in Sources */,
+				597546402803C0C700F3CD36 /* Nickname.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
