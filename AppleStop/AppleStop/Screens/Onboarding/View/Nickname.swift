@@ -15,29 +15,46 @@ extension UIScreen{
 
 struct Nickname: View {
     var body: some View {
-        ZStack{
-            VStack{
-                Text("닉네임 설정")
-                    .font(.title.bold())
-                    .multilineTextAlignment(.leading)
-            }
-            VStack{
-                //설정하기 버튼
-                Spacer()
-                NavigationLink(destination: OnboardingViewTwo()) {
-                    Text("설정하기")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:2)
-                            .frame(width: UIScreen.screenWidth * 0.75, height: UIScreen.screenHeight * 0.06,  alignment: .center)
-                            .shadow(color: Color.black.opacity(0.1), radius: 10, x: 10, y: 10)
-                            .shadow(color: Color.white.opacity(0.3), radius: 10, x: -5, y: -5))
-                        .foregroundColor(Color.orange)
+        NavigationView{
+            ZStack{
+                VStack{
+                    HStack{
+                        Text("수거딱대에서 사용할 닉네임을 입력해주세요.")
+                            .foregroundColor(Color.gray)
+                        Spacer()
+                    }
                     
+                    //TODO: 글자를 입력할 수 있도록 처리
+                    //TODO: 글자수 제한은 8문자로 제한
+                    RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:2)
+                        .frame(width: UIScreen.screenWidth * 0.9, height: UIScreen.screenHeight * 0.05,  alignment: .center)
                     
+                    //TODO: 숫자가 글자수에 따라 dynamic하게 바뀌도록 처리
+                    HStack{
+                        Spacer()
+                        Text("0/8")
+                            .foregroundColor(Color.orange)
+                            .padding(.trailing, 1.0)
+                    }
+                    .padding(.trailing)
+                    
+                    //설정하기 버튼
+                    //TODO: NavigationLink destination 수정
+                    Spacer()
+                    NavigationLink(destination: OnboardingViewTwo()) {
+                        Text("설정하기")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:2)
+                                .frame(width: UIScreen.screenWidth * 0.75, height: UIScreen.screenHeight * 0.06,  alignment: .center)
+                                .shadow(color: Color.black.opacity(0.1), radius: 10, x: 10, y: 10)
+                                .shadow(color: Color.white.opacity(0.3), radius: 10, x: -5, y: -5))
+                            .foregroundColor(Color.orange)
+                    }
                 }
+                .padding()
             }
-            .padding()
+            .navigationTitle("닉네임 설정")
         }
     }
 }
