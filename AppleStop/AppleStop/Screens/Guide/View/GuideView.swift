@@ -9,8 +9,7 @@ import SwiftUI
 
 struct GuideView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        
+
         /*
         SearchBar(text: $searchText)
             .padding(.top, -30)
