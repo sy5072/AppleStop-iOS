@@ -6,7 +6,6 @@
 //
 import SwiftUI
 import Combine
-import SDWebImageSwiftUI
 
 extension UIScreen{
     static let screenWidth = UIScreen.main.bounds.size.width
@@ -16,6 +15,7 @@ extension UIScreen{
 
 struct Nickname: View {
     @State var name: String = ""
+    
     let textLimit = 8
     
     var body: some View {
@@ -56,13 +56,10 @@ struct Nickname: View {
                         }
                     }
                     
-                    
-                    //TODO: 글자수 제한은 8문자로 제한
-                    
-                    //TODO: 숫자가 글자수에 따라 dynamic하게 바뀌도록 처리
+                    //글자수 나타내기
                     HStack{
                         Spacer()
-                        Text("0/8")
+                        Text("\(name.count)/8")
                             .foregroundColor(Color.orange)
                             .padding(.trailing, 1.0)
                     }
@@ -88,6 +85,7 @@ struct Nickname: View {
         }
     }
     
+    //8글자로 제한
     func limitText(_ upper: Int) {
         if name.count > upper {
             name = String(name.prefix(upper))
