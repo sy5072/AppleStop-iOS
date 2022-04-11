@@ -12,6 +12,7 @@ struct AppleStopApp: App {
     
     init() {
         let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .white
         appearance.titleTextAttributes = [.font: UIFont.systemFont(ofSize: 14, weight: .light)]
         
         UINavigationBar.appearance().tintColor = .black
