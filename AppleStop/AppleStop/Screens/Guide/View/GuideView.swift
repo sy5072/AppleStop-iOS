@@ -9,15 +9,19 @@ import SwiftUI
 
 struct GuideView: View {
     var body: some View {
+        ScrollView{
+            VStack(alignment: .center){
+                
+                /*
+                SearchBar(text: $searchText)
+                    .padding(.top, -30)
+                */
+                
+                ListView(cards: GuideCard.sampleData)
+                    .padding(.horizontal, 32)
 
-        /*
-        SearchBar(text: $searchText)
-            .padding(.top, -30)
-        */
-        
-        ListView(cards: GuideCard.sampleData)
-            .padding(.horizontal)
-        // 중앙 정렬이 안되길래 강제로 패딩(가로) 넣었더니 갑자기 양 옆에 날개 생겼습니다 도와주세요
+            }
+        }
     }
 }
 

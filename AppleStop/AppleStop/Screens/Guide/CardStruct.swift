@@ -58,7 +58,19 @@ extension GuideCard {
             recyclable: ["투명페트병", "플라스틱"],
             unrecyclable: ["빨대", "병뚜껑"]),
         
-        // 샘플 데이터 - 종이
+        // 샘플 데이터 - 종이 #1
+        GuideCard(
+            cardName: "종이",
+            image: ["paper01", "paper02"],
+            title: "종이는",
+            guideLine: "종이는 이렇게 저렇게 요렇게 비닐은 이렇게 저렇게 요렇게 붙어있는 이물질을 깨끗이 제거하고 어쩌구 저쩌구 샬라샬라 재활용을 잘해라 제발 전용 수거함에 넣어 배출합니다",
+            detailGuideLine: "종이는 이렇게 저렇게 요렇게 비닐은 이렇게 저렇게 요렇게 붙어있는 이물질을 깨끗이 제거하고 어쩌구 저쩌구 샬라샬라 재활용을 잘해라 제발 전용 수거함에 넣어 배출합니다",
+            video: ["비디오링크03", "비디오링크04"],
+            info: "종이는 이러합니다",
+            recyclable: ["책", "A4용지"],
+            unrecyclable: ["전단지", "이물질이 묻은 종이"]),
+        
+        // 샘플 데이터 - 종이 #2
         GuideCard(
             cardName: "종이",
             image: ["paper01", "paper02"],
