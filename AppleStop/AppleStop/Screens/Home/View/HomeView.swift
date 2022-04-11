@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        // ZStack을 이용해서 background와 foreground 구분하기
         ZStack {
             Color.backgroundGrey
                 .ignoresSafeArea()
@@ -21,8 +20,12 @@ struct HomeView: View {
                 Spacer()
                     .frame(height: 22)
                 
-                CharacterInformationView()
-                    .padding(.horizontal, 24)
+                ZStack {
+                    CharacterCardFrontView(degree: $frontDegree)
+                        .padding(.horizontal, 24)
+                    CharacterCardBackView(degree: $backDegree)
+                        .padding(.horizontal, 24)
+                }
                 
                 Spacer()
                     .frame(height: 22)
