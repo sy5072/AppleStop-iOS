@@ -68,7 +68,7 @@ struct NicknameView: View {
                             .frame(width: UIScreen.screenWidth * 0.75, height: UIScreen.screenHeight * 0.06,  alignment: .center)
                             .shadow(color: Color.black.opacity(0.1), radius: 10, x: 10, y: 10)
                             .shadow(color: Color.white.opacity(0.3), radius: 10, x: -5, y: -5))
-                        .foregroundColor(Color.orange)
+                        .foregroundColor(Color.charOrange)
                 }
             }
             .padding()
