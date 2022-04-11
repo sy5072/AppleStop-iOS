@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    // MARK: - properties
+    
+    @State var backDegree = 90.0
+    @State var frontDegree = 0.0
+    
     var body: some View {
         ZStack {
             Color.backgroundGrey
