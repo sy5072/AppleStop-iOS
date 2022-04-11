@@ -5,6 +5,7 @@
 //  Created by SHIN YOON AH on 2022/04/07.
 //
 import SwiftUI
+import Combine
 import SDWebImageSwiftUI
 
 extension UIScreen{
@@ -14,8 +15,8 @@ extension UIScreen{
 }
 
 struct Nickname: View {
-    
     @State var name: String = ""
+    let textLimit = 8
     
     var body: some View {
         NavigationView{
@@ -32,27 +33,30 @@ struct Nickname: View {
                         
                         //Textfield
                         ZStack{
-                            TextField("  Enter your nickname", text: $name)
-                                .multilineTextAlignment(.center)
-                                .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:2)
-                                    .frame(width: UIScreen.screenWidth * 0.9, height: UIScreen.screenHeight * 0.05,  alignment: .center)
-                                    .shadow(color: Color.black.opacity(0.1), radius: 10, x: 10, y: 10)
-                                    .shadow(color: Color.white.opacity(0.3), radius: 10, x: -5, y: -5))
-                            /*
-                             Text("\(name)")
-                             .font(.title3)
-                             .fontWeight(.bold)
-                             .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:2)
-                             .frame(width: UIScreen.screenWidth * 0.9, height: UIScreen.screenHeight * 0.05,  alignment: .center)
-                             .shadow(color: Color.black.opacity(0.1), radius: 10, x: 10, y: 10)
-                             .shadow(color: Color.white.opacity(0.3), radius: 10, x: -5, y: -5))
-                             .foregroundColor(Color.gray)
-                             */
+                            VStack{
+                                TextField("  Enter your nickname", text: $name)
+                                    .onReceive(Just(name)) { _ in limitText(textLimit) }
+                                    .multilineTextAlignment(.center)
+                                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:2)
+                                        .frame(width: UIScreen.screenWidth * 0.9, height: UIScreen.screenHeight * 0.05,  alignment: .center)
+                                        .shadow(color: Color.black.opacity(0.1), radius: 10, x: 10, y: 10)
+                                        .shadow(color: Color.white.opacity(0.3), radius: 10, x: -5, y: -5))
+                                
+                                //TextField 값의 텍스트 출력 시험
+                                    .padding()
+                                Text("test: \(name)")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:2)
+                                        .frame(width: UIScreen.screenWidth * 0.9, height: UIScreen.screenHeight * 0.05,  alignment: .center)
+                                        .shadow(color: Color.black.opacity(0.1), radius: 10, x: 10, y: 10)
+                                        .shadow(color: Color.white.opacity(0.3), radius: 10, x: -5, y: -5))
+                                    .foregroundColor(Color.gray)
+                            }
                         }
                     }
                     
                     
-                    //TODO: 글자를 입력할 수 있도록 처리
                     //TODO: 글자수 제한은 8문자로 제한
                     
                     //TODO: 숫자가 글자수에 따라 dynamic하게 바뀌도록 처리
@@ -81,6 +85,12 @@ struct Nickname: View {
                 .padding()
             }
             .navigationTitle("닉네임 설정")
+        }
+    }
+    
+    func limitText(_ upper: Int) {
+        if name.count > upper {
+            name = String(name.prefix(upper))
         }
     }
 }
