@@ -14,7 +14,6 @@ struct LocationInformationView: View {
     var location = "연일읍"
     var recyclingDay = "음식물쓰레기 배출일"
     
-    
     var body: some View {
         ZStack{
             Rectangle()
@@ -25,9 +24,13 @@ struct LocationInformationView: View {
                 .shadow(color: .black.opacity(0.04), radius: 2, x: 0, y: 1)
                 .shadow(color: .black.opacity(0.18), radius: 2, x: 0, y: 1)
             HStack{
-                Text("오늘은 '") + Text(location) + Text("'의 ") + Text(recyclingDay).foregroundColor(.mainGreen) + Text("입니다")
+                Text("오늘은 '\(location)'의 \(recyclingDayColor)입니다.")
             }.font(Font.headline.weight(.medium))
         }
+    }
+
+    var recyclingDayColor: Text {
+        Text(recyclingDay).foregroundColor(.mainGreen)
     }
 }
 
