@@ -13,6 +13,7 @@
 		598127942800861200A3296A /* OnboardingViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598127932800861200A3296A /* OnboardingViewTwo.swift */; };
 		5981279A280097EE00A3296A /* OnboardingViewThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59812799280097EE00A3296A /* OnboardingViewThree.swift */; };
 		5981279C2800989000A3296A /* OnboardingViewFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981279B2800989000A3296A /* OnboardingViewFour.swift */; };
+		7904CF3428047B89000EA6C4 /* CustomShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */; };
 		793FA13D2803E40500246AE9 /* ServiceTermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FA13C2803E40500246AE9 /* ServiceTermView.swift */; };
 		793FA13F2803E43700246AE9 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FA13E2803E43700246AE9 /* PrivacyPolicyView.swift */; };
 		793FA1412803E47F00246AE9 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FA1402803E47F00246AE9 /* FeedbackView.swift */; };
@@ -49,6 +50,7 @@
 		598127932800861200A3296A /* OnboardingViewTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewTwo.swift; sourceTree = "<group>"; };
 		59812799280097EE00A3296A /* OnboardingViewThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewThree.swift; sourceTree = "<group>"; };
 		5981279B2800989000A3296A /* OnboardingViewFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewFour.swift; sourceTree = "<group>"; };
+		7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShadowModifier.swift; sourceTree = "<group>"; };
 		793FA13C2803E40500246AE9 /* ServiceTermView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTermView.swift; sourceTree = "<group>"; };
 		793FA13E2803E43700246AE9 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		793FA1402803E47F00246AE9 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */,
+				7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				B594067F27FEAF04000D3CE8 /* CharacterView.swift in Sources */,
 				79B2D9E028046D5A00A0A782 /* ViewRouter.swift in Sources */,
 				B8C6AE5E2801F926002CCBFE /* MiniInformationView.swift in Sources */,
+				7904CF3428047B89000EA6C4 /* CustomShadowModifier.swift in Sources */,
 				B86225C32803518B0016FC71 /* CharacterCardBackView.swift in Sources */,
 				793FA1412803E47F00246AE9 /* FeedbackView.swift in Sources */,
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
@@ -577,7 +581,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppleStop/Preview Content\"";
-
 				DEVELOPMENT_TEAM = 8N8K22S85Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
