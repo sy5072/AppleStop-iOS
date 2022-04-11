@@ -22,3 +22,4 @@ struct ServiceTermView_Previews: PreviewProvider {
         ServiceTermView()
     }
 }
+
