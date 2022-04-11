@@ -19,6 +19,9 @@ extension Color {
     static var mainGreen: Color {
         return Color(hex: "#51AA6F")
     }
+    static var iconGrey: Color {
+        return Color(hex: "#8A8A8A")
+    }
 }
 
 extension Color {

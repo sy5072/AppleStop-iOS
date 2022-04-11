@@ -28,7 +28,7 @@ struct AppleStopApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                CharacterView()
+                HomeView()
             }
             .navigationViewStyle(.stack)
         }
