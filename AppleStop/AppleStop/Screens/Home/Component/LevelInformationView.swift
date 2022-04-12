@@ -29,7 +29,7 @@ struct LevelInformationView: View {
                 Text(nickname).fontWeight(.medium).font(.system(size: 14))
                 
                 HStack(spacing: 10){
-                    ProgressBarView(progress: userExp, level: userLevel)
+                    DonutChartView(progress: userExp, level: userLevel)
                 }.padding(.vertical, 8).frame(height: 86)
                 Spacer().frame(height: 8)
             }
@@ -37,7 +37,7 @@ struct LevelInformationView: View {
     }
 }
 
-struct ProgressBarView: View {
+struct DonutChartView: View {
     var progress: CGFloat
     var level: Int
     
