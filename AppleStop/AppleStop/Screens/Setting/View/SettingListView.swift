@@ -44,7 +44,7 @@ struct SettingListView: View {
                         .onChange(of: isAlarm) { value in
                             if value {
                                 setNotification()
-                                showAlert = true
+//                                showAlert = true
                             }else {
                                 delNotification()
                                 
