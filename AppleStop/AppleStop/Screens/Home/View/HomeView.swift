@@ -14,6 +14,9 @@ struct HomeView: View {
     @State var backDegree = 90.0
     @State var frontDegree = 0.0
     @State var isFlipped = false
+    @State var pushActive = false
+    @AppStorage("hideTabbar") var hideTabbar : Bool = false
+
     
     let durationAndDelay : CGFloat = 0.2
     
@@ -38,50 +41,72 @@ struct HomeView: View {
         }
     }
     
+    func pushCharacterView() {
+        self.pushActive = true
+    }
+    
     var body: some View {
-        ZStack {
-            Color.backgroundGrey
-                .ignoresSafeArea()
-            
-            VStack {
-                LocationInformationView()
-                    .padding(.horizontal, 24)
+        NavigationView {
+            ZStack {
+                Color.backgroundGrey
+                    .ignoresSafeArea()
                 
-                Spacer()
-                    .frame(height: 22)
-                
-                ZStack(alignment: .top) {
-                    CharacterCardFrontView(degree: $frontDegree)
-                        .padding(.horizontal, 24)
-                    CharacterCardBackView(degree: $backDegree)
-                        .padding(.horizontal, 24)
-                    HStack {
-                        Rectangle().opacity(0)
-                            .frame(width: 80, height: 60)
-                            .contentShape(Rectangle())
-                        Spacer().frame(width: 180)
-                        Rectangle().opacity(0)
-                            .frame(width: 80, height: 60)
-                            .contentShape(Rectangle()).onTapGesture {
-                                flipCard ()
-                            }
-                    }.frame(width: 342)
-                }
-                
-                Spacer()
-                    .frame(height: 22)
-                
-                HStack(spacing: 0.0) {
-                    WasteInformationView()
-                        .padding(.leading, 24)
-                        .padding(.trailing, 12)
+                VStack {
+                    Spacer()
+                        .frame(height: 22)
                     
-                    LevelInformationView(nickname: "연일읍분리수거왕", userLevel: 10)
-                        .padding(.trailing, 24)
-                        .padding(.leading, 12)
+                    LocationInformationView()
+                        .padding(.horizontal, 24)
+                    
+                    Spacer()
+                        .frame(height: 22)
+                    
+                    ZStack(alignment: .top) {
+                        CharacterCardFrontView(degree: $frontDegree)
+                            .padding(.horizontal, 24)
+                        CharacterCardBackView(degree: $backDegree)
+                            .padding(.horizontal, 24)
+                        HStack {
+                            Rectangle().opacity(0)
+                                .frame(width: 80, height: 60)
+                                .contentShape(Rectangle()).onTapGesture {
+                                    pushCharacterView()
+                                }
+                            Spacer().frame(width: 180)
+                            Rectangle().opacity(0)
+                                .frame(width: 80, height: 60)
+                                .contentShape(Rectangle()).onTapGesture {
+                                    flipCard ()
+                                }
+                        }.frame(width: 342)
+                    }
+                    
+                    Spacer()
+                        .frame(height: 22)
+                    
+                    HStack(spacing: 0.0) {
+                        WasteInformationView()
+                            .padding(.leading, 24)
+                            .padding(.trailing, 12)
+                        
+                        LevelInformationView(nickname: "연일읍분리수거왕", userLevel: 10)
+                            .padding(.trailing, 24)
+                            .padding(.leading, 12)
+                    }
+                    
+                    Spacer()
                 }
+                
+                NavigationLink(destination: CharacterView(),
+                   isActive: self.$pushActive) {
+                     EmptyView()
+                }.hidden()
             }
-        }.navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                hideTabbar = false
+            }
+        }
     }
     
 }

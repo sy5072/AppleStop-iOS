@@ -12,54 +12,57 @@ struct TabbarView: View {
     
     @StateObject var viewRouter: ViewRouter
     
-    
+    @AppStorage("hideTabbar") var hideTabbar : Bool = false
     @State private var isPresenting = false
-
+    
     var body: some View {
-        GeometryReader{ geometry in
-            
-            ZStack {
-                VStack{
-                    Spacer()
-                    switch viewRouter.currentPage {
-                    case .home:
-                        HomeView()
-                    case .guide:
-                        GuideView()
-                    }
-                    Spacer()
-                    ZStack {
-                        Rectangle()
-                            .frame(width: geometry.size.width, height: geometry.size.height/9)
-                            .background(.white)
-                            .customShadow()
-                        HStack{
-                            TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: geometry.size.width/5, height: geometry.size.height/30, systemIconName: "house", tabName: "홈", isCamera: false)
-                            
-                            TabBarIcon(viewRouter: viewRouter, assignedPage: nil, width: geometry.size.width/4, height: geometry.size.height/4, systemIconName: "", tabName: "", isCamera: true).shadow(radius: 2)
-                                .customShadow()
-                                
-                            TabBarIcon(viewRouter: viewRouter, assignedPage: .guide, width: geometry.size.width/5, height: geometry.size.height/30, systemIconName: "book", tabName: "분리수거 가이드", isCamera: false)
-                        }
-                        .frame(width: geometry.size.width, height: geometry.size.height/8)
-                        .background(.white)
-                    }
-                    
-                  
-                    
+        ZStack {
+            VStack{
+                Spacer()
+                switch viewRouter.currentPage {
+                case .home:
+                    HomeView()
+                case .guide:
+                    GuideView()
                 }
-                .edgesIgnoringSafeArea(.bottom)
+                Spacer()
+                
+                if hideTabbar {
+                    EmptyView()
+                } else {
+                    tabbarView
+                }
             }
+            .edgesIgnoringSafeArea(.bottom)
         }
-
+        
         // TODO: - 카메라뷰를 탭바에 연결 시에 fullScreenCover 필요
-//                .fullScreenCover(isPresented: $isPresenting) {
-//                    NavigationView{
-//                    }
-//                    CameraView()
-//                }
+        //                .fullScreenCover(isPresented: $isPresenting) {
+        //                    NavigationView{
+        //                    }
+        //                    CameraView()
+        //                }
     }
-
+    
+    var tabbarView: some View {
+        ZStack {
+            Rectangle()
+                .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/9)
+                .background(.white)
+                .customShadow()
+            HStack{
+                TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: UIScreen.main.bounds.size.width/5, height: UIScreen.main.bounds.size.height/30, systemIconName: "house", tabName: "홈", isCamera: false)
+                
+                TabBarIcon(viewRouter: viewRouter, assignedPage: nil, width: UIScreen.main.bounds.size.width/4, height: UIScreen.main.bounds.size.height/4, systemIconName: "", tabName: "", isCamera: true).shadow(radius: 2)
+                    .customShadow()
+                
+                TabBarIcon(viewRouter: viewRouter, assignedPage: .guide, width: UIScreen.main.bounds.size.width/5, height: UIScreen.main.bounds.size.height/30, systemIconName: "book", tabName: "분리수거 가이드", isCamera: false)
+            }
+            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/8)
+            .background(.white)
+        }
+    }
+    
 }
 
 struct TabbarView_Previews: PreviewProvider {
@@ -95,10 +98,10 @@ struct TabBarIcon: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: width, height: height)
-//                    .padding(.top, 10)
+                //                    .padding(.top, 10)
                 Text(tabName)
                     .font(.system(size: 10))
-         
+                
             }
         }
         .padding(.bottom, 10)
@@ -116,4 +119,3 @@ struct TabBarIcon: View {
         .foregroundColor(viewRouter.currentPage == assignedPage ? .charOrange : .gray)
     }
 }
- 
