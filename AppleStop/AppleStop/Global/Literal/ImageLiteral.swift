@@ -13,3 +13,6 @@ enum ImageLiteral {
     static var imgLock: Image = Image("img_lock")
     static var imgNewcharacter: Image = Image("img_newcharacter")
 }
+
+
+
