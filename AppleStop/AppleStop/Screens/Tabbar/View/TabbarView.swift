@@ -8,26 +8,45 @@
 import SwiftUI
 
 struct TabbarView: View {
+    
+    @StateObject var viewRouter: ViewRouter
+    
     var body: some View {
         GeometryReader{ geometry in
-            VStack{
-                Spacer()
-                Text("Home")
-                Spacer()
-                HStack{
-                    TabBarIcon(width: geometry.size.width/5, height: geometry.size.height/30, systemIconName: "house", tabName: "홈", isCamera: false)
-                        .shadow(radius: 0)
-                    TabBarIcon(width: geometry.size.width/4, height: geometry.size.height/4, systemIconName: "", tabName: "", isCamera: true)
-                        
-                    TabBarIcon(width: geometry.size.width/6, height: geometry.size.height/30, systemIconName: "book", tabName: "분리수거 가이드", isCamera: false)
-                        .shadow(radius: 0)
+            
+            ZStack {
+                VStack{
+                    Spacer()
+                    switch viewRouter.currentPage {
+                    case .home:
+                        HomeView()
+                    case .camera:
+                        CameraView()
+                    case .guide:
+                        GuideView()
+                    }
+                    Spacer()
+                    ZStack {
+                        Rectangle()
+                            .frame(width: geometry.size.width, height: geometry.size.height/9)
+                            .background(.white)
+                            .shadow(radius: 2)
+                        HStack{
+                            TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: geometry.size.width/5, height: geometry.size.height/30, systemIconName: "house", tabName: "홈", isCamera: false)
+    //                            .shadow(radius: 0)
+                            TabBarIcon(viewRouter: viewRouter, assignedPage: .camera, width: geometry.size.width/4, height: geometry.size.height/4, systemIconName: "", tabName: "", isCamera: true).shadow(radius: 2)
+                                
+                            TabBarIcon(viewRouter: viewRouter, assignedPage: .guide, width: geometry.size.width/6, height: geometry.size.height/30, systemIconName: "book", tabName: "분리수거 가이드", isCamera: false)
+                        }
+                        .frame(width: geometry.size.width, height: geometry.size.height/9)
+                        .background(.white)
+                    }
+                    
+                  
+                    
                 }
-                .frame(width: geometry.size.width, height: geometry.size.height/9)
-                .background(.white)
-                .shadow(radius: 2)
-                
+                .edgesIgnoringSafeArea(.bottom)
             }
-            .edgesIgnoringSafeArea(.bottom)
         }
         
     }
@@ -35,12 +54,14 @@ struct TabbarView: View {
 
 struct TabbarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabbarView()
+        TabbarView(viewRouter: ViewRouter())
     }
 }
 
 struct TabBarIcon: View {
     
+    @StateObject var viewRouter: ViewRouter
+    let assignedPage: Page
     let width, height : CGFloat
     let systemIconName, tabName : String
     let isCamera : Bool
@@ -62,9 +83,13 @@ struct TabBarIcon: View {
                     .padding(.top, 10)
                 Text(tabName)
                     .font(.footnote)
-        
+         
             }
-            
         }
+        .onTapGesture {
+            viewRouter.currentPage = assignedPage 
+        }
+        .foregroundColor(viewRouter.currentPage == assignedPage ? .orange : .gray)
     }
 }
+ 
