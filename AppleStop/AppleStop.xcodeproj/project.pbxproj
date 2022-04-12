@@ -42,6 +42,11 @@
 		B5B1F212280507350026AD0E /* WasteInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F211280507350026AD0E /* WasteInformationView.swift */; };
 		B5B1F21428050A200026AD0E /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B2D9DF28046D5A00A0A782 /* ViewRouter.swift */; };
 		B5B1F21728055E130026AD0E /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B5B1F21628055E130026AD0E /* SDWebImageSwiftUI */; };
+		B5B1F21C280571F40026AD0E /* SeachBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F218280571F40026AD0E /* SeachBar.swift */; };
+		B5B1F21D280571F40026AD0E /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F219280571F40026AD0E /* ListView.swift */; };
+		B5B1F21E280571F40026AD0E /* GuideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F21A280571F40026AD0E /* GuideDetailView.swift */; };
+		B5B1F21F280571F40026AD0E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F21B280571F40026AD0E /* CardView.swift */; };
+		B5B1F221280571FD0026AD0E /* CardStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F220280571FD0026AD0E /* CardStruct.swift */; };
 		B5E5ED65280404FD00074655 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED64280404FD00074655 /* Character.swift */; };
 		B5E5ED672804242A00074655 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED662804242A00074655 /* User.swift */; };
 		B5E5ED692804545800074655 /* CharacterPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED682804545800074655 /* CharacterPopupView.swift */; };
@@ -87,6 +92,11 @@
 		B5B1F20A2804F9630026AD0E /* ViewControllerHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHolder.swift; sourceTree = "<group>"; };
 		B5B1F20C2804FC970026AD0E /* BackgroundBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundBlurView.swift; sourceTree = "<group>"; };
 		B5B1F211280507350026AD0E /* WasteInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteInformationView.swift; sourceTree = "<group>"; };
+		B5B1F218280571F40026AD0E /* SeachBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeachBar.swift; sourceTree = "<group>"; };
+		B5B1F219280571F40026AD0E /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		B5B1F21A280571F40026AD0E /* GuideDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideDetailView.swift; sourceTree = "<group>"; };
+		B5B1F21B280571F40026AD0E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		B5B1F220280571FD0026AD0E /* CardStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStruct.swift; sourceTree = "<group>"; };
 		B5E5ED64280404FD00074655 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		B5E5ED662804242A00074655 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B5E5ED682804545800074655 /* CharacterPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPopupView.swift; sourceTree = "<group>"; };
@@ -245,6 +255,7 @@
 		B594066827FEAD6C000D3CE8 /* Guide */ = {
 			isa = PBXGroup;
 			children = (
+				B5B1F220280571FD0026AD0E /* CardStruct.swift */,
 				B594067927FEAEF0000D3CE8 /* View */,
 			);
 			path = Guide;
@@ -296,6 +307,10 @@
 		B594067927FEAEF0000D3CE8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B5B1F21B280571F40026AD0E /* CardView.swift */,
+				B5B1F21A280571F40026AD0E /* GuideDetailView.swift */,
+				B5B1F219280571F40026AD0E /* ListView.swift */,
+				B5B1F218280571F40026AD0E /* SeachBar.swift */,
 				B594067A27FEAEF7000D3CE8 /* GuideView.swift */,
 			);
 			path = View;
@@ -452,19 +467,23 @@
 				5931E3E127FFD62E006B16B6 /* SplashScreenView.swift in Sources */,
 				35A80AA32803264100DD7721 /* CustomCorner.swift in Sources */,
 				B594068F27FEB26F000D3CE8 /* NavigationBackButton.swift in Sources */,
+				B5B1F221280571FD0026AD0E /* CardStruct.swift in Sources */,
 				35A80AA52804537600DD7721 /* UIImage+Extension.swift in Sources */,
 				B594067F27FEAF04000D3CE8 /* CharacterView.swift in Sources */,
 				B5B1F20D2804FC970026AD0E /* BackgroundBlurView.swift in Sources */,
+				B5B1F21D280571F40026AD0E /* ListView.swift in Sources */,
 				B5B1F212280507350026AD0E /* WasteInformationView.swift in Sources */,
 				59F1780828051D0D00629F8B /* CustomShadowModifier.swift in Sources */,
 				35A80AAD280522AF00DD7721 /* SettingView.swift in Sources */,
 				B8C6AE5E2801F926002CCBFE /* LevelInformationView.swift in Sources */,
+				B5B1F21E280571F40026AD0E /* GuideDetailView.swift in Sources */,
 				B86225C32803518B0016FC71 /* CharacterCardBackView.swift in Sources */,
 				350C0C6827FFDCFE0012CBFA /* CameraModel.swift in Sources */,
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
 				35A80AAB2804FD2900DD7721 /* ToastAlertView.swift in Sources */,
 				B5E5ED692804545800074655 /* CharacterPopupView.swift in Sources */,
 				350C0C6A27FFDD590012CBFA /* CustomToggle.swift in Sources */,
+				B5B1F21F280571F40026AD0E /* CardView.swift in Sources */,
 				B594067227FEAED0000D3CE8 /* HomeView.swift in Sources */,
 				B594069527FFDC08000D3CE8 /* UserInformationView.swift in Sources */,
 				B594066C27FEAEB9000D3CE8 /* TabbarView.swift in Sources */,
@@ -482,6 +501,7 @@
 				79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */,
 				B594067B27FEAEF7000D3CE8 /* GuideView.swift in Sources */,
 				79B2D9DE2804195600A0A782 /* SettingListView.swift in Sources */,
+				B5B1F21C280571F40026AD0E /* SeachBar.swift in Sources */,
 				B8F226E128007B8E004294EE /* CharacterCardFrontView.swift in Sources */,
 				B5E5ED6B2804583600074655 /* CharacterDetailView.swift in Sources */,
 				B8C6AE5C2801F835002CCBFE /* LocationInformationView.swift in Sources */,
