@@ -38,7 +38,7 @@ extension CharacterDetailView {
                 .font(.system(size: 18, weight: .light, design: .default))
             Text(characterName ?? "")
                 .font(.system(size: 25, weight: .semibold, design: .default))
-                .padding(.bottom, 5)
+                .padding(.bottom, 10)
             Text(characterInfo ?? "")
                 .font(.system(size: 14, weight: .light, design: .default))
             
@@ -73,7 +73,7 @@ extension CharacterDetailView {
                 
                 characterImage?
                     .resizable()
-                    .frame(width: 62, height: 80, alignment: .center)
+                    .frame(width: 100, height: 100, alignment: .center)
                     .opacity(0.5)
             }
             Spacer()

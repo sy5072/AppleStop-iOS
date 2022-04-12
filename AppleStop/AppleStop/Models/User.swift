@@ -13,4 +13,5 @@ struct User {
     var level: Int
     var exp: Double
     var mainCharacterIndex: Int
+    var userCharacters: [Character]
 }

@@ -23,7 +23,9 @@ struct UserInfomationView: View {
             .foregroundColor(.white)
             .frame(height: 138)
             .cornerRadius(12)
-            .shadow(color: .gray.opacity(0.5), radius: 1, x: 0, y: 2)
+            .shadow(color: .black.opacity(0.04), radius: 6, x: 0, y: 2)
+            .shadow(color: .black.opacity(0.04), radius: 2, x: 0, y: 1)
+            .shadow(color: .black.opacity(0.18), radius: 2, x: 0, y: 1)
             .overlay {
                 innerView
                     .padding(.horizontal, 37)
@@ -36,7 +38,7 @@ extension UserInfomationView {
         HStack(spacing: 0) {
             mainCharacterImage?
                 .resizable()
-                .frame(width: 90, height: 96, alignment: .leading)
+                .frame(width: 100, height: 100, alignment: .leading)
                 .padding(.trailing, 32)
             userInfoView
         }
@@ -48,7 +50,7 @@ extension UserInfomationView {
                 .font(.system(size: 16, weight: .semibold, design: .default))
                 .padding(.bottom, 3)
             Text("분리수거를 시작한 지 \(usedDate)일째")
-                .font(.system(size: 12, weight: .regular, design: .default))
+                .font(.system(size: 11, weight: .regular, design: .default))
                 .padding(.bottom)
             
             levelTextView

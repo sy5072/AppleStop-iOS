@@ -27,10 +27,8 @@ struct AppleStopApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                HomeView()
-            }
-            .navigationViewStyle(.stack)
+            //SplashScreenView()
+            OnboardingViewMain()
         }
     }
 }
