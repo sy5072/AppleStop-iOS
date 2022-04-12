@@ -12,6 +12,7 @@
 		35A80AA32803264100DD7721 /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AA22803264100DD7721 /* CustomCorner.swift */; };
 		35A80AA52804537600DD7721 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AA42804537600DD7721 /* UIImage+Extension.swift */; };
 		35A80AA728046C3E00DD7721 /* CodeGuideLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AA628046C3E00DD7721 /* CodeGuideLineView.swift */; };
+		35A80AAB2804FD2900DD7721 /* ToastAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AAA2804FD2900DD7721 /* ToastAlertView.swift */; };
 		5931E3E127FFD62E006B16B6 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */; };
 		5931E3E427FFDDCF006B16B6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5931E3E327FFDDCF006B16B6 /* SDWebImageSwiftUI */; };
 		598127942800861200A3296A /* OnboardingViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598127932800861200A3296A /* OnboardingViewTwo.swift */; };
@@ -43,6 +44,7 @@
 		35A80AA22803264100DD7721 /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
 		35A80AA42804537600DD7721 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		35A80AA628046C3E00DD7721 /* CodeGuideLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGuideLineView.swift; sourceTree = "<group>"; };
+		35A80AAA2804FD2900DD7721 /* ToastAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAlertView.swift; sourceTree = "<group>"; };
 		5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		598127932800861200A3296A /* OnboardingViewTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewTwo.swift; sourceTree = "<group>"; };
 		59812799280097EE00A3296A /* OnboardingViewThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewThree.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		B594066127FEACD4000D3CE8 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
+				35A80AAA2804FD2900DD7721 /* ToastAlertView.swift */,
 				B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */,
 				350C0C6927FFDD590012CBFA /* CustomToggle.swift */,
 				35A80AA22803264100DD7721 /* CustomCorner.swift */,
@@ -399,6 +402,7 @@
 				B86225C32803518B0016FC71 /* CharacterCardBackView.swift in Sources */,
 				350C0C6827FFDCFE0012CBFA /* CameraModel.swift in Sources */,
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
+				35A80AAB2804FD2900DD7721 /* ToastAlertView.swift in Sources */,
 				598127942800861200A3296A /* OnboardingViewTwo.swift in Sources */,
 				350C0C6A27FFDD590012CBFA /* CustomToggle.swift in Sources */,
 				B594067227FEAED0000D3CE8 /* HomeView.swift in Sources */,

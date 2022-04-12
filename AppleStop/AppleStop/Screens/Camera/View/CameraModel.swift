@@ -20,9 +20,9 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
     @Published var preview : AVCaptureVideoPreviewLayer!
     
     @Published var isSaved = false
-    
+    @Published var isShowingToast = false
+
     @Published var picData = Data(count:0)
-    
     private let sessionQueue = DispatchQueue(label: "camera session queue")
     
 
@@ -117,6 +117,8 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
                     self.isTaken.toggle()
                 }
                 self.isSaved = false
+                self.isShowingToast = false
+
             }
         }
     }
@@ -150,6 +152,8 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
         UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
         
         self.isSaved = true
+        self.isShowingToast = true
+        
         print("save success")
     }
 }

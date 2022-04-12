@@ -32,7 +32,11 @@ struct CameraView: View {
             CodeGuideLineView()
             
             bottomView
+                .toast(isShowing: $camera.isShowingToast)
             bottomSheetView
+            
+          
+        
             
         }   .navigationTitle("카메라")
             .navigationBarBackButtonHidden(true)
@@ -108,6 +112,7 @@ extension CameraView {
                     }
                     Button {
                         if !camera.isSaved{
+                            
                             camera.savePic()
                         }
                     } label: {
