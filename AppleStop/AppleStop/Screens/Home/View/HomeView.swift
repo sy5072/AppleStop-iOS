@@ -16,7 +16,7 @@ struct HomeView: View {
     @State var isFlipped = false
     @State var pushActive = false
     @AppStorage("hideTabbar") var hideTabbar : Bool = false
-
+    @AppStorage("nickname") var nickname : String = ""
     
     let durationAndDelay : CGFloat = 0.2
     
@@ -105,7 +105,7 @@ struct HomeView: View {
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 hideTabbar = false
-            }
+g            }
         }
     }
     
