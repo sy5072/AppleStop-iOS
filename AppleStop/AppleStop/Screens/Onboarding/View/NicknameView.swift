@@ -59,7 +59,7 @@ struct NicknameView: View {
                     }
                 }
                 
-                
+
                 //설정하기 버튼
                 Spacer()
                 NavigationLink(destination: HomeView()) {

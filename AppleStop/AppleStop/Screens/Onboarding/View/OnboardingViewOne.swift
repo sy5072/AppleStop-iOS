@@ -35,7 +35,7 @@ struct OnboardingViewOne: View {
         //}
         //}
         //using overlay instead of ZStack due to issues with animations
-        //.overlay(SplashScreenView())
+        .overlay(SplashScreenView())
     }
 }
 
