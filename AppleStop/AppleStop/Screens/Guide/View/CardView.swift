@@ -20,7 +20,7 @@ struct CardView: View {
     var body: some View {
         VStack(alignment: .center){
             Rectangle()
-                .frame(height: 280.0)
+                .frame(height: 324.0)
                 .foregroundColor(.white)
                 .cornerRadius(12)
                 .shadow(color: .gray.opacity(0.5), radius: 1, x: 0, y: 2)
@@ -37,7 +37,8 @@ struct CardView: View {
         VStack(alignment: .center) {
             Text(card.cardName)
                 .font(
-                    .system(size: 22)
+                    .system(size: 24)
+                    // small title font size로 수정할것
                     .weight(.heavy)
                 )
                 .foregroundColor(.green)
@@ -73,6 +74,7 @@ struct CardView: View {
                     .foregroundColor(.black)
                     .padding(cardPadding)
                     .frame(width: 260.0)
+                    .frame(height: 60.0)
             }
         }
     }
