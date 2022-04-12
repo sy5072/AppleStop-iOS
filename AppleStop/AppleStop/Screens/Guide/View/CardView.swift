@@ -23,11 +23,11 @@ struct CardView: View {
                 .frame(height: 324.0)
                 .foregroundColor(.white)
                 .cornerRadius(12)
-                .shadow(color: .gray.opacity(0.5), radius: 1, x: 0, y: 2)
                 .overlay {
                     innerView
                         .padding(.horizontal, 32)
                 }
+                .customShadow()
         }
         
     }

@@ -18,15 +18,15 @@ struct GuideCard: Identifiable {
     var info:           String
     var recyclable:     [String]
     var unrecyclable:   [String]
-
+    
     /*
-    init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, theme: Theme) {
-        self.id = id
-        self.title = title
-        self.attendees = attendees
-        self.lengthInMinutes = lengthInMinutes
-        self.theme = theme
-    }}
+     init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, theme: Theme) {
+     self.id = id
+     self.title = title
+     self.attendees = attendees
+     self.lengthInMinutes = lengthInMinutes
+     self.theme = theme
+     }}
      */
     
     init(id: UUID = UUID(), cardName: String, image: [String], title: String, guideLine: String, detailGuideLine: String, video: [String], info: String, recyclable: [String], unrecyclable: [String]) {

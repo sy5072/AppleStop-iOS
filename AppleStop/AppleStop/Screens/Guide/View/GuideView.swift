@@ -12,6 +12,7 @@ struct GuideView: View {
         ScrollView{
             VStack(alignment: .center){
                 
+                // 서치바는 잠시 주석 속으로...
                 /*
                 SearchBar(text: $searchText)
                     .padding(.top, -30)

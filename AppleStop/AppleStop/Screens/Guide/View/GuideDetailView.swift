@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct GuideDetailView: View {
     
     let card: GuideCard
@@ -36,7 +34,7 @@ struct GuideDetailView: View {
 
             Text(card.cardName + "류")
             .font(
-                .system(size: 34)
+                .system(size: largeTitleFontSize)
                 // LargeTitle font size로 추후 수정
                 .weight(.heavy)
             )
@@ -55,6 +53,7 @@ struct GuideDetailView: View {
              2. 밑에 Stepper이용해서 .... <- 이런 식으로 스냅 이동 가능하게 만들기
 
             */
+            
             Rectangle()
                 .frame(height: 324.0)
                 //.frame(width: 221.0, height: 343.0)
@@ -71,7 +70,7 @@ struct GuideDetailView: View {
                 .padding(.leading, 24)
                 .padding(.vertical, 12)
                 .font(
-                    .system(size: 20)
+                    .system(size: largeTitleFontSize)
                     // LargeTitle font size로 추후 수정
                     .weight(.heavy)
                 )
@@ -90,12 +89,12 @@ struct GuideDetailView: View {
             }
             .foregroundColor(.gray)
             .padding(.leading, 24.0)
-            .padding(.top, 4)
+            .padding(.top, 2)
             
             VStack(alignment: .center){
                 Text("함께 보면 좋은 영상")
                     .font(
-                        .system(size: 20)
+                        .system(size: smallTitleFontSize)
                         // LargeTitle font size로 추후 수정
                         .weight(.heavy)
                     )
