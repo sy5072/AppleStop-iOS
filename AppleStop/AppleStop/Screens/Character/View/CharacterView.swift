@@ -33,7 +33,8 @@ struct CharacterView: View {
                 .ignoresSafeArea()
             
             ScrollView {
-                UserInfomationView(nickname: user.nickname,
+                UserInfomationView(mainCharacterImage: $characters[user.mainCharacterIndex].image,
+                                   nickname: user.nickname,
                                    usedDate: user.days,
                                    userLevel: user.level,
                                    userExp: user.exp)
