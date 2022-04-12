@@ -15,6 +15,7 @@
 		35A80AAB2804FD2900DD7721 /* ToastAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AAA2804FD2900DD7721 /* ToastAlertView.swift */; };
 		35A80AAD280522AF00DD7721 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AAC280522AE00DD7721 /* SettingView.swift */; };
 		35A80AAF280522FB00DD7721 /* CustomShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */; };
+		35A80AB02805715400DD7721 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594067A27FEAEF7000D3CE8 /* GuideView.swift */; };
 		5931E3E127FFD62E006B16B6 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */; };
 		5931E3E427FFDDCF006B16B6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5931E3E327FFDDCF006B16B6 /* SDWebImageSwiftUI */; };
 		597546402803C0C700F3CD36 /* NicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975463F2803C0C700F3CD36 /* NicknameView.swift */; };
@@ -31,7 +32,6 @@
 		B594066C27FEAEB9000D3CE8 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594066B27FEAEB9000D3CE8 /* TabbarView.swift */; };
 		B594067227FEAED0000D3CE8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594067127FEAED0000D3CE8 /* HomeView.swift */; };
 		B594067727FEAEE3000D3CE8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594067627FEAEE3000D3CE8 /* CameraView.swift */; };
-		B594067B27FEAEF7000D3CE8 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594067A27FEAEF7000D3CE8 /* GuideView.swift */; };
 		B594067F27FEAF04000D3CE8 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594067E27FEAF04000D3CE8 /* CharacterView.swift */; };
 		B594068927FEB0B3000D3CE8 /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068827FEB0B3000D3CE8 /* ImageLiteral.swift */; };
 		B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068A27FEB1A6000D3CE8 /* Color+Extension.swift */; };
@@ -454,6 +454,7 @@
 				7904CF3628049459000EA6C4 /* FeedbackWrapper.swift in Sources */,
 				5931E3E127FFD62E006B16B6 /* SplashScreenView.swift in Sources */,
 				35A80AA32803264100DD7721 /* CustomCorner.swift in Sources */,
+				35A80AB02805715400DD7721 /* GuideView.swift in Sources */,
 				B594068F27FEB26F000D3CE8 /* NavigationBackButton.swift in Sources */,
 				35A80AA52804537600DD7721 /* UIImage+Extension.swift in Sources */,
 				B594067F27FEAF04000D3CE8 /* CharacterView.swift in Sources */,
@@ -463,7 +464,6 @@
 				35A80AAD280522AF00DD7721 /* SettingView.swift in Sources */,
 				B8C6AE5E2801F926002CCBFE /* LevelInformationView.swift in Sources */,
 				B86225C32803518B0016FC71 /* CharacterCardBackView.swift in Sources */,
-				793FA1412803E47F00246AE9 /* FeedbackView.swift in Sources */,
 				350C0C6827FFDCFE0012CBFA /* CameraModel.swift in Sources */,
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
 				35A80AAB2804FD2900DD7721 /* ToastAlertView.swift in Sources */,
@@ -484,7 +484,6 @@
 				35A80AAF280522FB00DD7721 /* CustomShadowModifier.swift in Sources */,
 				B83A091428041FB50056080E /* (null) in Sources */,
 				79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */,
-				B594067B27FEAEF7000D3CE8 /* GuideView.swift in Sources */,
 				79B2D9DE2804195600A0A782 /* SettingListView.swift in Sources */,
 				B8F226E128007B8E004294EE /* CharacterCardFrontView.swift in Sources */,
 				B5E5ED6B2804583600074655 /* CharacterDetailView.swift in Sources */,
@@ -624,7 +623,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppleStop/Preview Content\"";
-				DEVELOPMENT_TEAM = U5D4UR6AFR;
+				DEVELOPMENT_TEAM = J85NQ6YL4V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
@@ -657,7 +656,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppleStop/Preview Content\"";
-				DEVELOPMENT_TEAM = U5D4UR6AFR;
+				DEVELOPMENT_TEAM = J85NQ6YL4V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
