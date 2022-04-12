@@ -10,7 +10,7 @@ import SwiftUI
 struct WastePopupView: View {
     
     @State var wasteDayData: [CGFloat] = [10, 20, 30, 30, 40, 50, 0]
-    @State var wasteTypeData: [CGFloat] = [5,6,3,1,5,8]
+    @State var wasteTypeData: [CGFloat] = [5,12,3,1,5,8]
 
     var wasteGoal = 10
     
@@ -68,7 +68,7 @@ struct HorizontalBarChartView: View {
     
     
     var body: some View {
-        HStack{
+        HStack(alignment: .center){
             Image(wasteType)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -76,7 +76,11 @@ struct HorizontalBarChartView: View {
             
             ZStack(alignment: .leading){
                 Capsule().frame(width: 205, height: 6).foregroundColor(.chartGrey)
-                Capsule().frame(width: value/goal*205, height: 6).foregroundColor(.mainGreen)
+                if value>goal {
+                    Capsule().frame(width: 205, height: 6).foregroundColor(.mainGreen)
+                } else {
+                    Capsule().frame(width: value/goal*205, height: 6).foregroundColor(.mainGreen)
+                }
                 
             }.padding(.horizontal, 10)
             
