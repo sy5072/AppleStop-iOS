@@ -50,7 +50,7 @@ extension UserInfomationView {
                 .font(.system(size: 16, weight: .semibold, design: .default))
                 .padding(.bottom, 3)
             Text("분리수거를 시작한 지 \(usedDate)일째")
-                .font(.system(size: 12, weight: .regular, design: .default))
+                .font(.system(size: 11, weight: .regular, design: .default))
                 .padding(.bottom)
             
             levelTextView
