@@ -16,6 +16,7 @@ extension UIScreen{
 struct NicknameView: View {
     //@State var name: String = ""
     //@AppStorage("nickname") var nickname : String = UserDefaults.standard.string(forKey: "nickname")
+    
     @AppStorage("nickname") var nickname : String = ""
     let textLimit = 8
     

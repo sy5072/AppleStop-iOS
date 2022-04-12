@@ -22,7 +22,7 @@ struct SplashScreenView: View {
     var body: some View {
         if !isFinished{
             ZStack{
-                Color.green //Background color
+                Color.mainGreen
                     .ignoresSafeArea()
                 
                 VStack{

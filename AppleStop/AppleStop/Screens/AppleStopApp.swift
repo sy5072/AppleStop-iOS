@@ -27,7 +27,7 @@ struct AppleStopApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TabbarView(viewRouter: ViewRouter())
+            OnboardingViewMain()
         }
     }
 }

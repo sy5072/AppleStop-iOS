@@ -32,8 +32,10 @@ struct CharacterCardFrontView: View {
             VStack{
                 HStack {
                     Image(systemName: "folder.fill")
+                    
                     Spacer()
                         .frame(width: 226)
+                    
                     Image(systemName: "repeat")
                     
                 }
