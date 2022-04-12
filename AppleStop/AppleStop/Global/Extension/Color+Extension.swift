@@ -24,7 +24,7 @@ extension Color {
         return Color(hex: "#8A8A8A")
     }
     static var charOrange: Color {
-        return Color(hex: "#f26725")
+        return Color(hex: "#F26725")
     }
     
     static var popupGrey: Color {

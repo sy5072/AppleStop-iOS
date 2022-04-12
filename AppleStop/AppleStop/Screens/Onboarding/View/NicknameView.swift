@@ -15,6 +15,7 @@ extension UIScreen{
 
 struct NicknameView: View {
     @State var name: String = ""
+    //@Binding var name: String = ""
     
     let textLimit = 8
     
@@ -45,6 +46,7 @@ struct NicknameView: View {
                                     .onReceive(Just(name)) { _ in limitText(textLimit) }
                                     .multilineTextAlignment(.center)
                                     .background(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 1).frame(width: UIScreen.screenWidth * 0.92, height: UIScreen.screenHeight * 0.06,  alignment: .center))
+                                    
                         }
                         .padding()
                     }

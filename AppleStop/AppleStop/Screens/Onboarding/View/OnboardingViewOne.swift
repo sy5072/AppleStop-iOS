@@ -9,7 +9,7 @@ import SDWebImageSwiftUI
 
 struct OnboardingViewOne: View {
     var body: some View {
-        NavigationView{
+        //NavigationView{
             //ScrollView(.vertical, showsIndicators: false){
             VStack{
                 Text("멸종위기 동물과 함께 분리수거해봐요")
@@ -32,7 +32,7 @@ struct OnboardingViewOne: View {
                 }
             }
             .padding()
-        }
+        //}
         //}
         //using overlay instead of ZStack due to issues with animations
         //.overlay(SplashScreenView())
