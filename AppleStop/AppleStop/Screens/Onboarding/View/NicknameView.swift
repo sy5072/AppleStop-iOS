@@ -66,12 +66,10 @@ struct NicknameView: View {
                     Text("설정하기")
                         .font(.title3)
                         .fontWeight(.bold)
-                        .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:2)
-                            .frame(width: UIScreen.screenWidth * 0.75, height: UIScreen.screenHeight * 0.06,  alignment: .center)
-                            .shadow(color: Color.black.opacity(0.1), radius: 10, x: 10, y: 10)
-                            .shadow(color: Color.white.opacity(0.3), radius: 10, x: -5, y: -5)
-                        )
+                        .background(RoundedRectangle(cornerRadius: 12).fill(Color.white)
+                            .frame(width: UIScreen.screenWidth * 0.75, height: UIScreen.screenHeight * 0.06,  alignment: .center))
                         .foregroundColor(Color.charOrange)
+                        .customShadow()
                 }
             }
             .padding()
