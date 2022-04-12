@@ -23,7 +23,9 @@ struct UserInfomationView: View {
             .foregroundColor(.white)
             .frame(height: 138)
             .cornerRadius(12)
-            .shadow(color: .gray.opacity(0.5), radius: 1, x: 0, y: 2)
+            .shadow(color: .black.opacity(0.04), radius: 6, x: 0, y: 2)
+            .shadow(color: .black.opacity(0.04), radius: 2, x: 0, y: 1)
+            .shadow(color: .black.opacity(0.18), radius: 2, x: 0, y: 1)
             .overlay {
                 innerView
                     .padding(.horizontal, 37)
