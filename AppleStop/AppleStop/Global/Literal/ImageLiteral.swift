@@ -26,3 +26,6 @@ enum ImageLiteral {
     static var imgSsoksae: Image = Image("img_ssoksae")
     static var imgTurtle: Image = Image("img_turtle")
 }
+
+
+

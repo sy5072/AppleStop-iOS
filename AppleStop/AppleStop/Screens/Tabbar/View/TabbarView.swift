@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import CoreMedia
 
 struct TabbarView: View {
     
     @StateObject var viewRouter: ViewRouter
     
+    
+    @State private var isPresenting = false
+
     var body: some View {
         GeometryReader{ geometry in
             
@@ -28,11 +32,12 @@ struct TabbarView: View {
                         Rectangle()
                             .frame(width: geometry.size.width, height: geometry.size.height/9)
                             .background(.white)
-                            .shadow(radius: 2)
+                            .customShadow()
                         HStack{
                             TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: geometry.size.width/5, height: geometry.size.height/30, systemIconName: "house", tabName: "홈", isCamera: false)
-    //                            .shadow(radius: 0)
+                            
                             TabBarIcon(viewRouter: viewRouter, assignedPage: nil, width: geometry.size.width/4, height: geometry.size.height/4, systemIconName: "", tabName: "", isCamera: true).shadow(radius: 2)
+                                .customShadow()
                                 
                             TabBarIcon(viewRouter: viewRouter, assignedPage: .guide, width: geometry.size.width/6, height: geometry.size.height/30, systemIconName: "book", tabName: "분리수거 가이드", isCamera: false)
                         }
@@ -46,8 +51,15 @@ struct TabbarView: View {
                 .edgesIgnoringSafeArea(.bottom)
             }
         }
-        
+
+        // TODO: - 카메라뷰를 탭바에 연결 시에 fullScreenCover 필요
+//                .fullScreenCover(isPresented: $isPresenting) {
+//                    NavigationView{
+//                    }
+//                    CameraView()
+//                }
     }
+
 }
 
 struct TabbarView_Previews: PreviewProvider {
@@ -100,7 +112,7 @@ struct TabBarIcon: View {
                 }
             }
         }
-        .foregroundColor(viewRouter.currentPage == assignedPage ? .orange : .gray)
+        .foregroundColor(viewRouter.currentPage == assignedPage ? .charOrange : .gray)
     }
 }
  
