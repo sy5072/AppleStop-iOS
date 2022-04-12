@@ -16,7 +16,6 @@
 		35A80AAD280522AF00DD7721 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AAC280522AE00DD7721 /* SettingView.swift */; };
 		35A80AAF280522FB00DD7721 /* CustomShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */; };
 		5931E3E127FFD62E006B16B6 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */; };
-		5931E3E427FFDDCF006B16B6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5931E3E327FFDDCF006B16B6 /* SDWebImageSwiftUI */; };
 		597546402803C0C700F3CD36 /* NicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975463F2803C0C700F3CD36 /* NicknameView.swift */; };
 		598127942800861200A3296A /* OnboardingViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598127932800861200A3296A /* OnboardingViewTwo.swift */; };
 		5981279A280097EE00A3296A /* OnboardingViewThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59812799280097EE00A3296A /* OnboardingViewThree.swift */; };
@@ -44,6 +43,7 @@
 		B5B1F20D2804FC970026AD0E /* BackgroundBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F20C2804FC970026AD0E /* BackgroundBlurView.swift */; };
 		B5B1F212280507350026AD0E /* WasteInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F211280507350026AD0E /* WasteInformationView.swift */; };
 		B5B1F21428050A200026AD0E /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B2D9DF28046D5A00A0A782 /* ViewRouter.swift */; };
+		B5B1F21728055E130026AD0E /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B5B1F21628055E130026AD0E /* SDWebImageSwiftUI */; };
 		B5E5ED65280404FD00074655 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED64280404FD00074655 /* Character.swift */; };
 		B5E5ED672804242A00074655 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED662804242A00074655 /* User.swift */; };
 		B5E5ED692804545800074655 /* CharacterPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED682804545800074655 /* CharacterPopupView.swift */; };
@@ -107,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5931E3E427FFDDCF006B16B6 /* SDWebImageSwiftUI in Frameworks */,
+				B5B1F21728055E130026AD0E /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +397,7 @@
 			);
 			name = AppleStop;
 			packageProductDependencies = (
-				5931E3E327FFDDCF006B16B6 /* SDWebImageSwiftUI */,
+				B5B1F21628055E130026AD0E /* SDWebImageSwiftUI */,
 			);
 			productName = AppleStop;
 			productReference = B594064D27FEAC94000D3CE8 /* AppleStop.app */;
@@ -428,7 +428,7 @@
 			);
 			mainGroup = B594064427FEAC94000D3CE8;
 			packageReferences = (
-				5931E3E227FFDDCF006B16B6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				B5B1F21528055E130026AD0E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = B594064E27FEAC94000D3CE8 /* Products */;
 			projectDirPath = "";
@@ -467,7 +467,6 @@
 				35A80AAD280522AF00DD7721 /* SettingView.swift in Sources */,
 				B8C6AE5E2801F926002CCBFE /* LevelInformationView.swift in Sources */,
 				B86225C32803518B0016FC71 /* CharacterCardBackView.swift in Sources */,
-				793FA1412803E47F00246AE9 /* FeedbackView.swift in Sources */,
 				350C0C6827FFDCFE0012CBFA /* CameraModel.swift in Sources */,
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
 				35A80AAB2804FD2900DD7721 /* ToastAlertView.swift in Sources */,
@@ -712,7 +711,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5931E3E227FFDDCF006B16B6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+		B5B1F21528055E130026AD0E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
 			requirement = {
@@ -723,9 +722,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5931E3E327FFDDCF006B16B6 /* SDWebImageSwiftUI */ = {
+		B5B1F21628055E130026AD0E /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5931E3E227FFDDCF006B16B6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			package = B5B1F21528055E130026AD0E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
