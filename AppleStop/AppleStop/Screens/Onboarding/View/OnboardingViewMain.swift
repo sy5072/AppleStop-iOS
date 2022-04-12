@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnboardingViewMain: View {
-    private let images = ["moon.stars.fill", "곰사찢반달곰", "정수리맨질맨질물범", "딱대촉새"]
+    private let images = ["img_ddakchong", "img_dambi", "img_bandal", "img_doyo"]
     
     var body: some View {
         NavigationView{
@@ -44,7 +44,7 @@ struct OnboardingViewMain: View {
             }
             .tabViewStyle(PageTabViewStyle())
         }
-        //.overlay(SplashScreenView())
+        .overlay(SplashScreenView())
     }
 }
 
