@@ -84,7 +84,9 @@ struct HorizontalBarChartView: View {
                 
             }.padding(.horizontal, 10)
             
-            Text("\(Int(value/goal*100))%").font(.system(size: 14))
+            Text("\(Int(value/goal*100))%")
+                .font(.system(size: 14))
+                .frame(width: 40)
         }
     }
 }
