@@ -22,14 +22,19 @@ struct CameraView: View {
     @State var lastOffset : CGFloat = 0
     @GestureState var gestureOffset : CGFloat = 0
     
-    
+    @State var naviHide = false
     
     // MARK: - CameraView
     var body: some View {
         ZStack{
             
             CameraPreview(camera: camera)
+                .navigationBarHidden(naviHide)
+                .animation(.linear(duration: 0.38))
             CodeGuideLineView()
+                    .navigationTitle("카메라")
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarTitleDisplayMode(.inline)
             
             bottomView
                 .toast(isShowing: $camera.isShowingToast)
@@ -42,9 +47,7 @@ struct CameraView: View {
             
 
             
-        }   .navigationTitle("카메라")
-            .navigationBarBackButtonHidden(true)
-            .navigationBarTitleDisplayMode(.inline)
+        }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
@@ -207,14 +210,16 @@ extension CameraView {
                     })
                                 .onEnded({ value in
                                     
-                                    let maxHeight = height - 70
+                                    let maxHeight = height
                                     withAnimation {
                                         
                                         if -offset > 70 && -offset < maxHeight / 2 {
                                             offset = -(maxHeight * 0.4)
+                                            naviHide = false
                                         }
                                         else if -offset > maxHeight / 2 {
                                             offset = -maxHeight
+                                            naviHide = true
                                         }
                                         else {
                                             offset = 0
