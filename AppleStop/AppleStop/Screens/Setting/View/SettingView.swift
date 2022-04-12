@@ -4,7 +4,6 @@
 //
 //  Created by SHIN YOON AH on 2022/04/07.
 //
-
 import SwiftUI
 
 struct SettingView: View {
@@ -13,7 +12,7 @@ struct SettingView: View {
     
     var body: some View {
         ZStack{
-            Color.backgroundGrey
+            Color.listGrey
                 .ignoresSafeArea()
             
             VStack{
@@ -27,6 +26,25 @@ struct SettingView: View {
                         SettingListView(title: "개인정보 처리방침", navIndex: 4, hasAlarm: false, isAlarm: false)
                         SettingListView(title: "서비스 이용약관", navIndex: 5, hasAlarm: false, isAlarm: false)
                         SettingListView(title: "수거딱대 가이드라인", navIndex: 6,hasAlarm: false, isAlarm: false)
+//                        Spacer()
+//                            .listRowBackground(Color.clear)
+//                            .listRowSeparator(.hidden)
+                        ZStack {
+                            
+                            Rectangle()
+                                .fill(Color.listGrey)
+                                .frame(height:780)
+                            
+                            VStack{
+                                Text("Made by 애플스탑")
+                                Text("v 1.0.0")
+                            }
+                            .font(.system(size: 12, weight: .light))
+                        }
+          
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
+          
                     
                     }
                     .navigationBarTitle("")
@@ -34,14 +52,13 @@ struct SettingView: View {
                     
                 }
                 
+                              
                 
-                VStack{
-                    Text("Made by 애플스탑")
-                    Text("v 1.0.0")
-                }
-                .font(.system(size: 12, weight: .light))
+               
             }
+            .edgesIgnoringSafeArea(.bottom)
         }
+        .navigationBarTitleDisplayMode(.inline)
         
     }
 }
