@@ -11,8 +11,7 @@ struct CharacterPopupView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                Color.popupGrey.opacity(0.8)
-                    .ignoresSafeArea()
+                Color.popupGrey.opacity(0.3)
                 
                 Rectangle()
                     .foregroundColor(.white)
@@ -26,6 +25,8 @@ struct CharacterPopupView: View {
                             .padding(.trailing, 45)
                     }
             }
+            .background(BackgroundBlurView())
+            .ignoresSafeArea()
         }
     }
 }
