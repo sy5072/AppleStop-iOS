@@ -157,7 +157,7 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
             print("error")
             return}
         
-        let watermark = UIImage(named: "character1")
+        let watermark = UIImage(named: "img_ddakchong")
         let newImage = image.overlayWith(image: watermark ?? UIImage())
         
         UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)

@@ -17,8 +17,8 @@ struct GuideView: View {
                     .padding(.top, -30)
                 */
                 
-                ListView(cards: GuideCard.sampleData)
-                    .padding(.horizontal, 32)
+//                ListView(cards: GuideCard.sampleData)
+//                    .padding(.horizontal, 32)
 
             }
         }
