@@ -59,6 +59,7 @@ struct SettingView: View {
             }
             .edgesIgnoringSafeArea(.bottom)
         }
+        .navigationBarTitleDisplayMode(.inline)
         
     }
 }
