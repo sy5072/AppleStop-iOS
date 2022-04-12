@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct CharacterPopupView: View {
+    
+    // MARK: - properties
+    
+    @Binding var character: Character
+    
     var body: some View {
         GeometryReader { geo in
             ZStack {
@@ -20,7 +25,9 @@ struct CharacterPopupView: View {
                     .shadow(color: .gray.opacity(0.5), radius: 1, x: 0, y: 2)
                     .padding(.horizontal, 25)
                     .overlay {
-                        CharacterDetailView()
+                        CharacterDetailView(characterImage: $character.image,
+                                            characterName: $character.name,
+                                            characterInfo: $character.info)
                             .padding(.leading, 50)
                             .padding(.trailing, 45)
                     }
@@ -33,6 +40,6 @@ struct CharacterPopupView: View {
 
 struct CharacterPopupView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterPopupView()
+        CharacterPopupView(character: .constant(Character(image: Image(systemName: "circle.fill"), name: "동그라미 땡", info: "동그라미 땡은 귀엽습니다.!")))
     }
 }

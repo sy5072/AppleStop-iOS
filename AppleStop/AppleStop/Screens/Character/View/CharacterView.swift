@@ -58,7 +58,7 @@ struct CharacterView: View {
                                         characters[characters.count - 1] = randomCharacter
                                     } else {
                                         self.viewController?.present(style: .overCurrentContext, transitionStyle: .crossDissolve) {
-                                            CharacterPopupView()
+                                            CharacterPopupView(character: $characters[index])
                                         }
                                     }
                                 }
