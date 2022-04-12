@@ -12,6 +12,9 @@ struct CharacterPopupView: View {
     // MARK: - properties
     
     @Binding var character: Character
+    @Binding var mainIndex: Int
+    
+    var currentCellIndex: Int
     
     var body: some View {
         GeometryReader { geo in
@@ -27,7 +30,9 @@ struct CharacterPopupView: View {
                     .overlay {
                         CharacterDetailView(characterImage: $character.image,
                                             characterName: $character.name,
-                                            characterInfo: $character.info)
+                                            characterInfo: $character.info,
+                                            mainCharacterIndex: $mainIndex,
+                                            currentCellIndex: currentCellIndex)
                             .padding(.leading, 50)
                             .padding(.trailing, 45)
                     }
@@ -40,6 +45,6 @@ struct CharacterPopupView: View {
 
 struct CharacterPopupView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterPopupView(character: .constant(Character(image: Image(systemName: "circle.fill"), name: "동그라미 땡", info: "동그라미 땡은 귀엽습니다.!")))
+        CharacterPopupView(character: .constant(Character(image: Image(systemName: "circle.fill"), name: "동그라미 땡", info: "동그라미 땡은 귀엽습니다.!")), mainIndex: .constant(1), currentCellIndex: 2)
     }
 }

@@ -16,6 +16,9 @@ struct CharacterDetailView: View {
     @Binding var characterImage: Image?
     @Binding var characterName: String?
     @Binding var characterInfo: String?
+    @Binding var mainCharacterIndex: Int
+    
+    var currentCellIndex: Int
     
     var body: some View {
         ZStack {
@@ -82,6 +85,7 @@ extension CharacterDetailView {
         VStack {
             Spacer()
             Button("변경", action: {
+                mainCharacterIndex = currentCellIndex
                 self.presentationMode.wrappedValue.dismiss()
             })
                 .foregroundColor(.white)
@@ -99,6 +103,6 @@ extension CharacterDetailView {
 
 struct CharacterDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterDetailView(characterImage: .constant(Image(systemName: "circle.fill")), characterName: .constant("동그라미땡"), characterInfo: .constant("왕왕"))
+        CharacterDetailView(characterImage: .constant(Image(systemName: "circle.fill")), characterName: .constant("동그라미땡"), characterInfo: .constant("왕왕"), mainCharacterIndex: .constant(1), currentCellIndex: 3)
     }
 }
