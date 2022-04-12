@@ -8,18 +8,30 @@
 import SwiftUI
 
 enum ImageLiteral {
-    static var exampleImage: Image = Image("exampleImage")
     
-    // 플라스틱 이미지 샘플 데이터
+    // MARK: - image
+    
+    static var imgLock: Image = Image("img_lock")
+    static var imgNewcharacter: Image = Image("img_newcharacter")
+    static var imgBandal: Image = Image("img_bandal")
+    static var imgDambi: Image = Image("img_dambi")
+    static var img_ddakchong: Image = Image("img_ddakchong")
+    static var img_dolphin: Image = Image("img_dolphin")
+    static var img_doyo: Image = Image("img_doyo")
+    static var imgGoni: Image = Image("img_goni")
+    static var imgMulbum: Image = Image("img_mulbum")
+    static var imgMusan: Image = Image("img_musan")
+    static var imgOwl: Image = Image("img_owl")
+    static var imgSoodal: Image = Image("img_soodal")
+    static var imgSsoksae: Image = Image("img_ssoksae")
+    static var imgTurtle: Image = Image("img_turtle")
     static var plasticImage01: Image = Image("plastic01")
     static var plasticImage02: Image = Image("plastic02")
-    
-    // 종이 이미지 샘플 데이터
     static var paperImage01: Image = Image("paper01")
     static var paperImage02: Image = Image("paper02")
-    
-    // 비닐 이미지 샘플 데이터
     static var vynylImage01: Image = Image("vynyl01")
     static var vynylImage02: Image = Image("vynyl02")
-    
 }
+
+
+

@@ -8,8 +8,36 @@
 import SwiftUI
 
 extension Color {
-    static var exampleGrey: Color {
-        return Color(hex: "#f3f3f3")
+    static var backgroundGrey: Color {
+        return Color(hex: "#FBFBFB")
+    }
+    
+    static var lightGrey: Color {
+        return Color(hex: "#AAAAAA")
+    }
+    
+    static var mainGreen: Color {
+        return Color(hex: "#51AA6F")
+    }
+    
+    static var iconGrey: Color {
+        return Color(hex: "#8A8A8A")
+    }
+    
+    static var charOrange: Color {
+        return Color(hex: "#F26725")
+    }
+    
+    static var popupGrey: Color {
+        return Color(hex: "#8E8E8E")
+    }
+    
+    static var listGrey: Color {
+        return Color(hex: "#F2F2F7")
+    }
+        
+    static var chartGrey: Color {
+        return Color(hex: "#EFEFEF")
     }
 }
 
