@@ -14,9 +14,9 @@ extension UIScreen{
 }
 
 struct NicknameView: View {
-    @State var name: String = ""
-    //@Binding var name: String = ""
-    
+    //@State var name: String = ""
+    //@AppStorage("nickname") var nickname : String = UserDefaults.standard.string(forKey: "nickname")
+    @AppStorage("nickname") var nickname : String = ""
     let textLimit = 8
     
     var body: some View {
@@ -41,9 +41,9 @@ struct NicknameView: View {
                             
                             //Textfield
                             ZStack{
-                                TextField("", text: $name)
+                                TextField("", text: $nickname)
                                     .ignoresSafeArea(.keyboard) //키보드가 올라오면 알아서 설정하기 버튼이 올라갑니다
-                                    .onReceive(Just(name)) { _ in limitText(textLimit) }
+                                    .onReceive(Just(nickname)) { _ in limitText(textLimit) }
                                     .multilineTextAlignment(.center)
                                     .background(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 1).frame(width: UIScreen.screenWidth * 0.92, height: UIScreen.screenHeight * 0.06,  alignment: .center))
                                     
@@ -53,7 +53,7 @@ struct NicknameView: View {
                     //글자수 나타내기
                     HStack{
                         Spacer()
-                        Text("\(name.count)/8")
+                        Text("\(nickname.count)/8")
                             .foregroundColor(Color.charOrange)
                             .padding(.top,0.0)
                     }
@@ -69,7 +69,8 @@ struct NicknameView: View {
                         .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).shadow(radius:2)
                             .frame(width: UIScreen.screenWidth * 0.75, height: UIScreen.screenHeight * 0.06,  alignment: .center)
                             .shadow(color: Color.black.opacity(0.1), radius: 10, x: 10, y: 10)
-                            .shadow(color: Color.white.opacity(0.3), radius: 10, x: -5, y: -5))
+                            .shadow(color: Color.white.opacity(0.3), radius: 10, x: -5, y: -5)
+                        )
                         .foregroundColor(Color.charOrange)
                 }
             }
@@ -80,8 +81,8 @@ struct NicknameView: View {
     
     //8글자로 제한
     func limitText(_ upper: Int) {
-        if name.count > upper {
-            name = String(name.prefix(upper))
+        if nickname.count > upper {
+            nickname = String(nickname.prefix(upper))
         }
     }
 }
