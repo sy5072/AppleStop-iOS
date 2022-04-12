@@ -18,9 +18,8 @@
 		5931E3E127FFD62E006B16B6 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */; };
 		5931E3E427FFDDCF006B16B6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5931E3E327FFDDCF006B16B6 /* SDWebImageSwiftUI */; };
 		597546402803C0C700F3CD36 /* NicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975463F2803C0C700F3CD36 /* NicknameView.swift */; };
-		598127942800861200A3296A /* OnboardingViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598127932800861200A3296A /* OnboardingViewTwo.swift */; };
-		5981279A280097EE00A3296A /* OnboardingViewThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59812799280097EE00A3296A /* OnboardingViewThree.swift */; };
-		5981279C2800989000A3296A /* OnboardingViewFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981279B2800989000A3296A /* OnboardingViewFour.swift */; };
+		59863B3C28052940002F847B /* OnboardingViewMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59863B3B28052940002F847B /* OnboardingViewMain.swift */; };
+		59F1780828051D0D00629F8B /* CustomShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */; };
 		7904CF3628049459000EA6C4 /* FeedbackWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3528049459000EA6C4 /* FeedbackWrapper.swift */; };
 		793FA13D2803E40500246AE9 /* ServiceTermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FA13C2803E40500246AE9 /* ServiceTermView.swift */; };
 		793FA13F2803E43700246AE9 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FA13E2803E43700246AE9 /* PrivacyPolicyView.swift */; };
@@ -34,7 +33,6 @@
 		B594067727FEAEE3000D3CE8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594067627FEAEE3000D3CE8 /* CameraView.swift */; };
 		B594067B27FEAEF7000D3CE8 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594067A27FEAEF7000D3CE8 /* GuideView.swift */; };
 		B594067F27FEAF04000D3CE8 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594067E27FEAF04000D3CE8 /* CharacterView.swift */; };
-		B594068427FEAF21000D3CE8 /* OnboardingViewOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068327FEAF21000D3CE8 /* OnboardingViewOne.swift */; };
 		B594068927FEB0B3000D3CE8 /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068827FEB0B3000D3CE8 /* ImageLiteral.swift */; };
 		B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068A27FEB1A6000D3CE8 /* Color+Extension.swift */; };
 		B594068F27FEB26F000D3CE8 /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */; };
@@ -65,9 +63,7 @@
 		35A80AAC280522AE00DD7721 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		5975463F2803C0C700F3CD36 /* NicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameView.swift; sourceTree = "<group>"; };
-		598127932800861200A3296A /* OnboardingViewTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewTwo.swift; sourceTree = "<group>"; };
-		59812799280097EE00A3296A /* OnboardingViewThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewThree.swift; sourceTree = "<group>"; };
-		5981279B2800989000A3296A /* OnboardingViewFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewFour.swift; sourceTree = "<group>"; };
+		59863B3B28052940002F847B /* OnboardingViewMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewMain.swift; sourceTree = "<group>"; };
 		7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShadowModifier.swift; sourceTree = "<group>"; };
 		7904CF3528049459000EA6C4 /* FeedbackWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackWrapper.swift; sourceTree = "<group>"; };
 		793FA13C2803E40500246AE9 /* ServiceTermView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTermView.swift; sourceTree = "<group>"; };
@@ -83,7 +79,6 @@
 		B594067627FEAEE3000D3CE8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		B594067A27FEAEF7000D3CE8 /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		B594067E27FEAF04000D3CE8 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
-		B594068327FEAF21000D3CE8 /* OnboardingViewOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewOne.swift; sourceTree = "<group>"; };
 		B594068827FEB0B3000D3CE8 /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
 		B594068A27FEB1A6000D3CE8 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
@@ -319,10 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */,
-				B594068327FEAF21000D3CE8 /* OnboardingViewOne.swift */,
-				598127932800861200A3296A /* OnboardingViewTwo.swift */,
-				59812799280097EE00A3296A /* OnboardingViewThree.swift */,
-				5981279B2800989000A3296A /* OnboardingViewFour.swift */,
+				59863B3B28052940002F847B /* OnboardingViewMain.swift */,
 				5975463F2803C0C700F3CD36 /* NicknameView.swift */,
 			);
 			path = View;
@@ -464,6 +456,7 @@
 				B594067F27FEAF04000D3CE8 /* CharacterView.swift in Sources */,
 				B5B1F20D2804FC970026AD0E /* BackgroundBlurView.swift in Sources */,
 				B5B1F212280507350026AD0E /* WasteInformationView.swift in Sources */,
+				59F1780828051D0D00629F8B /* CustomShadowModifier.swift in Sources */,
 				35A80AAD280522AF00DD7721 /* SettingView.swift in Sources */,
 				B8C6AE5E2801F926002CCBFE /* LevelInformationView.swift in Sources */,
 				B86225C32803518B0016FC71 /* CharacterCardBackView.swift in Sources */,
@@ -471,7 +464,6 @@
 				350C0C6827FFDCFE0012CBFA /* CameraModel.swift in Sources */,
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
 				35A80AAB2804FD2900DD7721 /* ToastAlertView.swift in Sources */,
-				598127942800861200A3296A /* OnboardingViewTwo.swift in Sources */,
 				B5E5ED692804545800074655 /* CharacterPopupView.swift in Sources */,
 				350C0C6A27FFDD590012CBFA /* CustomToggle.swift in Sources */,
 				B594067227FEAED0000D3CE8 /* HomeView.swift in Sources */,
@@ -487,7 +479,6 @@
 				35A80AA728046C3E00DD7721 /* CodeGuideLineView.swift in Sources */,
 				B594067727FEAEE3000D3CE8 /* CameraView.swift in Sources */,
 				35A80AAF280522FB00DD7721 /* CustomShadowModifier.swift in Sources */,
-				5981279C2800989000A3296A /* OnboardingViewFour.swift in Sources */,
 				B83A091428041FB50056080E /* (null) in Sources */,
 				79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */,
 				B594067B27FEAEF7000D3CE8 /* GuideView.swift in Sources */,
@@ -495,8 +486,7 @@
 				B8F226E128007B8E004294EE /* CharacterCardFrontView.swift in Sources */,
 				B5E5ED6B2804583600074655 /* CharacterDetailView.swift in Sources */,
 				B8C6AE5C2801F835002CCBFE /* LocationInformationView.swift in Sources */,
-				5981279A280097EE00A3296A /* OnboardingViewThree.swift in Sources */,
-				B594068427FEAF21000D3CE8 /* OnboardingViewOne.swift in Sources */,
+				59863B3C28052940002F847B /* OnboardingViewMain.swift in Sources */,
 				B5B1F20B2804F9630026AD0E /* ViewControllerHolder.swift in Sources */,
 				597546402803C0C700F3CD36 /* NicknameView.swift in Sources */,
 				B5E5ED672804242A00074655 /* User.swift in Sources */,
