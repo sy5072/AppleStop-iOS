@@ -18,7 +18,7 @@ func makeBody(configuration: Configuration) -> some View {
                    Spacer()
                    Rectangle()
                        .foregroundColor(configuration.isOn ? .black : .green)
-                       .frame(width: 40*2.7, height: 40, alignment: .center)
+                       .frame(width: 86, height: 31, alignment: .center)
                        .overlay(
                         
                         
@@ -26,7 +26,7 @@ func makeBody(configuration: Configuration) -> some View {
                             
                             if configuration.isOn {
                         Text("카메라촬영")
-                                .font(.system(size: 10))
+                                .font(.system(size: 8))
                                 .padding(.trailing)
                                 .foregroundColor(.white)
                             }
@@ -39,16 +39,16 @@ func makeBody(configuration: Configuration) -> some View {
                                            .resizable()
                                            .aspectRatio(contentMode: .fit)
                                            .font(Font.title.weight(.black))
-                                           .frame(width: 15, height: 15, alignment: .center)
+                                           .frame(width: 8, height: 8, alignment: .center)
                                            .foregroundColor(configuration.isOn ? .black : .green)
                                    )
-                                   .offset(x: configuration.isOn ? 35 : -35, y: 0)
+                                   .offset(x: configuration.isOn ? 28 : -28, y: 0)
                                    .animation(Animation.linear(duration: 0.1),value: configuration.isOn)
                             
                         
                             if !configuration.isOn {
                         Text("바코드촬영")
-                                .font(.system(size: 10))
+                                .font(.system(size: 8))
                                 .padding(.leading)
                                 .foregroundColor(.white)
 
