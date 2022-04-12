@@ -21,7 +21,7 @@ struct CharacterView: View {
     @Environment(\.viewController) private var viewControllerHolder: UIViewController?
     @Environment(\.presentationMode) var presentation
     
-    @State private var user: User = User(nickname: "연일읍분리수거왕", days: 150, level: 10, exp: 60, mainCharacterIndex: 0, userCharacters: [defaultCharacter[0], defaultCharacter[1]])
+    @State private var user: User = User(days: 150, level: 10, exp: 60, mainCharacterIndex: 0, userCharacters: defaultCharacter)
     
     private var viewController: UIViewController? {
         self.viewControllerHolder
@@ -36,7 +36,6 @@ struct CharacterView: View {
             
             ScrollView {
                 UserInfomationView(mainCharacterImage: $user.userCharacters[user.mainCharacterIndex].image,
-                                   nickname: user.nickname,
                                    usedDate: user.days,
                                    userLevel: user.level,
                                    userExp: user.exp)

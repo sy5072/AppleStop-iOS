@@ -8,7 +8,6 @@
 import Foundation
 
 struct User {
-    var nickname: String
     var days: Int
     var level: Int
     var exp: Double
