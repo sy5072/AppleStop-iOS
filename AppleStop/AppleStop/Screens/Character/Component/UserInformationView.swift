@@ -11,6 +11,8 @@ struct UserInfomationView: View {
     
     // MARK: - properties
     
+    @Binding var mainCharacterImage: Image?
+    
     var nickname: String
     var usedDate: Int
     var userLevel: Int
@@ -32,7 +34,8 @@ struct UserInfomationView: View {
 extension UserInfomationView {
     var innerView: some View {
         HStack(spacing: 0) {
-            Rectangle()
+            mainCharacterImage?
+                .resizable()
                 .frame(width: 90, height: 96, alignment: .leading)
                 .padding(.trailing, 32)
             userInfoView
@@ -70,6 +73,6 @@ extension UserInfomationView {
 
 struct UserInfomationView_Previews: PreviewProvider {
     static var previews: some View {
-        UserInfomationView(nickname: "연일읍분리수거왕", usedDate: 150, userLevel: 10)
+        UserInfomationView(mainCharacterImage: .constant(Image(systemName: "circle.fill")), nickname: "연일읍분리수거왕", usedDate: 150, userLevel: 10)
     }
 }
