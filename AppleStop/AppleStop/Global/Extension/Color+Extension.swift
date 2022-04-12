@@ -32,6 +32,10 @@ extension Color {
         return Color(hex: "#8E8E8E")
     }
     
+    static var listGrey: Color {
+        return Color(hex: "#F2F2F7")
+    }
+        
     static var chartGrey: Color {
         return Color(hex: "#EFEFEF")
     }

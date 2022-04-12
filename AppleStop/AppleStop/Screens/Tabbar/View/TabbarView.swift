@@ -34,11 +34,12 @@ struct TabbarView: View {
                         Rectangle()
                             .frame(width: geometry.size.width, height: geometry.size.height/9)
                             .background(.white)
-                            .shadow(radius: 2)
+                            .customShadow()
                         HStack{
                             TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: geometry.size.width/5, height: geometry.size.height/30, systemIconName: "house", tabName: "홈", isCamera: false)
-    //                            .shadow(radius: 0)
-                            TabBarIcon(viewRouter: viewRouter, assignedPage: .camera, width: geometry.size.width/4, height: geometry.size.height/4, systemIconName: "", tabName: "", isCamera: true).shadow(radius: 2)
+                            
+                            TabBarIcon(viewRouter: viewRouter, assignedPage: .camera, width: geometry.size.width/4, height: geometry.size.height/4, systemIconName: "", tabName: "", isCamera: true)
+                                .customShadow()
                                 
                             TabBarIcon(viewRouter: viewRouter, assignedPage: .guide, width: geometry.size.width/6, height: geometry.size.height/30, systemIconName: "book", tabName: "분리수거 가이드", isCamera: false)
                         }
@@ -100,7 +101,7 @@ struct TabBarIcon: View {
         .onTapGesture {
             viewRouter.currentPage = assignedPage 
         }
-        .foregroundColor(viewRouter.currentPage == assignedPage ? .orange : .gray)
+        .foregroundColor(viewRouter.currentPage == assignedPage ? .charOrange : .gray)
     }
 }
  
