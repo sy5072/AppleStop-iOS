@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnboardingViewMain: View {
-    private let images = ["img_bandal", "img_soodal", "img_doyo", "img_ddakchong"]
+    private let images = ["moon.stars.fill", "곰사찢반달곰", "정수리맨질맨질물범", "딱대촉새"]
     
     var body: some View {
         NavigationView{
@@ -39,8 +39,8 @@ struct OnboardingViewMain: View {
                         .font(.title3)
                         .fontWeight(.bold)
                         .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).frame(width: UIScreen.screenWidth * 0.75, height: UIScreen.screenHeight * 0.06,  alignment: .center).customShadow())
-                    
                 }
+                
             }
             .tabViewStyle(PageTabViewStyle())
         }
