@@ -8,43 +8,43 @@
 import SwiftUI
 
 struct OnboardingViewMain: View {
-    private let images = ["logo_barcode", "logo_barcode", "logo_barcode", "logo_barcode"]
+    private let images = ["img_bandal", "img_soodal", "img_doyo", "img_ddakchong"]
     
     var body: some View {
         NavigationView{
-        VStack{
-            Text("멸종위기 동물과 함께 분리수거해봐요")
-                .font(.title2.bold())
-                .multilineTextAlignment(.center)
-            // 2
-            TabView {
-                ForEach(images, id: \.self) { item in
-                    //3
-                    VStack{
-                        
-                        Image(item)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                        //.frame(width: .infinity, height: .infinity)
-                            .cornerRadius(15)
+            VStack{
+                VStack{
+                    Spacer()
+                    Text("멸종위기 동물들과 함께 분리수거해봐요")
+                        .font(.title2.bold())
+                        .multilineTextAlignment(.center)
+                    // 2
+                    TabView {
+                        ForEach(images, id: \.self) { item in
+                            //3
+                            Image(item)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 300, height: 300)
+                                .cornerRadius(15)
+                            //.padding(.top, 20)
+                            
+                        }
                     }
-                    .padding(.top, 20)
+                    .padding()
+                }
+                NavigationLink(destination: NicknameView()) {
+                    Text("분리수거하러가기")
+                        .foregroundColor(Color.charOrange)
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).frame(width: UIScreen.screenWidth * 0.75, height: UIScreen.screenHeight * 0.06,  alignment: .center).customShadow())
                     
                 }
-                .padding()
             }
-            NavigationLink(destination: NicknameView()) {
-                Text("설정하기")
-                    .foregroundColor(Color.charOrange)
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).frame(width: UIScreen.screenWidth * 0.75, height: UIScreen.screenHeight * 0.06,  alignment: .center).customShadow())
-                
-            }
+            .tabViewStyle(PageTabViewStyle())
         }
-        .tabViewStyle(PageTabViewStyle())
-    }
-        .overlay(SplashScreenView())
+        //.overlay(SplashScreenView())
     }
 }
 
