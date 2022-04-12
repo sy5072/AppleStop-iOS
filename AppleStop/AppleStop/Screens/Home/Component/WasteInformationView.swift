@@ -25,13 +25,13 @@ struct WasteInformationView: View {
                 Text("분리수거 실천도").fontWeight(.medium).font(.system(size: 14))
                 
                 HStack(spacing: 10){
-                    BarView(value: weeklyWasteData[0], day: "M")
-                    BarView(value: weeklyWasteData[1], day: "T")
-                    BarView(value: weeklyWasteData[2], day: "W")
-                    BarView(value: weeklyWasteData[3], day: "T")
-                    BarView(value: weeklyWasteData[4], day: "F")
-                    BarView(value: weeklyWasteData[5], day: "S")
-                    BarView(value: weeklyWasteData[6], day: "S")
+                    BarChartView(value: weeklyWasteData[0], day: "M")
+                    BarChartView(value: weeklyWasteData[1], day: "T")
+                    BarChartView(value: weeklyWasteData[2], day: "W")
+                    BarChartView(value: weeklyWasteData[3], day: "T")
+                    BarChartView(value: weeklyWasteData[4], day: "F")
+                    BarChartView(value: weeklyWasteData[5], day: "S")
+                    BarChartView(value: weeklyWasteData[6], day: "S")
                 }.padding(.top, 6)
                 
             }
@@ -40,7 +40,7 @@ struct WasteInformationView: View {
     }
 }
 
-struct BarView: View {
+struct BarChartView: View {
     
     var value: CGFloat
     var day: String

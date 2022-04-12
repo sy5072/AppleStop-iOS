@@ -81,7 +81,7 @@ struct HomeView: View {
                         .padding(.leading, 12)
                 }
             }
-        }
+        }.navigationBarTitleDisplayMode(.inline)
     }
     
 }
