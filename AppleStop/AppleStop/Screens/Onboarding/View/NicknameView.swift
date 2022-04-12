@@ -20,33 +20,32 @@ struct NicknameView: View {
     let textLimit = 8
     
     var body: some View {
-        //NavigationView{
         ZStack{
             VStack{
                 VStack{
-                        VStack{
-                            HStack{
-                                Text("닉네임 설정")
-                                    .font(.title)
-                                    .fontWeight(.semibold)
-                                    .multilineTextAlignment(.leading)
-                                    .padding(.bottom, -3.0)
-                                Spacer()
-                            }
-                            HStack{
-                                Text("수거딱대에서 사용할 닉네임을 입력해주세요.")
-                                    .foregroundColor(Color.iconGrey)
-                                Spacer()
-                            }
+                    VStack{
+                        HStack{
+                            Text("닉네임 설정")
+                                .font(.title)
+                                .fontWeight(.semibold)
+                                .multilineTextAlignment(.leading)
+                                .padding(.bottom, -3.0)
+                            Spacer()
+                        }
+                        HStack{
+                            Text("수거딱대에서 사용할 닉네임을 입력해주세요.")
+                                .foregroundColor(Color.iconGrey)
+                            Spacer()
+                        }
+                        
+                        //Textfield
+                        ZStack{
+                            TextField("", text: $nickname)
+                                .ignoresSafeArea(.keyboard) //키보드가 올라오면 알아서 설정하기 버튼이 올라갑니다
+                                .onReceive(Just(nickname)) { _ in limitText(textLimit) }
+                                .multilineTextAlignment(.center)
+                                .background(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 1).frame(width: UIScreen.screenWidth * 0.92, height: UIScreen.screenHeight * 0.06,  alignment: .center))
                             
-                            //Textfield
-                            ZStack{
-                                TextField("", text: $nickname)
-                                    .ignoresSafeArea(.keyboard) //키보드가 올라오면 알아서 설정하기 버튼이 올라갑니다
-                                    .onReceive(Just(nickname)) { _ in limitText(textLimit) }
-                                    .multilineTextAlignment(.center)
-                                    .background(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 1).frame(width: UIScreen.screenWidth * 0.92, height: UIScreen.screenHeight * 0.06,  alignment: .center))
-                                    
                         }
                         .padding()
                     }
@@ -59,7 +58,6 @@ struct NicknameView: View {
                     }
                 }
                 
-
                 //설정하기 버튼
                 Spacer()
                 NavigationLink(destination: HomeView()) {
@@ -75,7 +73,6 @@ struct NicknameView: View {
             .padding()
         }
     }
-    //}
     
     //8글자로 제한
     func limitText(_ upper: Int) {

@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import UIKit
+import MessageUI
 
 struct SettingListView: View {
     
@@ -13,6 +15,14 @@ struct SettingListView: View {
     let navIndex : Int
     @State var hasAlarm : Bool
     @State var isAlarm: Bool
+    @State var result: Result<MFMailComposeResult, Error>? = nil
+    @State private var showSheet = false
+    @State private var mailData = ComposeMailData(subject: "수거딱대 문의사항",
+                                                  recipients: ["sy5072@naver.com"],
+                                                  message: "",
+                                                  attachment: [])
+   @State private var showMailView = false
+    
     
     var body: some View {
 
@@ -21,7 +31,7 @@ struct SettingListView: View {
                 .fill(.white)
                 .frame(width: 320, height: 45)
                 .cornerRadius(10)
-                .shadow(color: .gray, radius: 5, x: 2, y: 2)
+                .customShadow()
             
             if hasAlarm {
                 HStack{
@@ -36,7 +46,7 @@ struct SettingListView: View {
               
             } else {
                 if navIndex==2 {
-                    NavigationLink(destination: OnboardingViewTwo() ){
+                    NavigationLink(destination: NicknameView() ){
                         HStack{
                             Text("\(title)")
                             Spacer()
@@ -45,14 +55,27 @@ struct SettingListView: View {
                     }
                     .padding(.horizontal, 10)
                 } else if navIndex == 3 {
-                    NavigationLink(destination: FeedbackView() ){
-                        HStack{
+                    HStack {
+                        Button(action: {
+                            showMailView.toggle()
+                        }) {
                             Text("\(title)")
-                            Spacer()
                         }
+                        .disabled(!MailView.canSendMail)
+                        .sheet(isPresented: $showMailView) {
+                            MailView(data: $mailData) { result in
+                                print(result)
+                                }
+                           }
+                        .foregroundColor(.black)
                         .padding(12)
+                        
+                        Spacer()
+                            
                     }
-                    .padding(.horizontal, 10)
+                    .frame(width: 310, height: 45)
+                    .padding(.horizontal, 8)
+                  
                 } else if navIndex == 4 {
                     NavigationLink(destination: PrivacyPolicyView() ){
                         HStack{
@@ -72,7 +95,7 @@ struct SettingListView: View {
                     }
                     .padding(.horizontal, 10)
                 } else if navIndex == 6 {
-                    NavigationLink(destination: OnboardingViewOne() ){
+                    NavigationLink(destination: OnboardingViewMain() ){
                         HStack{
                             Text("\(title)")
                             Spacer()
@@ -86,10 +109,20 @@ struct SettingListView: View {
         .listRowBackground(Color.clear)
         .listRowSeparator(.hidden)
     }
+    
+    func suggestFeature() {
+        if MFMailComposeViewController.canSendMail() {
+            self.showSheet = true
+        } else {
+            print("Error sending mail")
+        }
+    }
 }
+
+
 
 struct SettingListView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingListView(title: "hiiiii", navIndex: 1, hasAlarm: false, isAlarm: true)
+        SettingListView(title: "피드백 보내기", navIndex: 4, hasAlarm: false, isAlarm: true)
     }
 }

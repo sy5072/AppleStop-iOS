@@ -18,8 +18,7 @@ struct CharacterView: View {
     @AppStorage("isLevelUp") var isLevelUp : Bool = UserDefaults.standard.bool(forKey: "isLevelUp")
     @Environment(\.viewController) private var viewControllerHolder: UIViewController?
     
-    @State private var characters: [Character] = [Character(image: Image(systemName: "moon.stars.fill"), name: "날아라다람쥐", info: "날아라 다람쥐는 귀엽습니다. 예쁘고 착한 편입니다. 날아라다람쥐야 행복해라~"), Character(image: Image(systemName: "wand.and.stars.inverse"), name: "담비손담비", info: "담비는 귀엽고 랩도 잘하고 머리부터 발끝까지 펄풱. 인생의 진리 어쩌구")]
-    @State private var user: User = User(nickname: "연일읍분리수거왕", days: 150, level: 10, exp: 60, mainCharacterIndex: 1)
+    @State private var user: User = User(nickname: "연일읍분리수거왕", days: 150, level: 10, exp: 60, mainCharacterIndex: 0, userCharacters: defaultCharacter)
     
     private var viewController: UIViewController? {
         self.viewControllerHolder
@@ -33,7 +32,7 @@ struct CharacterView: View {
                 .ignoresSafeArea()
             
             ScrollView {
-                UserInfomationView(mainCharacterImage: $characters[user.mainCharacterIndex].image,
+                UserInfomationView(mainCharacterImage: $user.userCharacters[user.mainCharacterIndex].image,
                                    nickname: user.nickname,
                                    usedDate: user.days,
                                    userLevel: user.level,
@@ -72,16 +71,16 @@ extension CharacterView {
             ForEach(data, id: \.self) { index in
                 let isMainCharacter: Binding<Bool> = markMainCharacter(index: index)
                 
-                if index < characters.count {
-                    CharacterCardView(character: $characters[index],
+                if index < user.userCharacters.count {
+                    CharacterCardView(character: $user.userCharacters[index],
                                       isMainCharacter: isMainCharacter)
                         .onTapGesture {
-                            if characters[index].name == nil {
+                            if user.userCharacters[index].name == nil {
                                 let randomCharacter = selectRandomCharacter()
-                                characters[characters.count - 1] = randomCharacter
+                                user.userCharacters[user.userCharacters.count - 1] = randomCharacter
                             } else {
                                 self.viewController?.present(style: .overCurrentContext, transitionStyle: .crossDissolve) {
-                                    CharacterPopupView(character: $characters[index],
+                                    CharacterPopupView(character: $user.userCharacters[index],
                                                        mainIndex: $user.mainCharacterIndex,
                                                        currentCellIndex: index)
                                 }
@@ -105,13 +104,13 @@ extension CharacterView {
     
     private func setupNewCharacterConfiguration() {
         if user.level % 5 == 0 && isLevelUp {
-            characters.append(Character(image: ImageLiteral.imgNewcharacter, name: nil, info: nil))
+            user.userCharacters.append(Character(image: ImageLiteral.imgNewcharacter, name: nil, info: nil))
             isLevelUp = false
         }
     }
     
     private func selectRandomCharacter() -> Character {
-        let filteredCharacter = defaultCharacter.filter { !characters.map { $0.name }.contains($0.name) }
+        let filteredCharacter = defaultCharacter.filter { !user.userCharacters.map { $0.name }.contains($0.name) }
         let randInt = Int.random(in: 0..<filteredCharacter.count)
         
         return filteredCharacter[randInt]
