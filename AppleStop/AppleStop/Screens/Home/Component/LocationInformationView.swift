@@ -24,7 +24,7 @@ struct LocationInformationView: View {
                 .shadow(color: .black.opacity(0.04), radius: 2, x: 0, y: 1)
                 .shadow(color: .black.opacity(0.18), radius: 2, x: 0, y: 1)
             HStack{
-                Text("오늘은 '\(location)'의 \(recyclingDayColor)입니다.")
+                Text("오늘은 '\(location)'의 \(recyclingDayColor)입니다")
             }.font(Font.headline.weight(.medium))
         }
     }
