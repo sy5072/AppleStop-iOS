@@ -20,7 +20,7 @@ struct NicknameView: View {
     let textLimit = 8
     
     var body: some View {
-        //NavigationView{
+        NavigationView{
         ZStack{
             VStack{
                 VStack{
@@ -75,7 +75,7 @@ struct NicknameView: View {
             .padding()
         }
     }
-    //}
+    }
     
     //8글자로 제한
     func limitText(_ upper: Int) {
