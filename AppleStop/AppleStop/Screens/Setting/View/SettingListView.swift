@@ -71,21 +71,11 @@ struct SettingListView: View {
                         .padding(12)
                         
                         Spacer()
-                        
-//                        Image(systemName:"chevron.right")
                             
                     }
                     .frame(width: 310, height: 45)
                     .padding(.horizontal, 8)
                   
-//                    NavigationLink(destination: FeedbackView() ){
-//                        HStack{
-//                            Text("\(title)")
-//                            Spacer()
-//                        }
-//                        .padding(12)
-//                    }
-//                    .padding(.horizontal, 10)
                 } else if navIndex == 4 {
                     NavigationLink(destination: PrivacyPolicyView() ){
                         HStack{

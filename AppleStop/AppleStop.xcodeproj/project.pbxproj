@@ -13,12 +13,11 @@
 		598127942800861200A3296A /* OnboardingViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598127932800861200A3296A /* OnboardingViewTwo.swift */; };
 		5981279A280097EE00A3296A /* OnboardingViewThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59812799280097EE00A3296A /* OnboardingViewThree.swift */; };
 		5981279C2800989000A3296A /* OnboardingViewFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981279B2800989000A3296A /* OnboardingViewFour.swift */; };
-		7904CF3428047B89000EA6C4 /* CustomShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */; };
 		7904CF3628049459000EA6C4 /* FeedbackWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3528049459000EA6C4 /* FeedbackWrapper.swift */; };
 		793FA13D2803E40500246AE9 /* ServiceTermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FA13C2803E40500246AE9 /* ServiceTermView.swift */; };
 		793FA13F2803E43700246AE9 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FA13E2803E43700246AE9 /* PrivacyPolicyView.swift */; };
-		793FA1412803E47F00246AE9 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FA1402803E47F00246AE9 /* FeedbackView.swift */; };
 		79B2D9DE2804195600A0A782 /* SettingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B2D9DD2804195600A0A782 /* SettingListView.swift */; };
+		79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */; };
 		B594065127FEAC94000D3CE8 /* AppleStopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594065027FEAC94000D3CE8 /* AppleStopApp.swift */; };
 		B594065527FEAC95000D3CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B594065427FEAC95000D3CE8 /* Assets.xcassets */; };
 		B594065827FEAC95000D3CE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B594065727FEAC95000D3CE8 /* Preview Assets.xcassets */; };
@@ -59,7 +58,6 @@
 		7904CF3528049459000EA6C4 /* FeedbackWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackWrapper.swift; sourceTree = "<group>"; };
 		793FA13C2803E40500246AE9 /* ServiceTermView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTermView.swift; sourceTree = "<group>"; };
 		793FA13E2803E43700246AE9 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
-		793FA1402803E47F00246AE9 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		79B2D9DD2804195600A0A782 /* SettingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListView.swift; sourceTree = "<group>"; };
 		79B2D9DF28046D5A00A0A782 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		B594064D27FEAC94000D3CE8 /* AppleStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -316,7 +314,6 @@
 			children = (
 				B594068627FEAF32000D3CE8 /* SettingView.swift */,
 				79B2D9DD2804195600A0A782 /* SettingListView.swift */,
-				793FA1402803E47F00246AE9 /* FeedbackView.swift */,
 				7904CF3528049459000EA6C4 /* FeedbackWrapper.swift */,
 				793FA13E2803E43700246AE9 /* PrivacyPolicyView.swift */,
 				793FA13C2803E40500246AE9 /* ServiceTermView.swift */,
@@ -448,7 +445,6 @@
 				B5B1F212280507350026AD0E /* WasteInformationView.swift in Sources */,
 				B8C6AE5E2801F926002CCBFE /* LevelInformationView.swift in Sources */,
 				B86225C32803518B0016FC71 /* CharacterCardBackView.swift in Sources */,
-				793FA1412803E47F00246AE9 /* FeedbackView.swift in Sources */,
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
 				598127942800861200A3296A /* OnboardingViewTwo.swift in Sources */,
 				B5E5ED692804545800074655 /* CharacterPopupView.swift in Sources */,
@@ -466,6 +462,7 @@
 				5981279C2800989000A3296A /* OnboardingViewFour.swift in Sources */,
 				B594068727FEAF32000D3CE8 /* SettingView.swift in Sources */,
 				B83A091428041FB50056080E /* (null) in Sources */,
+				79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */,
 				B594067B27FEAEF7000D3CE8 /* GuideView.swift in Sources */,
 				79B2D9DE2804195600A0A782 /* SettingListView.swift in Sources */,
 				B8F226E128007B8E004294EE /* CharacterCardFrontView.swift in Sources */,
