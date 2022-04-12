@@ -9,24 +9,30 @@ import SwiftUI
 
 struct WastePopupView: View {
     
+    // MARK: - properties
+    
+    @Binding var showState: Bool
+    
     @State var wasteDayData: [CGFloat] = [10, 20, 30, 30, 40, 50, 0]
     @State var wasteTypeData: [CGFloat] = [5,12,3,1,5,8]
-
+    
     var wasteGoal = 10
     
     var body: some View {
-            ZStack{
+        ZStack(alignment: .center){
                 
 //                Color.popupGrey.opacity(0.2)
                 
                 Rectangle()
                     .foregroundColor(.white)
-                    .frame(height: 500, alignment: .center)
+                    .frame(width: 340, height: 500, alignment: .center)
                     .cornerRadius(12)
                     .customShadow()
                 
                 VStack{
-                    Button(action: {} ){
+                    Button(action: {
+                        self.showState = false
+                    } ){
                         Image(systemName: "xmark").frame(width: 42, height: 42, alignment: .center).padding(.top, 8).tint(.black)
                     }
 
@@ -59,8 +65,8 @@ struct WastePopupView: View {
                 
                 
             }
-            .background(BackgroundBlurView())
-            .ignoresSafeArea()
+//            .background(BackgroundBlurView())
+//            .ignoresSafeArea()
     }
 }
 
@@ -97,6 +103,6 @@ struct HorizontalBarChartView: View {
 
 struct WastePopupView_Previews: PreviewProvider {
     static var previews: some View {
-        WastePopupView()
+        WastePopupView(showState: .constant(true))
     }
 }

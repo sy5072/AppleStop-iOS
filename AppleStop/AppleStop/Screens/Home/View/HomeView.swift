@@ -90,10 +90,10 @@ struct HomeView: View {
             }
             
             if self.show{
-                GeometryReader{_ in
-                     WastePopupView()
+                GeometryReader{ geometry in
+                    WastePopupView(showState: $show).position(x: geometry.frame(in: .local).midX, y: geometry.frame(in: .local).midY)
                 }.background(
-                    Color.black.opacity(0.65)
+                    Color.black.opacity(0.2)
                         .edgesIgnoringSafeArea(.all)
                         .onTapGesture {
                             self.show = false
