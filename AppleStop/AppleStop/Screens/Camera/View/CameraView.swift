@@ -50,6 +50,26 @@ struct CameraView: View {
                             .foregroundColor(.black)
                     }
                 }
+                
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    
+                    if camera.isTaken {
+                    Button {
+                            camera.reTake()
+                    } label: {
+                        Image(systemName: "arrow.triangle.2.circlepath.camera")
+                            .foregroundColor(.black)
+                    }
+                    Button {
+                        if !camera.isSaved{
+                            camera.savePic()
+                        }
+                    } label: {
+                        Image(systemName: "folder")
+                            .foregroundColor(.black)
+                    }
+                    }
+                }
             }
             .onAppear {
                 camera.requestAndCheckPermissions()
@@ -61,11 +81,11 @@ struct CameraView: View {
 
 
 
-struct CameraView_Previews: PreviewProvider {
-    static var previews: some View {
-        CameraView()
-    }
-}
+//struct CameraView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CameraView()
+//    }
+//}
 
 
 // MARK: - CameraPreview for UIkit
@@ -99,31 +119,31 @@ extension CameraView {
     // 토글 및 버튼포함하는 뷰
     var bottomView : some View {
         VStack(){
-            if camera.isTaken{
-                HStack {
-                    Button {
-                        camera.reTake()
-                    } label: {
-                        Image(systemName: "arrow.triangle.2.circlepath.camera")
-                            .foregroundColor(.black)
-                            .padding()
-                            .background(Color.white)
-                            .clipShape(Capsule())
-                    }
-                    Button {
-                        if !camera.isSaved{
-                            
-                            camera.savePic()
-                        }
-                    } label: {
-                        Text(camera.isSaved ? "saved" :"save")
-                            .foregroundColor(.black)
-                            .padding()
-                            .background(Color.white)
-                            .clipShape(Capsule())
-                    }
-                }
-            }
+//            if camera.isTaken{
+//                HStack {
+//                    Button {
+//                        camera.reTake()
+//                    } label: {
+//                        Image(systemName: "arrow.triangle.2.circlepath.camera")
+//                            .foregroundColor(.black)
+//                            .padding()
+//                            .background(Color.white)
+//                            .clipShape(Capsule())
+//                    }
+//                    Button {
+//                        if !camera.isSaved{
+//
+//                            camera.savePic()
+//                        }
+//                    } label: {
+//                        Text(camera.isSaved ? "saved" :"save")
+//                            .foregroundColor(.black)
+//                            .padding()
+//                            .background(Color.white)
+//                            .clipShape(Capsule())
+//                    }
+//                }
+//            }
             
             Spacer()
             
@@ -141,6 +161,7 @@ extension CameraView {
                         withAnimation(.easeInOut, {
                             // TODO: -  디바이스 의존도 제거하기
                             offset = -270 // 범위내 임의값
+                            lastOffset = offset
                         })
                     }
                     
