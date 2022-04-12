@@ -36,7 +36,7 @@ extension UserInfomationView {
         HStack(spacing: 0) {
             mainCharacterImage?
                 .resizable()
-                .frame(width: 90, height: 96, alignment: .leading)
+                .frame(width: 100, height: 100, alignment: .leading)
                 .padding(.trailing, 32)
             userInfoView
         }

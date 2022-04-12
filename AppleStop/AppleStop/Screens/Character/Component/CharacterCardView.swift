@@ -37,7 +37,7 @@ extension CharacterCardView {
             
             character.image?
                 .resizable()
-                .frame(width: 74, height: 95, alignment: .center)
+                .frame(width: 100, height: 100, alignment: .center)
             
             Text(character.name ?? "")
                 .font(.system(size: 12, weight: .light, design: .default))
