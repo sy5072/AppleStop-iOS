@@ -24,13 +24,16 @@ struct WastePopupView: View {
                     .foregroundColor(.white)
                     .frame(height: 500, alignment: .center)
                     .cornerRadius(12)
-                    .shadow(color: .black.opacity(0.04), radius: 6, x: 0, y: 2)
-                    .shadow(color: .black.opacity(0.04), radius: 2, x: 0, y: 1)
-                    .shadow(color: .black.opacity(0.18), radius: 2, x: 0, y: 1)
+                    .customShadow()
                 
                 VStack{
-                    Text("나의 분리수거 실천도").fontWeight(.medium).font(.system(size: 18))
-                    
+                    Image(systemName: "xmark").frame(width: 42, height: 42, alignment: .center).padding(.top, 8)
+                }.frame(width: 320, height: 500, alignment: .topTrailing)
+   
+                
+                VStack{
+                   Text("나의 분리수거 실천도").fontWeight(.medium).font(.system(size: 18))
+                   
                     HStack(spacing: 26){
                         BarChartView(value: wasteDayData[0], day: "M")
                         BarChartView(value: wasteDayData[1], day: "T")
