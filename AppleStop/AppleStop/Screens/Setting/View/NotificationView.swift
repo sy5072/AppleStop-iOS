@@ -10,18 +10,13 @@ import SwiftUI
 struct NotificationView: View {
     
     @State var showAlert = false
-    func setNotification() -> Void {
-        let manager = NotificationManager()
-        manager.requestPermission()
-        manager.addNotification(title: "수거딱대")
-        manager.schedule()
-    }
+    
     
     var body: some View {
         VStack {
             Text("Notification Demo")
             Button {
-                self.setNotification()
+                setNotification()
             } label: {
                 Text("SetNotification!")
             }
@@ -31,6 +26,20 @@ struct NotificationView: View {
             }
         }
     }
+}
+
+func setNotification() -> Void {
+    let manager = NotificationManager()
+    manager.requestPermission()
+    manager.addNotification(title: "수거딱대")
+    manager.schedule()
+}
+
+func delNotification() -> Void {
+    let manager = NotificationManager()
+    manager.addNotification(title: "수거딱대")
+    manager.scheduleNotifications(isOn: false)
+    
 }
 
 struct NotificationView_Previews: PreviewProvider {

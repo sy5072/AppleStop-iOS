@@ -22,6 +22,7 @@ struct SettingListView: View {
                                                   message: "",
                                                   attachment: [])
    @State private var showMailView = false
+   @State var showAlert = false
     
     
     var body: some View {
@@ -40,6 +41,18 @@ struct SettingListView: View {
                     Toggle("notification", isOn: $isAlarm)
                         .labelsHidden()
                         .frame(height: 20)
+                        .onChange(of: isAlarm) { value in
+                            if value {
+                                setNotification()
+                                showAlert = true
+                            }else {
+                                delNotification()
+                                
+                            }
+                        }
+//                        .alert(isPresented: $showAlert) {
+//                            Alert(title: Text("경고"), message: Text("알림을 허용해주세요"), dismissButton: .default(Text("확인")))
+//                        }
                 }
                 .padding(12)
                 .padding(.horizontal, 10)

@@ -26,6 +26,11 @@
 		7993A08B28055BE3001ED0B3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7993A08A28055BE3001ED0B3 /* NotificationManager.swift */; };
 		7993A08D28055EF4001ED0B3 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7993A08C28055EF4001ED0B3 /* NotificationView.swift */; };
 		79B2D9DE2804195600A0A782 /* SettingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B2D9DD2804195600A0A782 /* SettingListView.swift */; };
+		79B869F128056DBD0029BAD1 /* CardStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B869F028056DBD0029BAD1 /* CardStruct.swift */; };
+		79B869F628056DC50029BAD1 /* GuideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B869F228056DC50029BAD1 /* GuideDetailView.swift */; };
+		79B869F728056DC50029BAD1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B869F328056DC50029BAD1 /* CardView.swift */; };
+		79B869F828056DC50029BAD1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B869F428056DC50029BAD1 /* ListView.swift */; };
+		79B869F928056DC50029BAD1 /* SeachBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B869F528056DC50029BAD1 /* SeachBar.swift */; };
 		79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */; };
 		B594065127FEAC94000D3CE8 /* AppleStopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594065027FEAC94000D3CE8 /* AppleStopApp.swift */; };
 		B594065527FEAC95000D3CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B594065427FEAC95000D3CE8 /* Assets.xcassets */; };
@@ -74,6 +79,11 @@
 		7993A08C28055EF4001ED0B3 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		79B2D9DD2804195600A0A782 /* SettingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListView.swift; sourceTree = "<group>"; };
 		79B2D9DF28046D5A00A0A782 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		79B869F028056DBD0029BAD1 /* CardStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStruct.swift; sourceTree = "<group>"; };
+		79B869F228056DC50029BAD1 /* GuideDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideDetailView.swift; sourceTree = "<group>"; };
+		79B869F328056DC50029BAD1 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		79B869F428056DC50029BAD1 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		79B869F528056DC50029BAD1 /* SeachBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeachBar.swift; sourceTree = "<group>"; };
 		B594064D27FEAC94000D3CE8 /* AppleStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B594065027FEAC94000D3CE8 /* AppleStopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleStopApp.swift; sourceTree = "<group>"; };
 		B594065427FEAC95000D3CE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -249,6 +259,7 @@
 		B594066827FEAD6C000D3CE8 /* Guide */ = {
 			isa = PBXGroup;
 			children = (
+				79B869F028056DBD0029BAD1 /* CardStruct.swift */,
 				B594067927FEAEF0000D3CE8 /* View */,
 			);
 			path = Guide;
@@ -300,6 +311,10 @@
 		B594067927FEAEF0000D3CE8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				79B869F328056DC50029BAD1 /* CardView.swift */,
+				79B869F228056DC50029BAD1 /* GuideDetailView.swift */,
+				79B869F428056DC50029BAD1 /* ListView.swift */,
+				79B869F528056DC50029BAD1 /* SeachBar.swift */,
 				B594067A27FEAEF7000D3CE8 /* GuideView.swift */,
 			);
 			path = View;
@@ -455,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7904CF3628049459000EA6C4 /* FeedbackWrapper.swift in Sources */,
+				79B869F628056DC50029BAD1 /* GuideDetailView.swift in Sources */,
 				5931E3E127FFD62E006B16B6 /* SplashScreenView.swift in Sources */,
 				35A80AA32803264100DD7721 /* CustomCorner.swift in Sources */,
 				B594068F27FEB26F000D3CE8 /* NavigationBackButton.swift in Sources */,
@@ -463,6 +479,7 @@
 				B5B1F20D2804FC970026AD0E /* BackgroundBlurView.swift in Sources */,
 				B5B1F212280507350026AD0E /* WasteInformationView.swift in Sources */,
 				7993A08B28055BE3001ED0B3 /* NotificationManager.swift in Sources */,
+				79B869F828056DC50029BAD1 /* ListView.swift in Sources */,
 				59F1780828051D0D00629F8B /* CustomShadowModifier.swift in Sources */,
 				35A80AAD280522AF00DD7721 /* SettingView.swift in Sources */,
 				B8C6AE5E2801F926002CCBFE /* LevelInformationView.swift in Sources */,
@@ -471,6 +488,7 @@
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
 				35A80AAB2804FD2900DD7721 /* ToastAlertView.swift in Sources */,
 				B5E5ED692804545800074655 /* CharacterPopupView.swift in Sources */,
+				79B869F728056DC50029BAD1 /* CardView.swift in Sources */,
 				350C0C6A27FFDD590012CBFA /* CustomToggle.swift in Sources */,
 				B594067227FEAED0000D3CE8 /* HomeView.swift in Sources */,
 				B594069527FFDC08000D3CE8 /* UserInformationView.swift in Sources */,
@@ -484,6 +502,8 @@
 				B594068927FEB0B3000D3CE8 /* ImageLiteral.swift in Sources */,
 				35A80AA728046C3E00DD7721 /* CodeGuideLineView.swift in Sources */,
 				B594067727FEAEE3000D3CE8 /* CameraView.swift in Sources */,
+				79B869F128056DBD0029BAD1 /* CardStruct.swift in Sources */,
+				79B869F928056DC50029BAD1 /* SeachBar.swift in Sources */,
 				35A80AAF280522FB00DD7721 /* CustomShadowModifier.swift in Sources */,
 				B83A091428041FB50056080E /* (null) in Sources */,
 				79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */,
