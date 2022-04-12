@@ -13,6 +13,13 @@ struct CharacterDetailView: View {
     
     @Environment(\.presentationMode) private var presentationMode
     
+    @Binding var characterImage: Image?
+    @Binding var characterName: String?
+    @Binding var characterInfo: String?
+    @Binding var mainCharacterIndex: Int
+    
+    var currentCellIndex: Int
+    
     var body: some View {
         ZStack {
             characterImageView
@@ -29,10 +36,10 @@ extension CharacterDetailView {
         VStack(alignment: .leading, spacing: 0) {
             Text("플라스틱을 혼쭐내는")
                 .font(.system(size: 18, weight: .light, design: .default))
-            Text("하늘다람쥐")
+            Text(characterName ?? "")
                 .font(.system(size: 25, weight: .semibold, design: .default))
                 .padding(.bottom, 5)
-            Text("하늘다람쥐는 어쩌구 저쩌구 솰라솰라 어쩌구 저쩌구 하늘다람쥐 졸귀탱탱 짱귀여워 하늘 다람쥐.. ")
+            Text(characterInfo ?? "")
                 .font(.system(size: 14, weight: .light, design: .default))
             
             Spacer()
@@ -64,7 +71,8 @@ extension CharacterDetailView {
             HStack {
                 Spacer()
                 
-                Rectangle()
+                characterImage?
+                    .resizable()
                     .frame(width: 62, height: 80, alignment: .center)
                     .opacity(0.5)
             }
@@ -77,6 +85,7 @@ extension CharacterDetailView {
         VStack {
             Spacer()
             Button("변경", action: {
+                mainCharacterIndex = currentCellIndex
                 self.presentationMode.wrappedValue.dismiss()
             })
                 .foregroundColor(.white)
@@ -94,6 +103,6 @@ extension CharacterDetailView {
 
 struct CharacterDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterDetailView()
+        CharacterDetailView(characterImage: .constant(Image(systemName: "circle.fill")), characterName: .constant("동그라미땡"), characterInfo: .constant("왕왕"), mainCharacterIndex: .constant(1), currentCellIndex: 3)
     }
 }

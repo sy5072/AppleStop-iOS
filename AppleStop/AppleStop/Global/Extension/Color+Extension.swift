@@ -23,6 +23,7 @@ extension Color {
     static var iconGrey: Color {
         return Color(hex: "#8A8A8A")
     }
+    
     static var charOrange: Color {
         return Color(hex: "#f26725")
     }
@@ -33,6 +34,10 @@ extension Color {
     
     static var listGrey: Color {
         return Color(hex: "#F2F2F7")
+    }
+        
+    static var chartGrey: Color {
+        return Color(hex: "#EFEFEF")
     }
 }
 

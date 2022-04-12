@@ -72,16 +72,16 @@ struct HomeView: View {
                     .frame(height: 22)
                 
                 HStack(spacing: 0.0) {
-                    MiniInformationView()
+                    WasteInformationView()
                         .padding(.leading, 24)
                         .padding(.trailing, 12)
                     
-                    MiniInformationView()
+                    LevelInformationView(nickname: "연일읍분리수거왕", userLevel: 10)
                         .padding(.trailing, 24)
                         .padding(.leading, 12)
                 }
             }
-        }
+        }.navigationBarTitleDisplayMode(.inline)
     }
     
 }
