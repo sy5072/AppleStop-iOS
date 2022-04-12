@@ -95,7 +95,7 @@ struct SettingListView: View {
                     }
                     .padding(.horizontal, 10)
                 } else if navIndex == 6 {
-                    NavigationLink(destination: OnboardingViewOne() ){
+                    NavigationLink(destination: OnboardingViewMain() ){
                         HStack{
                             Text("\(title)")
                             Spacer()

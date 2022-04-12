@@ -39,9 +39,9 @@ struct TabbarView: View {
                             TabBarIcon(viewRouter: viewRouter, assignedPage: nil, width: geometry.size.width/4, height: geometry.size.height/4, systemIconName: "", tabName: "", isCamera: true).shadow(radius: 2)
                                 .customShadow()
                                 
-                            TabBarIcon(viewRouter: viewRouter, assignedPage: .guide, width: geometry.size.width/6, height: geometry.size.height/30, systemIconName: "book", tabName: "분리수거 가이드", isCamera: false)
+                            TabBarIcon(viewRouter: viewRouter, assignedPage: .guide, width: geometry.size.width/5, height: geometry.size.height/30, systemIconName: "book", tabName: "분리수거 가이드", isCamera: false)
                         }
-                        .frame(width: geometry.size.width, height: geometry.size.height/9)
+                        .frame(width: geometry.size.width, height: geometry.size.height/8)
                         .background(.white)
                     }
                     
@@ -89,18 +89,19 @@ struct TabBarIcon: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: width, height: height)
                     .padding(.horizontal, 20)
-                    .offset(y: -height/6)
+                    .offset(y: -height/5)
             } else {
                 Image(systemName: systemIconName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: width, height: height)
-                    .padding(.top, 10)
+//                    .padding(.top, 10)
                 Text(tabName)
-                    .font(.footnote)
+                    .font(.system(size: 10))
          
             }
         }
+        .padding(.bottom, 10)
         .onTapGesture {
             if let assignedPage = assignedPage {
                 viewRouter.currentPage = assignedPage
