@@ -14,7 +14,7 @@ struct UserInfomationView: View {
     var nickname: String
     var usedDate: Int
     var userLevel: Int
-    @State private var userExp: Double = 30.0
+    var userExp: Double = 30.0
     
     var body: some View {
         Rectangle()
