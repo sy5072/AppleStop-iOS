@@ -32,6 +32,7 @@
 		B594068F27FEB26F000D3CE8 /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */; };
 		B594069527FFDC08000D3CE8 /* UserInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594069427FFDC08000D3CE8 /* UserInformationView.swift */; };
 		B594069727FFDFE4000D3CE8 /* CharacterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594069627FFDFE4000D3CE8 /* CharacterCardView.swift */; };
+		B5B1F20B2804F9630026AD0E /* ViewControllerHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F20A2804F9630026AD0E /* ViewControllerHolder.swift */; };
 		B5E5ED65280404FD00074655 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED64280404FD00074655 /* Character.swift */; };
 		B5E5ED672804242A00074655 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED662804242A00074655 /* User.swift */; };
 		B5E5ED692804545800074655 /* CharacterPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED682804545800074655 /* CharacterPopupView.swift */; };
@@ -68,6 +69,7 @@
 		B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
 		B594069427FFDC08000D3CE8 /* UserInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationView.swift; sourceTree = "<group>"; };
 		B594069627FFDFE4000D3CE8 /* CharacterCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardView.swift; sourceTree = "<group>"; };
+		B5B1F20A2804F9630026AD0E /* ViewControllerHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHolder.swift; sourceTree = "<group>"; };
 		B5E5ED64280404FD00074655 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		B5E5ED662804242A00074655 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B5E5ED682804545800074655 /* CharacterPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPopupView.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 		B594066727FEAD68000D3CE8 /* Character */ = {
 			isa = PBXGroup;
 			children = (
+				B5B1F2092804F95B0026AD0E /* Helper */,
 				B594069327FFDBFF000D3CE8 /* Component */,
 				B594067D27FEAEFE000D3CE8 /* View */,
 			);
@@ -315,6 +318,14 @@
 				B5E5ED6A2804583600074655 /* CharacterDetailView.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		B5B1F2092804F95B0026AD0E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B5B1F20A2804F9630026AD0E /* ViewControllerHolder.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		B5E5ED63280404F100074655 /* Models */ = {
@@ -441,6 +452,7 @@
 				B8C6AE5C2801F835002CCBFE /* LocationInformationView.swift in Sources */,
 				5981279A280097EE00A3296A /* OnboardingViewThree.swift in Sources */,
 				B594068427FEAF21000D3CE8 /* OnboardingViewOne.swift in Sources */,
+				B5B1F20B2804F9630026AD0E /* ViewControllerHolder.swift in Sources */,
 				597546402803C0C700F3CD36 /* NicknameView.swift in Sources */,
 				B5E5ED672804242A00074655 /* User.swift in Sources */,
 			);
@@ -573,7 +585,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppleStop/Preview Content\"";
-
 				DEVELOPMENT_TEAM = 8N8K22S85Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
