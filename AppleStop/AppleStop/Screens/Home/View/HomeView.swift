@@ -17,6 +17,8 @@ struct HomeView: View {
     
     let durationAndDelay : CGFloat = 0.2
     
+    @State var show = false
+    
     // MARK: Flip Card Function
     
     func flipCard () {
@@ -63,7 +65,7 @@ struct HomeView: View {
                         Rectangle().opacity(0)
                             .frame(width: 80, height: 60)
                             .contentShape(Rectangle()).onTapGesture {
-                                flipCard ()
+                                flipCard()
                             }
                     }.frame(width: 342)
                 }
@@ -75,12 +77,32 @@ struct HomeView: View {
                     WasteInformationView()
                         .padding(.leading, 24)
                         .padding(.trailing, 12)
+                        .onTapGesture{
+                            withAnimation{
+                                self.show = true
+                            }
+                        }
                     
                     LevelInformationView(nickname: "연일읍분리수거왕", userLevel: 10)
                         .padding(.trailing, 24)
                         .padding(.leading, 12)
                 }
             }
+            
+            if self.show{
+                GeometryReader{_ in
+                     WastePopupView()
+                }.background(
+                    Color.black.opacity(0.65)
+                        .edgesIgnoringSafeArea(.all)
+                        .onTapGesture {
+                            self.show = false
+                        }
+                )
+            }
+            
+   
+            
         }.navigationBarTitleDisplayMode(.inline)
     }
     

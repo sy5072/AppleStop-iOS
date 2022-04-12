@@ -15,10 +15,9 @@ struct WastePopupView: View {
     var wasteGoal = 10
     
     var body: some View {
-        GeometryReader { geo in
             ZStack{
                 
-                Color.popupGrey.opacity(0.2)
+//                Color.popupGrey.opacity(0.2)
                 
                 Rectangle()
                     .foregroundColor(.white)
@@ -27,7 +26,10 @@ struct WastePopupView: View {
                     .customShadow()
                 
                 VStack{
-                    Image(systemName: "xmark").frame(width: 42, height: 42, alignment: .center).padding(.top, 8)
+                    Button(action: {} ){
+                        Image(systemName: "xmark").frame(width: 42, height: 42, alignment: .center).padding(.top, 8).tint(.black)
+                    }
+
                 }.frame(width: 320, height: 500, alignment: .topTrailing)
    
                 
@@ -59,7 +61,6 @@ struct WastePopupView: View {
             }
             .background(BackgroundBlurView())
             .ignoresSafeArea()
-        }
     }
 }
 
