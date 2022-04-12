@@ -27,10 +27,7 @@ struct AppleStopApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                CharacterView()
-            }
-            .navigationViewStyle(.stack)
+            TabbarView(viewRouter: ViewRouter())
         }
     }
 }

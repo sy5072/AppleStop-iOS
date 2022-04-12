@@ -18,7 +18,7 @@ struct CharacterView: View {
     @AppStorage("isLevelUp") var isLevelUp : Bool = UserDefaults.standard.bool(forKey: "isLevelUp")
     @Environment(\.viewController) private var viewControllerHolder: UIViewController?
     
-    @State private var user: User = User(nickname: "연일읍분리수거왕", days: 150, level: 10, exp: 60, mainCharacterIndex: 0, userCharacters: defaultCharacter)
+    @State private var user: User = User(nickname: "연일읍분리수거왕", days: 150, level: 10, exp: 60, mainCharacterIndex: 0, userCharacters: [defaultCharacter[0], defaultCharacter[1]])
     
     private var viewController: UIViewController? {
         self.viewControllerHolder

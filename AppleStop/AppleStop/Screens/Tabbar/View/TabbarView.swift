@@ -20,8 +20,6 @@ struct TabbarView: View {
                     switch viewRouter.currentPage {
                     case .home:
                         HomeView()
-                    case .camera:
-                        CameraView()
                     case .guide:
                         GuideView()
                     }
@@ -34,7 +32,7 @@ struct TabbarView: View {
                         HStack{
                             TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: geometry.size.width/5, height: geometry.size.height/30, systemIconName: "house", tabName: "홈", isCamera: false)
     //                            .shadow(radius: 0)
-                            TabBarIcon(viewRouter: viewRouter, assignedPage: .camera, width: geometry.size.width/4, height: geometry.size.height/4, systemIconName: "", tabName: "", isCamera: true).shadow(radius: 2)
+                            TabBarIcon(viewRouter: viewRouter, assignedPage: nil, width: geometry.size.width/4, height: geometry.size.height/4, systemIconName: "", tabName: "", isCamera: true).shadow(radius: 2)
                                 
                             TabBarIcon(viewRouter: viewRouter, assignedPage: .guide, width: geometry.size.width/6, height: geometry.size.height/30, systemIconName: "book", tabName: "분리수거 가이드", isCamera: false)
                         }
@@ -60,8 +58,13 @@ struct TabbarView_Previews: PreviewProvider {
 
 struct TabBarIcon: View {
     
+    @Environment(\.viewController) private var viewControllerHolder: UIViewController?
+    
+    private var viewController: UIViewController? {
+        self.viewControllerHolder
+    }
     @StateObject var viewRouter: ViewRouter
-    let assignedPage: Page
+    let assignedPage: Page?
     let width, height : CGFloat
     let systemIconName, tabName : String
     let isCamera : Bool
@@ -87,7 +90,15 @@ struct TabBarIcon: View {
             }
         }
         .onTapGesture {
-            viewRouter.currentPage = assignedPage 
+            if let assignedPage = assignedPage {
+                viewRouter.currentPage = assignedPage
+            }
+            
+            if isCamera {
+                self.viewController?.present(style: .fullScreen, transitionStyle: .coverVertical) {
+                    CameraView()
+                }
+            }
         }
         .foregroundColor(viewRouter.currentPage == assignedPage ? .orange : .gray)
     }

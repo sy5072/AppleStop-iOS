@@ -8,12 +8,10 @@
 import SwiftUI
 
 class ViewRouter: ObservableObject {
-    
     @Published var currentPage: Page = .home
 }
 
 enum Page {
     case home
-    case camera
     case guide
 }
