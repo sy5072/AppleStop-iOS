@@ -16,6 +16,7 @@
 		35A80AAD280522AF00DD7721 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AAC280522AE00DD7721 /* SettingView.swift */; };
 		35A80AAF280522FB00DD7721 /* CustomShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */; };
 		35A80AB02805715400DD7721 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594067A27FEAEF7000D3CE8 /* GuideView.swift */; };
+		35A80AB228057BF800DD7721 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AB128057BF800DD7721 /* APICaller.swift */; };
 		5931E3E127FFD62E006B16B6 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */; };
 		5931E3E427FFDDCF006B16B6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5931E3E327FFDDCF006B16B6 /* SDWebImageSwiftUI */; };
 		597546402803C0C700F3CD36 /* NicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975463F2803C0C700F3CD36 /* NicknameView.swift */; };
@@ -61,6 +62,7 @@
 		35A80AA628046C3E00DD7721 /* CodeGuideLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGuideLineView.swift; sourceTree = "<group>"; };
 		35A80AAA2804FD2900DD7721 /* ToastAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAlertView.swift; sourceTree = "<group>"; };
 		35A80AAC280522AE00DD7721 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		35A80AB128057BF800DD7721 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		5975463F2803C0C700F3CD36 /* NicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameView.swift; sourceTree = "<group>"; };
 		59863B3B28052940002F847B /* OnboardingViewMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewMain.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				B594065427FEAC95000D3CE8 /* Assets.xcassets */,
+				35A80AB128057BF800DD7721 /* APICaller.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				35A80AA728046C3E00DD7721 /* CodeGuideLineView.swift in Sources */,
 				B594067727FEAEE3000D3CE8 /* CameraView.swift in Sources */,
 				35A80AAF280522FB00DD7721 /* CustomShadowModifier.swift in Sources */,
+				35A80AB228057BF800DD7721 /* APICaller.swift in Sources */,
 				B83A091428041FB50056080E /* (null) in Sources */,
 				79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */,
 				79B2D9DE2804195600A0A782 /* SettingListView.swift in Sources */,
