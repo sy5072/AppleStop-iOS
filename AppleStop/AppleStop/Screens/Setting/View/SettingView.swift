@@ -4,12 +4,44 @@
 //
 //  Created by SHIN YOON AH on 2022/04/07.
 //
-
 import SwiftUI
 
 struct SettingView: View {
+    
+    @State var isNotificated = true
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Color.backgroundGrey
+                .ignoresSafeArea()
+            
+            VStack{
+                
+                
+                NavigationView {
+                    List{
+                        SettingListView(title: "알림 설정", navIndex: 1, hasAlarm: true, isAlarm: isNotificated)
+                        SettingListView(title: "닉네임 변경", navIndex: 2, hasAlarm: false, isAlarm: false)
+                        SettingListView(title: "피드백 보내기", navIndex: 3, hasAlarm: false, isAlarm: false)
+                        SettingListView(title: "개인정보 처리방침", navIndex: 4, hasAlarm: false, isAlarm: false)
+                        SettingListView(title: "서비스 이용약관", navIndex: 5, hasAlarm: false, isAlarm: false)
+                        SettingListView(title: "수거딱대 가이드라인", navIndex: 6,hasAlarm: false, isAlarm: false)
+                    
+                    }
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                    
+                }
+                
+                
+                VStack{
+                    Text("Made by 애플스탑")
+                    Text("v 1.0.0")
+                }
+                .font(.system(size: 12, weight: .light))
+            }
+        }
+        
     }
 }
 
