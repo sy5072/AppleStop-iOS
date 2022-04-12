@@ -4,7 +4,6 @@
 //
 //  Created by SHIN YOON AH on 2022/04/07.
 //
-
 import SwiftUI
 
 struct SettingView: View {

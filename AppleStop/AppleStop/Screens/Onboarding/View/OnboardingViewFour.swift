@@ -10,38 +10,35 @@ import SDWebImageSwiftUI
 struct OnboardingViewFour: View {
     var body: some View {
         //NavigationView{
-            //ScrollView(.vertical, showsIndicators: false){
                 VStack{
                     Text("분리수거 가이드라인으로\n상세한 정보 득템!")
-                        .font(.title.bold())
+                        .font(.title2.bold())
                         .multilineTextAlignment(.center)
                     
                     WebImage(url: URL(string: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/cat-face_1f431.png"))
                         .resizable()
-                        //.aspectRatio(contentMode: .fill)
-                        .frame(height:500)
-                        //.cornerRadius(15)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: .infinity, height: .infinity)
+                        .cornerRadius(15)
                     
-                    
-                    Spacer()
-                    /*
-                    //TODO: NagivateLink to "CreateNickname"
-                     
-                    NavigationLink(destination: OnboardingViewThree()) {
-                        Text("Go to make nickname")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.blue)
-                    }
-                     */
+                     NavigationLink(destination: NicknameView()) {
+                         Text("설정하기")
+                             .font(.title3)
+                             .fontWeight(.bold)
+                             .background(RoundedRectangle(cornerRadius: 12).fill(Color.white)
+                                 .frame(width: UIScreen.screenWidth * 0.75, height: UIScreen.screenHeight * 0.06,  alignment: .center))
+                             .foregroundColor(Color.charOrange)
+                             .customShadow()
+                     }
+                     .padding(.top, 20)
                 }
                 .padding()
-            //}
         //}
         //using overlay instead of ZStack due to issues with animations
         //.overlay(SplashScreenView())
     }
 }
+
 
 struct OnboardingViewFour_Previews: PreviewProvider {
     static var previews: some View {

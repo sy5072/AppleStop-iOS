@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import CoreMedia
 
 struct TabbarView: View {
     
     @StateObject var viewRouter: ViewRouter
     
+    
+    @State private var isPresenting = false
+
     var body: some View {
         GeometryReader{ geometry in
             
@@ -49,8 +53,15 @@ struct TabbarView: View {
                 .edgesIgnoringSafeArea(.bottom)
             }
         }
-        
+
+        // TODO: - 카메라뷰를 탭바에 연결 시에 fullScreenCover 필요
+//                .fullScreenCover(isPresented: $isPresenting) {
+//                    NavigationView{
+//                    }
+//                    CameraView()
+//                }
     }
+
 }
 
 struct TabbarView_Previews: PreviewProvider {
