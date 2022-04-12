@@ -10,29 +10,30 @@ import SDWebImageSwiftUI
 struct OnboardingViewTwo: View {
     var body: some View {
         //NavigationView{
-            //ScrollView(.vertical, showsIndicators: false){
                 VStack{
-                    Text("바코드 스캔은\n다음과 같이!")
-                        .font(.title.bold())
+                    Text("바코드 스캔은 다음과 같이!")
+                        .font(.title2.bold())
                         .multilineTextAlignment(.center)
                     
                     WebImage(url: URL(string: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/apple/325/fox_1f98a.png"))
                         .resizable()
-                        //.aspectRatio(contentMode: .fill)
-                        .frame(height:500)
-                        //.cornerRadius(15)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: .infinity, height: .infinity)
+                        .cornerRadius(15)
                     
                     
-                    Spacer()
-                    NavigationLink(destination: OnboardingViewThree()) {
-                        Text("Next")
+                    NavigationLink(destination: OnboardingViewTwo()) {
+                        Text("설정하기")
                             .font(.title3)
                             .fontWeight(.bold)
-                            .foregroundColor(Color.blue)
+                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.white)
+                                .frame(width: UIScreen.screenWidth * 0.75, height: UIScreen.screenHeight * 0.06,  alignment: .center))
+                            .foregroundColor(Color.charOrange)
+                            .customShadow()
                     }
+                    .padding(.top, 20)
                 }
                 .padding()
-            //}
         //}
         //using overlay instead of ZStack due to issues with animations
         //.overlay(SplashScreenView())
