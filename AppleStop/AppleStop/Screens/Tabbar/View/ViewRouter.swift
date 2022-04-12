@@ -13,5 +13,6 @@ class ViewRouter: ObservableObject {
 
 enum Page {
     case home
+    case camera
     case guide
 }

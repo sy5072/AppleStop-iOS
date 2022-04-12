@@ -105,7 +105,7 @@ struct HomeView: View {
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
                 hideTabbar = false
-g            }
+            }
         }
     }
     

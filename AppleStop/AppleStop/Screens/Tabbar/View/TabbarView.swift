@@ -24,6 +24,8 @@ struct TabbarView: View {
                     HomeView()
                 case .guide:
                     GuideView()
+                case .camera:
+                    EmptyView()
                 }
                 Spacer()
                 
@@ -45,22 +47,22 @@ struct TabbarView: View {
     }
     
     var tabbarView: some View {
-        ZStack {
-            Rectangle()
-                .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/9)
-                .background(.white)
-                .customShadow()
-            HStack{
-                TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: UIScreen.main.bounds.size.width/5, height: UIScreen.main.bounds.size.height/30, systemIconName: "house", tabName: "홈", isCamera: false)
-                
-                TabBarIcon(viewRouter: viewRouter, assignedPage: nil, width: UIScreen.main.bounds.size.width/4, height: UIScreen.main.bounds.size.height/4, systemIconName: "", tabName: "", isCamera: true).shadow(radius: 2)
-                    .customShadow()
-                
-                TabBarIcon(viewRouter: viewRouter, assignedPage: .guide, width: UIScreen.main.bounds.size.width/5, height: UIScreen.main.bounds.size.height/30, systemIconName: "book", tabName: "분리수거 가이드", isCamera: false)
+            ZStack {
+                        Rectangle()
+                            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/9)
+                            .background(.white)
+                            .customShadow()
+                        HStack{
+                            TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: UIScreen.main.bounds.size.width/5, height: UIScreen.main.bounds.size.height/30, systemIconName: "house", tabName: "홈", isCamera: false, isCameraPressed: false)
+                            
+                            TabBarIcon(viewRouter: viewRouter, assignedPage: .camera, width: UIScreen.main.bounds.size.width/4, height: UIScreen.main.bounds.size.height/4, systemIconName: "", tabName: "", isCamera: true,isCameraPressed: false)
+                                .customShadow()
+                                
+                            TabBarIcon(viewRouter: viewRouter, assignedPage: .guide, width: UIScreen.main.bounds.size.width/5, height: UIScreen.main.bounds.size.height/30, systemIconName: "book", tabName: "분리수거 가이드", isCamera: false,isCameraPressed: false)
+                        }
+                        .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/8)
+                        .background(.white)
             }
-            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/8)
-            .background(.white)
-        }
     }
     
 }
@@ -79,11 +81,11 @@ struct TabBarIcon: View {
         self.viewControllerHolder
     }
     @StateObject var viewRouter: ViewRouter
-    let assignedPage: Page?
+    let assignedPage: Page
     let width, height : CGFloat
     let systemIconName, tabName : String
     let isCamera : Bool
-    
+    @State var isCameraPressed = false
     var body: some View {
         VStack{
             if isCamera {
@@ -106,16 +108,18 @@ struct TabBarIcon: View {
         }
         .padding(.bottom, 10)
         .onTapGesture {
-            if let assignedPage = assignedPage {
+            if assignedPage == .camera {
+                isCameraPressed = true
+
+            } else {
                 viewRouter.currentPage = assignedPage
             }
-            
-            if isCamera {
-                self.viewController?.present(style: .fullScreen, transitionStyle: .coverVertical) {
-                    CameraView()
-                }
-            }
         }
+        .fullScreenCover(isPresented: $isCameraPressed, content: {
+            NavigationView{
+                CameraView()
+         }
+        })
         .foregroundColor(viewRouter.currentPage == assignedPage ? .charOrange : .gray)
     }
 }
