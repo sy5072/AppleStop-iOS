@@ -10,6 +10,8 @@ import SwiftUI
 struct OnboardingViewMain: View {
     private let images = ["img_ddakchong", "img_dambi", "img_bandal", "img_doyo"]
     
+    @State var backgroundoffset: CGFloat = 0
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -27,24 +29,21 @@ struct OnboardingViewMain: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 300, height: 300)
                                 .cornerRadius(15)
-                            //.padding(.top, 20)
-                            
+                                //.padding(.top, 20)
                         }
                     }
-                    .padding()
+                    NavigationLink(destination: NicknameView()) {
+                        Text("분리수거하러가기")
+                            .foregroundColor(Color.charOrange)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).frame(width: UIScreen.screenWidth * 0.75, height: UIScreen.screenHeight * 0.06,  alignment: .center).customShadow())
+                    }
                 }
-                NavigationLink(destination: NicknameView()) {
-                    Text("분리수거하러가기")
-                        .foregroundColor(Color.charOrange)
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .background(RoundedRectangle(cornerRadius: 12).fill(Color.white).frame(width: UIScreen.screenWidth * 0.75, height: UIScreen.screenHeight * 0.06,  alignment: .center).customShadow())
-                }
-                
+                .tabViewStyle(PageTabViewStyle())
             }
-            .tabViewStyle(PageTabViewStyle())
+            //.overlay(SplashScreenView())
         }
-        .overlay(SplashScreenView())
     }
 }
 
