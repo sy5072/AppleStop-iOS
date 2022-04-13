@@ -39,6 +39,7 @@
 		B594068F27FEB26F000D3CE8 /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */; };
 		B594069527FFDC08000D3CE8 /* UserInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594069427FFDC08000D3CE8 /* UserInformationView.swift */; };
 		B594069727FFDFE4000D3CE8 /* CharacterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594069627FFDFE4000D3CE8 /* CharacterCardView.swift */; };
+		B5B07A532806BEB100BBBF56 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B07A522806BEB100BBBF56 /* UINavigationController+Extension.swift */; };
 		B5B1F20B2804F9630026AD0E /* ViewControllerHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F20A2804F9630026AD0E /* ViewControllerHolder.swift */; };
 		B5B1F20D2804FC970026AD0E /* BackgroundBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F20C2804FC970026AD0E /* BackgroundBlurView.swift */; };
 		B5B1F212280507350026AD0E /* WasteInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F211280507350026AD0E /* WasteInformationView.swift */; };
@@ -93,6 +94,7 @@
 		B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
 		B594069427FFDC08000D3CE8 /* UserInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationView.swift; sourceTree = "<group>"; };
 		B594069627FFDFE4000D3CE8 /* CharacterCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardView.swift; sourceTree = "<group>"; };
+		B5B07A522806BEB100BBBF56 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		B5B1F20A2804F9630026AD0E /* ViewControllerHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHolder.swift; sourceTree = "<group>"; };
 		B5B1F20C2804FC970026AD0E /* BackgroundBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundBlurView.swift; sourceTree = "<group>"; };
 		B5B1F211280507350026AD0E /* WasteInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteInformationView.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				B594068A27FEB1A6000D3CE8 /* Color+Extension.swift */,
 				35A80AA42804537600DD7721 /* UIImage+Extension.swift */,
+				B5B07A522806BEB100BBBF56 /* UINavigationController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				B5B1F21E280571F40026AD0E /* GuideDetailView.swift in Sources */,
 				B86225C32803518B0016FC71 /* CharacterCardBackView.swift in Sources */,
 				350C0C6827FFDCFE0012CBFA /* CameraModel.swift in Sources */,
+				B5B07A532806BEB100BBBF56 /* UINavigationController+Extension.swift in Sources */,
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
 				35A80AAB2804FD2900DD7721 /* ToastAlertView.swift in Sources */,
 				B5E5ED692804545800074655 /* CharacterPopupView.swift in Sources */,

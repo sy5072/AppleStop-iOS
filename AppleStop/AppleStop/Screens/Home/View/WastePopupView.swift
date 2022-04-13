@@ -54,7 +54,7 @@ struct WastePopupView: View {
                     
                     
                     VStack(spacing: 18){
-                        HorizontalBarChartView(goal: CGFloat(wasteGoal), value: wasteTypeData[0], wasteType: "glass")
+                        HorizontalBarChartView(goal: CGFloat(wasteGoal), value: wasteTypeData[0], wasteType: "Glass")
                         HorizontalBarChartView(goal: CGFloat(wasteGoal), value: wasteTypeData[1], wasteType: "plastic")
                         HorizontalBarChartView(goal: CGFloat(wasteGoal), value: wasteTypeData[2], wasteType: "vinyl")
                         HorizontalBarChartView(goal: CGFloat(wasteGoal), value: wasteTypeData[3], wasteType: "paper")
