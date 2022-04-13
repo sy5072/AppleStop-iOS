@@ -148,22 +148,21 @@ extension CameraView {
                     
                     camera.takePic()
                     
-                    //TODO: - 카메라찍고 인식하면
-                   
-                               Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (timer) in
-                                   if camera.showBottomSheet {
-                                   DispatchQueue.main.async {
-                                       withAnimation(.easeInOut, {
-                                           print("성공")
-                                           // TODO: -  디바이스 의존도 제거하기
-                                           offset = -270 // 범위내 임의값
-                                           lastOffset = offset
-                                       })
-                                   }
-                                   }
-                                   else{print("fail")}
-                                   
-                               }
+                //FIXME: - 3초딜레이 말고 오픈API 완료하면 실행되도록
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
+                        if camera.showBottomSheet {
+                        
+                            withAnimation(.easeInOut, {
+                                print("성공")
+                                // TODO: -  디바이스 의존도 제거하기
+                                offset = -270 // 범위내 임의값
+                                lastOffset = offset
+                            })
+                        
+                        }
+                        else{print("fail")}
+                    }
+                           
                            
                     
                  

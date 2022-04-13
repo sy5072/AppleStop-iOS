@@ -24,4 +24,24 @@ extension UIImage {
         
         return newImage
     }
+    
+    static func imageResize (image:UIImage, sizeChange:CGSize)-> UIImage{
+
+            let hasAlpha = true
+            let scale: CGFloat = 0.0 // Use scale factor of main screen
+
+            // Create a Drawing Environment (which will render to a bitmap image, later)
+            UIGraphicsBeginImageContextWithOptions(sizeChange, !hasAlpha, scale)
+
+        image.draw(in: CGRect(origin: CGPoint.zero, size: sizeChange))
+
+            let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+
+            // Clean up the Drawing Environment (created above)
+            UIGraphicsEndImageContext()
+
+            return scaledImage!
+        }
+
+          
 }
