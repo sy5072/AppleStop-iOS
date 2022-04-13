@@ -8,7 +8,7 @@ import SwiftUI
 
 struct SettingView: View {
     
-    @State var isNotificated = true
+    @State var isNotificated = false
     
     var body: some View {
         ZStack{
