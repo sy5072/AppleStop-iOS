@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 import SwiftUI
-
+import Vision
 class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
     
     // MARK: - Properties
@@ -21,7 +21,10 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
     
     @Published var isSaved = false
     @Published var isShowingToast = false
-
+    
+    @Published var showAlert = false
+    @Published var barcodePayLoad = ""
+    
     @Published var picData = Data(count:0)
     private let sessionQueue = DispatchQueue(label: "camera session queue")
     
@@ -137,6 +140,14 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
         
         self.picData = imageData
         
+        // 바코드스캔
+        guard let cgImageRef = photo.cgImageRepresentation() else {
+             return print("Could not get image representation")
+           }
+           
+           print("Scanning image")
+           scanImage(cgImage: cgImageRef)
+        
     }
     
     // 캡쳐 저장
@@ -146,7 +157,7 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
             print("error")
             return}
         
-        let watermark = UIImage(named: "character1")
+        let watermark = UIImage(named: "img_ddakchong")
         let newImage = image.overlayWith(image: watermark ?? UIImage())
         
         UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
@@ -155,5 +166,54 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
         self.isShowingToast = true
         
         print("save success")
+    }
+    //  바코드 스캔
+     func scanImage(cgImage: CGImage) {
+       let barcodeRequest = VNDetectBarcodesRequest(completionHandler: { request, error in
+         self.reportResults(results: request.results)
+       })
+       
+       let handler = VNImageRequestHandler(cgImage: cgImage, options: [.properties : ""])
+       
+       guard let _ = try? handler.perform([barcodeRequest]) else {
+         return print("Could not perform barcode-request!")
+       }
+     }
+    
+    private func reportResults(results: [Any]?) {
+       // Loop through the found results
+       print("Barcode observation")
+
+       guard let results = results else {
+         return print("No results found.")
+       }
+
+       print("Number of results found: \(results.count)")
+
+       for result in results {
+         
+         // Cast the result to a barcode-observation
+         if let barcode = result as? VNBarcodeObservation {
+           
+           if let payload = barcode.payloadStringValue {
+             print("Payload: \(payload)")
+               
+                   showAlert = true
+               barcodePayLoad = payload
+           }
+           
+           // Print barcode-values
+          // print("Symbology: \(barcode.symbology.rawValue)")
+       
+//           if let desc = barcode.barcodeDescriptor as? CIQRCodeDescriptor {
+//             let content = String(data: desc.errorCorrectedPayload, encoding: .utf8)
+//
+//             // FIXME: This currently returns nil. I did not find any docs on how to encode the data properly so far.
+//             print("Payload: \(String(describing: content))")
+//             print("Error-Correction-Level: \(desc.errorCorrectionLevel)")
+//             print("Symbol-Version: \(desc.symbolVersion)")
+//           }
+         }
+       }
     }
 }
