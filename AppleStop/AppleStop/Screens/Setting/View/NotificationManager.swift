@@ -15,11 +15,11 @@ struct Notification {
     var title : String
 }
 
-class NotificationManager {
+final class NotificationManager {
    
     var notifications = [Notification]()
     
-    func requestPermission() -> Void {
+    func requestPermission() {
         print("permission")
         UNUserNotificationCenter
             .current()
@@ -68,10 +68,10 @@ class NotificationManager {
             var date = DateComponents()
             date.hour = 09
             date.minute = 00
-            let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
+//            let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
             
 //         Test용 3초뒤 알람
-//            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
             let request = UNNotificationRequest(identifier: notification.id, content: content, trigger: trigger)
             
             if isOn {
