@@ -9,7 +9,6 @@ import SwiftUI
 
 enum ImageLiteral {
     
-<<<<<<< HEAD
     // MARK: - image
     
     static var imgLock: Image = Image("img_lock")
@@ -32,10 +31,6 @@ enum ImageLiteral {
     static var paperImage02: Image = Image("paper02")
     static var vynylImage01: Image = Image("vynyl01")
     static var vynylImage02: Image = Image("vynyl02")
-=======
-    static var imgLock: Image = Image("img_lock")
-    static var imgNewcharacter: Image = Image("img_newcharacter")
->>>>>>> e485c9a1daf393f0067020f478c154bb7e436af5
 }
 
 
