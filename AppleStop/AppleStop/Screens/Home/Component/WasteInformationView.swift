@@ -34,6 +34,7 @@ struct WasteInformationView: View {
                     BarChartView(value: weeklyWasteData[6], day: "S")
                 }.padding(.top, 6)
                 
+                
             }
         }
         
