@@ -63,7 +63,7 @@ struct DonutChartView: View {
                 .rotationEffect(.degrees(-90))
             Text("LV.\(level)").font(.system(size: 14)).fontWeight(.semibold)
         }.animation(.spring(response: 2), value: progress).onAppear{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                     self.progress = 0.72
                 }
         }
