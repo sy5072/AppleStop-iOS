@@ -23,6 +23,8 @@
 		7904CF3628049459000EA6C4 /* FeedbackWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3528049459000EA6C4 /* FeedbackWrapper.swift */; };
 		793FA13D2803E40500246AE9 /* ServiceTermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FA13C2803E40500246AE9 /* ServiceTermView.swift */; };
 		793FA13F2803E43700246AE9 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FA13E2803E43700246AE9 /* PrivacyPolicyView.swift */; };
+		7993A08B28055BE3001ED0B3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7993A08A28055BE3001ED0B3 /* NotificationManager.swift */; };
+		7993A08D28055EF4001ED0B3 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7993A08C28055EF4001ED0B3 /* NotificationView.swift */; };
 		79B2D9DE2804195600A0A782 /* SettingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B2D9DD2804195600A0A782 /* SettingListView.swift */; };
 		79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */; };
 		B594065127FEAC94000D3CE8 /* AppleStopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594065027FEAC94000D3CE8 /* AppleStopApp.swift */; };
@@ -51,7 +53,7 @@
 		B5E5ED672804242A00074655 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED662804242A00074655 /* User.swift */; };
 		B5E5ED692804545800074655 /* CharacterPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED682804545800074655 /* CharacterPopupView.swift */; };
 		B5E5ED6B2804583600074655 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED6A2804583600074655 /* CharacterDetailView.swift */; };
-		B83A091428041FB50056080E /* (null) in Sources */ = {isa = PBXBuildFile; };
+		B815371D28050E85005FA061 /* WastePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B815371C28050E85005FA061 /* WastePopupView.swift */; };
 		B86225C32803518B0016FC71 /* CharacterCardBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86225C22803518B0016FC71 /* CharacterCardBackView.swift */; };
 		B8C6AE5C2801F835002CCBFE /* LocationInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C6AE5B2801F835002CCBFE /* LocationInformationView.swift */; };
 		B8C6AE5E2801F926002CCBFE /* LevelInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C6AE5D2801F926002CCBFE /* LevelInformationView.swift */; };
@@ -73,6 +75,8 @@
 		7904CF3528049459000EA6C4 /* FeedbackWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackWrapper.swift; sourceTree = "<group>"; };
 		793FA13C2803E40500246AE9 /* ServiceTermView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTermView.swift; sourceTree = "<group>"; };
 		793FA13E2803E43700246AE9 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		7993A08A28055BE3001ED0B3 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		7993A08C28055EF4001ED0B3 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		79B2D9DD2804195600A0A782 /* SettingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListView.swift; sourceTree = "<group>"; };
 		79B2D9DF28046D5A00A0A782 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		B594064D27FEAC94000D3CE8 /* AppleStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +105,7 @@
 		B5E5ED662804242A00074655 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B5E5ED682804545800074655 /* CharacterPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPopupView.swift; sourceTree = "<group>"; };
 		B5E5ED6A2804583600074655 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		B815371C28050E85005FA061 /* WastePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WastePopupView.swift; sourceTree = "<group>"; };
 		B86225C22803518B0016FC71 /* CharacterCardBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardBackView.swift; sourceTree = "<group>"; };
 		B8C6AE5B2801F835002CCBFE /* LocationInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInformationView.swift; sourceTree = "<group>"; };
 		B8C6AE5D2801F926002CCBFE /* LevelInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelInformationView.swift; sourceTree = "<group>"; };
@@ -290,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				B594067127FEAED0000D3CE8 /* HomeView.swift */,
+				B815371C28050E85005FA061 /* WastePopupView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -343,6 +349,8 @@
 				7904CF3528049459000EA6C4 /* FeedbackWrapper.swift */,
 				793FA13E2803E43700246AE9 /* PrivacyPolicyView.swift */,
 				793FA13C2803E40500246AE9 /* ServiceTermView.swift */,
+				7993A08A28055BE3001ED0B3 /* NotificationManager.swift */,
+				7993A08C28055EF4001ED0B3 /* NotificationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -474,6 +482,7 @@
 				B5B1F20D2804FC970026AD0E /* BackgroundBlurView.swift in Sources */,
 				B5B1F21D280571F40026AD0E /* ListView.swift in Sources */,
 				B5B1F212280507350026AD0E /* WasteInformationView.swift in Sources */,
+				7993A08B28055BE3001ED0B3 /* NotificationManager.swift in Sources */,
 				59F1780828051D0D00629F8B /* CustomShadowModifier.swift in Sources */,
 				35A80AAD280522AF00DD7721 /* SettingView.swift in Sources */,
 				B8C6AE5E2801F926002CCBFE /* LevelInformationView.swift in Sources */,
@@ -498,17 +507,18 @@
 				35A80AA728046C3E00DD7721 /* CodeGuideLineView.swift in Sources */,
 				B594067727FEAEE3000D3CE8 /* CameraView.swift in Sources */,
 				35A80AAF280522FB00DD7721 /* CustomShadowModifier.swift in Sources */,
-				B83A091428041FB50056080E /* (null) in Sources */,
 				79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */,
 				79B2D9DE2804195600A0A782 /* SettingListView.swift in Sources */,
 				B5B1F21C280571F40026AD0E /* SeachBar.swift in Sources */,
 				B8F226E128007B8E004294EE /* CharacterCardFrontView.swift in Sources */,
 				B5E5ED6B2804583600074655 /* CharacterDetailView.swift in Sources */,
 				B8C6AE5C2801F835002CCBFE /* LocationInformationView.swift in Sources */,
+				B815371D28050E85005FA061 /* WastePopupView.swift in Sources */,
 				59863B3C28052940002F847B /* OnboardingViewMain.swift in Sources */,
 				B5B1F20B2804F9630026AD0E /* ViewControllerHolder.swift in Sources */,
 				597546402803C0C700F3CD36 /* NicknameView.swift in Sources */,
 				B5E5ED672804242A00074655 /* User.swift in Sources */,
+				7993A08D28055EF4001ED0B3 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
