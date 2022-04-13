@@ -460,7 +460,6 @@
 				35A80AAD280522AF00DD7721 /* SettingView.swift in Sources */,
 				B8C6AE5E2801F926002CCBFE /* LevelInformationView.swift in Sources */,
 				B86225C32803518B0016FC71 /* CharacterCardBackView.swift in Sources */,
-				793FA1412803E47F00246AE9 /* FeedbackView.swift in Sources */,
 				350C0C6827FFDCFE0012CBFA /* CameraModel.swift in Sources */,
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
 				35A80AAB2804FD2900DD7721 /* ToastAlertView.swift in Sources */,
@@ -620,7 +619,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppleStop/Preview Content\"";
-				DEVELOPMENT_TEAM = U5D4UR6AFR;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
