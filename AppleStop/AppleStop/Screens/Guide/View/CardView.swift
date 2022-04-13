@@ -9,13 +9,13 @@ import SwiftUI
 
 struct CardView: View {
     
+    let card: GuideCard
+    
     // MARK: - Card Property
     
     let cardThumbNailSize: CGFloat = 120
     let cardThumbNailCornerRadius: CGFloat = 10
     let cardPadding: CGFloat = 8
-    
-    let card: GuideCard
 
     var body: some View {
         VStack(alignment: .center){
@@ -25,7 +25,6 @@ struct CardView: View {
                 .cornerRadius(12)
                 .overlay {
                     innerView
-                        .padding(.horizontal, 32)
                 }
                 .customShadow()
         }

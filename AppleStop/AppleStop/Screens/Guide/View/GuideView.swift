@@ -8,26 +8,47 @@
 import SwiftUI
 
 struct GuideView: View {
+
+    @State private var searchText = ""
+    
+    var guideCards: [GuideCard] = GuideCard.sampleData
+    
     var body: some View {
-        ScrollView{
-            VStack(alignment: .center){
+        NavigationView {
+            
+            ZStack{
+                // 배경 색상
+                Color.backgroundGrey
+                    .ignoresSafeArea()
                 
-                // 서치바는 잠시 주석 속으로...
-                /*
-                SearchBar(text: $searchText)
-                    .padding(.top, -30)
-                */
-                
-                ListView(cards: GuideCard.sampleData)
-                    .padding(.horizontal, 32)
+                GuideListView
 
             }
         }
     }
+    
+    var GuideListView: some View {
+        
+        ScrollView {
+            VStack{
+                ForEach(guideCards) {
+                    
+                    card in CardView(card: card)
+                    
+                }
+            }
+            
+        }
+        
+    }
 }
+
 
 struct GuideView_Previews: PreviewProvider {
     static var previews: some View {
-        GuideView()
+        
+        NavigationView{
+            GuideView(guideCards: GuideCard.sampleData)
+        }
     }
 }

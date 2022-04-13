@@ -8,29 +8,34 @@
 import SwiftUI
 
 struct SearchBar: View {
+    
     @Binding var text: String
     
     @State private var isEditing = false
     
     var body: some View {
-        HStack{
+        
+        HStack {
             
-            TextField("분리수거 방법 검색 ...", text: $text)
-                .padding()
-                .background(Color(.systemGray6))
-                .shadow(color: .black, radius: 12, x: 0, y: 0)
-                .cornerRadius(12)
+            TextField("분리수거 방법을 검색하세요(ex. 플라스틱)", text: $text)
+                .padding(.leading, 32)
+                .padding(8)
+                .background(.white)
+                .customShadow()
+            // 왜 그림자가 적용되질 않는거? 또 패딩에 가려졌나?
+                .cornerRadius(6)
                 .overlay(
                     HStack {
                         Image(systemName: "magnifyingglass")
-                            .foregroundColor(.gray)
+                            .padding(.leading, 12)
+                            .foregroundColor(.black)
                             .frame(
                                 minWidth: 0,
                                 maxWidth: .infinity,
                                 alignment: .leading)
                     }
                 )
-                .padding(.leading, 8)
+                .padding(.horizontal, 8)
             
             if isEditing {
                 Button(action: {
@@ -51,7 +56,6 @@ struct SearchBar: View {
                 Text("취소")
             }
             .padding(.trailing, 12)
-            //.transition(.move(edge: .trailing))
                 
         }
     }
