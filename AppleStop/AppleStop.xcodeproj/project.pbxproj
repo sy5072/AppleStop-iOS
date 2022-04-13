@@ -21,12 +21,18 @@
 		598127942800861200A3296A /* OnboardingViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598127932800861200A3296A /* OnboardingViewTwo.swift */; };
 		5981279A280097EE00A3296A /* OnboardingViewThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59812799280097EE00A3296A /* OnboardingViewThree.swift */; };
 		5981279C2800989000A3296A /* OnboardingViewFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981279B2800989000A3296A /* OnboardingViewFour.swift */; };
+<<<<<<< HEAD
 		7904CF3628049459000EA6C4 /* FeedbackWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3528049459000EA6C4 /* FeedbackWrapper.swift */; };
+=======
+>>>>>>> e485c9a1daf393f0067020f478c154bb7e436af5
 		793FA13D2803E40500246AE9 /* ServiceTermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FA13C2803E40500246AE9 /* ServiceTermView.swift */; };
 		793FA13F2803E43700246AE9 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793FA13E2803E43700246AE9 /* PrivacyPolicyView.swift */; };
 		79B2D9DE2804195600A0A782 /* SettingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B2D9DD2804195600A0A782 /* SettingListView.swift */; };
+<<<<<<< HEAD
 		79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */; };
 		A420B60928042446008651E9 /* GuideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A420B60828042446008651E9 /* GuideDetailView.swift */; };
+=======
+>>>>>>> e485c9a1daf393f0067020f478c154bb7e436af5
 		B594065127FEAC94000D3CE8 /* AppleStopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594065027FEAC94000D3CE8 /* AppleStopApp.swift */; };
 		B594065527FEAC95000D3CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B594065427FEAC95000D3CE8 /* Assets.xcassets */; };
 		B594065827FEAC95000D3CE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B594065727FEAC95000D3CE8 /* Preview Assets.xcassets */; };
@@ -77,7 +83,10 @@
 		793FA13E2803E43700246AE9 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		79B2D9DD2804195600A0A782 /* SettingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListView.swift; sourceTree = "<group>"; };
 		79B2D9DF28046D5A00A0A782 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		A420B60828042446008651E9 /* GuideDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideDetailView.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> e485c9a1daf393f0067020f478c154bb7e436af5
 		B594064D27FEAC94000D3CE8 /* AppleStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B594065027FEAC94000D3CE8 /* AppleStopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleStopApp.swift; sourceTree = "<group>"; };
 		B594065427FEAC95000D3CE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -257,7 +266,6 @@
 		B594066827FEAD6C000D3CE8 /* Guide */ = {
 			isa = PBXGroup;
 			children = (
-				B5E5ED612803C98F00074655 /* CardStruct.swift */,
 				B594067927FEAEF0000D3CE8 /* View */,
 			);
 			path = Guide;
@@ -309,10 +317,12 @@
 		B594067927FEAEF0000D3CE8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				B5E5ED5C2803C97A00074655 /* CardView.swift */,
 				B5E5ED5B2803C97A00074655 /* SeachBar.swift */,
+=======
+>>>>>>> e485c9a1daf393f0067020f478c154bb7e436af5
 				B594067A27FEAEF7000D3CE8 /* GuideView.swift */,
-				A420B60828042446008651E9 /* GuideDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -472,7 +482,10 @@
 				35A80AA32803264100DD7721 /* CustomCorner.swift in Sources */,
 				B594068F27FEB26F000D3CE8 /* NavigationBackButton.swift in Sources */,
 				35A80AA52804537600DD7721 /* UIImage+Extension.swift in Sources */,
+<<<<<<< HEAD
 				B5E5ED5E2803C97A00074655 /* SeachBar.swift in Sources */,
+=======
+>>>>>>> e485c9a1daf393f0067020f478c154bb7e436af5
 				B594067F27FEAF04000D3CE8 /* CharacterView.swift in Sources */,
 				B5B1F20D2804FC970026AD0E /* BackgroundBlurView.swift in Sources */,
 				B5B1F212280507350026AD0E /* WasteInformationView.swift in Sources */,
@@ -496,19 +509,24 @@
 				793FA13D2803E40500246AE9 /* ServiceTermView.swift in Sources */,
 				B594068927FEB0B3000D3CE8 /* ImageLiteral.swift in Sources */,
 				35A80AA728046C3E00DD7721 /* CodeGuideLineView.swift in Sources */,
+<<<<<<< HEAD
 				B5E5ED622803C98F00074655 /* CardStruct.swift in Sources */,
+=======
+>>>>>>> e485c9a1daf393f0067020f478c154bb7e436af5
 				B594067727FEAEE3000D3CE8 /* CameraView.swift in Sources */,
 				35A80AAF280522FB00DD7721 /* CustomShadowModifier.swift in Sources */,
 				5981279C2800989000A3296A /* OnboardingViewFour.swift in Sources */,
 				79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */,
 				B594067B27FEAEF7000D3CE8 /* GuideView.swift in Sources */,
+<<<<<<< HEAD
 				A420B60928042446008651E9 /* GuideDetailView.swift in Sources */,
+=======
+>>>>>>> e485c9a1daf393f0067020f478c154bb7e436af5
 				79B2D9DE2804195600A0A782 /* SettingListView.swift in Sources */,
 				B8F226E128007B8E004294EE /* CharacterCardFrontView.swift in Sources */,
 				B5E5ED6B2804583600074655 /* CharacterDetailView.swift in Sources */,
 				B8C6AE5C2801F835002CCBFE /* LocationInformationView.swift in Sources */,
 				5981279A280097EE00A3296A /* OnboardingViewThree.swift in Sources */,
-				B5E5ED5F2803C97A00074655 /* CardView.swift in Sources */,
 				B594068427FEAF21000D3CE8 /* OnboardingViewOne.swift in Sources */,
 				B5B1F20B2804F9630026AD0E /* ViewControllerHolder.swift in Sources */,
 				597546402803C0C700F3CD36 /* NicknameView.swift in Sources */,
