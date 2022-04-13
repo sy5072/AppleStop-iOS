@@ -16,6 +16,13 @@
 		35A80AAD280522AF00DD7721 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AAC280522AE00DD7721 /* SettingView.swift */; };
 		35A80AAF280522FB00DD7721 /* CustomShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */; };
 		35A80AB02805715400DD7721 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594067A27FEAEF7000D3CE8 /* GuideView.swift */; };
+		35A80AB428065BA400DD7721 /* CardStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AB328065BA400DD7721 /* CardStruct.swift */; };
+		35A80AB928065BEF00DD7721 /* SeachBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AB528065BEF00DD7721 /* SeachBar.swift */; };
+		35A80ABA28065BEF00DD7721 /* GuideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AB628065BEF00DD7721 /* GuideDetailView.swift */; };
+		35A80ABB28065BEF00DD7721 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AB728065BEF00DD7721 /* CardView.swift */; };
+		35A80ABC28065BEF00DD7721 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AB828065BEF00DD7721 /* ListView.swift */; };
+		35A80ABE2806AF3600DD7721 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80ABD2806AF3600DD7721 /* APICaller.swift */; };
+		35A80AC02806B1B300DD7721 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80ABF2806B1B300DD7721 /* Product.swift */; };
 		5931E3E127FFD62E006B16B6 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */; };
 		5931E3E427FFDDCF006B16B6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5931E3E327FFDDCF006B16B6 /* SDWebImageSwiftUI */; };
 		597546402803C0C700F3CD36 /* NicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975463F2803C0C700F3CD36 /* NicknameView.swift */; };
@@ -61,6 +68,14 @@
 		35A80AA628046C3E00DD7721 /* CodeGuideLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGuideLineView.swift; sourceTree = "<group>"; };
 		35A80AAA2804FD2900DD7721 /* ToastAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAlertView.swift; sourceTree = "<group>"; };
 		35A80AAC280522AE00DD7721 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		35A80AB328065BA400DD7721 /* CardStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStruct.swift; sourceTree = "<group>"; };
+		35A80AB528065BEF00DD7721 /* SeachBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeachBar.swift; sourceTree = "<group>"; };
+		35A80AB628065BEF00DD7721 /* GuideDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideDetailView.swift; sourceTree = "<group>"; };
+		35A80AB728065BEF00DD7721 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		35A80AB828065BEF00DD7721 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		35A80ABD2806AF3600DD7721 /* APICaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		35A80ABF2806B1B300DD7721 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		35A80AC12806D80600DD7721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		5975463F2803C0C700F3CD36 /* NicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameView.swift; sourceTree = "<group>"; };
 		59863B3B28052940002F847B /* OnboardingViewMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewMain.swift; sourceTree = "<group>"; };
@@ -128,6 +143,7 @@
 		B594064F27FEAC94000D3CE8 /* AppleStop */ = {
 			isa = PBXGroup;
 			children = (
+				35A80AC12806D80600DD7721 /* Info.plist */,
 				B5E5ED63280404F100074655 /* Models */,
 				B594066327FEAD50000D3CE8 /* Screens */,
 				B594065E27FEACC9000D3CE8 /* Global */,
@@ -187,6 +203,7 @@
 		B594066227FEAD3C000D3CE8 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				35A80ABD2806AF3600DD7721 /* APICaller.swift */,
 				B594065427FEAC95000D3CE8 /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -245,6 +262,7 @@
 		B594066827FEAD6C000D3CE8 /* Guide */ = {
 			isa = PBXGroup;
 			children = (
+				35A80AB328065BA400DD7721 /* CardStruct.swift */,
 				B594067927FEAEF0000D3CE8 /* View */,
 			);
 			path = Guide;
@@ -296,6 +314,10 @@
 		B594067927FEAEF0000D3CE8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				35A80AB728065BEF00DD7721 /* CardView.swift */,
+				35A80AB628065BEF00DD7721 /* GuideDetailView.swift */,
+				35A80AB828065BEF00DD7721 /* ListView.swift */,
+				35A80AB528065BEF00DD7721 /* SeachBar.swift */,
 				B594067A27FEAEF7000D3CE8 /* GuideView.swift */,
 			);
 			path = View;
@@ -356,6 +378,7 @@
 			children = (
 				B5E5ED64280404FD00074655 /* Character.swift */,
 				B5E5ED662804242A00074655 /* User.swift */,
+				35A80ABF2806B1B300DD7721 /* Product.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -458,12 +481,17 @@
 				B5B1F20D2804FC970026AD0E /* BackgroundBlurView.swift in Sources */,
 				B5B1F212280507350026AD0E /* WasteInformationView.swift in Sources */,
 				59F1780828051D0D00629F8B /* CustomShadowModifier.swift in Sources */,
+				35A80AB428065BA400DD7721 /* CardStruct.swift in Sources */,
 				35A80AAD280522AF00DD7721 /* SettingView.swift in Sources */,
+				35A80ABA28065BEF00DD7721 /* GuideDetailView.swift in Sources */,
 				B8C6AE5E2801F926002CCBFE /* LevelInformationView.swift in Sources */,
+				35A80AB928065BEF00DD7721 /* SeachBar.swift in Sources */,
 				B86225C32803518B0016FC71 /* CharacterCardBackView.swift in Sources */,
 				350C0C6827FFDCFE0012CBFA /* CameraModel.swift in Sources */,
+				35A80ABE2806AF3600DD7721 /* APICaller.swift in Sources */,
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
 				35A80AAB2804FD2900DD7721 /* ToastAlertView.swift in Sources */,
+				35A80ABB28065BEF00DD7721 /* CardView.swift in Sources */,
 				B5E5ED692804545800074655 /* CharacterPopupView.swift in Sources */,
 				350C0C6A27FFDD590012CBFA /* CustomToggle.swift in Sources */,
 				B594067227FEAED0000D3CE8 /* HomeView.swift in Sources */,
@@ -474,6 +502,7 @@
 				793FA13F2803E43700246AE9 /* PrivacyPolicyView.swift in Sources */,
 				B5E5ED65280404FD00074655 /* Character.swift in Sources */,
 				B594069727FFDFE4000D3CE8 /* CharacterCardView.swift in Sources */,
+				35A80ABC28065BEF00DD7721 /* ListView.swift in Sources */,
 				793FA13D2803E40500246AE9 /* ServiceTermView.swift in Sources */,
 				B594068927FEB0B3000D3CE8 /* ImageLiteral.swift in Sources */,
 				35A80AA728046C3E00DD7721 /* CodeGuideLineView.swift in Sources */,
@@ -483,6 +512,7 @@
 				79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */,
 				79B2D9DE2804195600A0A782 /* SettingListView.swift in Sources */,
 				B8F226E128007B8E004294EE /* CharacterCardFrontView.swift in Sources */,
+				35A80AC02806B1B300DD7721 /* Product.swift in Sources */,
 				B5E5ED6B2804583600074655 /* CharacterDetailView.swift in Sources */,
 				B8C6AE5C2801F835002CCBFE /* LocationInformationView.swift in Sources */,
 				59863B3C28052940002F847B /* OnboardingViewMain.swift in Sources */,
@@ -622,6 +652,7 @@
 				DEVELOPMENT_TEAM = J85NQ6YL4V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppleStop/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
@@ -655,6 +686,7 @@
 				DEVELOPMENT_TEAM = J85NQ6YL4V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppleStop/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";

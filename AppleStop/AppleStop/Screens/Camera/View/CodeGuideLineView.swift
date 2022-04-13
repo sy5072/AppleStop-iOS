@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CodeGuideLineView: View {
+    
+
     var body: some View {
         GeometryReader{ geometryProxy in
             VStack {

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 @main
 struct AppleStopApp: App {
@@ -23,6 +24,11 @@ struct AppleStopApp: App {
         UINavigationBar.appearance().layer.shadowRadius = 2
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        
+ 
+        
+       
+       
     }
     
     var body: some Scene {
