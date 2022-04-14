@@ -17,11 +17,31 @@ extension UIImage {
         
         draw(in: CGRect(origin: CGPoint.zero, size: size))
         // edit CGPoint(x: ..., y: ...) part to adjust your watermark's position
-        image.draw(in: CGRect(origin: CGPoint(x: size.width - 200, y: size.height - 200), size: image.size))
+        image.draw(in: CGRect(origin: CGPoint(x: size.width - 450, y: size.height - 450), size: image.size))
         
         let newImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
         return newImage
     }
+    
+    static func imageResize (image:UIImage, sizeChange:CGSize)-> UIImage{
+
+            let hasAlpha = true
+            let scale: CGFloat = 0.0 // Use scale factor of main screen
+
+            // Create a Drawing Environment (which will render to a bitmap image, later)
+            UIGraphicsBeginImageContextWithOptions(sizeChange, !hasAlpha, scale)
+
+        image.draw(in: CGRect(origin: CGPoint.zero, size: sizeChange))
+
+            let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+
+            // Clean up the Drawing Environment (created above)
+            UIGraphicsEndImageContext()
+
+            return scaledImage!
+        }
+
+          
 }

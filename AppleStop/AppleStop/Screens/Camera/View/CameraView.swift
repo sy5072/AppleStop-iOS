@@ -11,7 +11,6 @@ import Vision
 struct CameraView: View {
     
     // MARK: - Properties
-    @State private var isToggleOn = false
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -31,23 +30,27 @@ struct CameraView: View {
             CameraPreview(camera: camera)
                 .navigationBarHidden(naviHide)
                 .animation(.linear(duration: 0.38))
-            CodeGuideLineView()
-                    .navigationTitle("카메라")
-                    .navigationBarBackButtonHidden(true)
-                    .navigationBarTitleDisplayMode(.inline)
             
+            if !camera.isToggleOn{
+            CodeGuideLineView()
+                
+            }
             bottomView
                 .toast(isShowing: $camera.isShowingToast)
                 .alert(isPresented: $camera.showAlert) {
-                    Alert(title: Text("바코드 번호"), message: Text("바코드 번호는 \(camera.barcodePayLoad)"), dismissButton: .default(Text("확인")))
+                    //Alert(title: Text("바코드 번호"), message: Text("제품명은 \(camera.productKind)"), dismissButton: .default(Text("확인")))
+                    Alert(title: Text("실패"), message: Text("바코드 인식에 실패하셨습니다."), dismissButton: .default(Text("확인")))
+
                 }
             bottomSheetView
-            
+                
           
             
 
             
-        }
+        }    .navigationTitle("카메라")
+            .navigationBarBackButtonHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
@@ -67,6 +70,7 @@ struct CameraView: View {
                         Image(systemName: "arrow.triangle.2.circlepath.camera")
                             .foregroundColor(.black)
                     }
+                        if camera.isToggleOn{
                     Button {
                         if !camera.isSaved{
                             camera.savePic()
@@ -75,6 +79,7 @@ struct CameraView: View {
                         Image(systemName: "folder")
                             .foregroundColor(.black)
                     }
+                        }
                     }
                 }
             }
@@ -129,27 +134,42 @@ extension CameraView {
             
             Spacer()
             
-            Toggle(isOn: $isToggleOn) {}
+            Toggle(isOn: $camera.isToggleOn) {}
             .toggleStyle(MyToggle())
             
             Button {
+                camera.showBottomSheet = false
                 // 카메라 촬영
-                if isToggleOn {
+                if camera.isToggleOn {
                     camera.takePic()
                 }
                 // 바코드 촬영
                 else{
-                    DispatchQueue.main.async {
-                        withAnimation(.easeInOut, {
-                            // TODO: -  디바이스 의존도 제거하기
-                            offset = -270 // 범위내 임의값
-                            lastOffset = offset
-                        })
+                    
+                    camera.takePic()
+                    
+                //FIXME: - 3초딜레이 말고 오픈API 완료하면 실행되도록
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
+                        if camera.showBottomSheet {
+                        
+                            withAnimation(.easeInOut, {
+                                print("성공")
+                                // TODO: -  디바이스 의존도 제거하기
+                                offset = -270 // 범위내 임의값
+                                lastOffset = offset
+                            })
+                        
+                        }
+                        else{print("fail")}
                     }
+                           
+                           
+                    
+                 
                     
                 }
             } label: {
-                Image(isToggleOn ? "logo_camera" : "logo_barcode")
+                Image(camera.isToggleOn ? "logo_camera" : "logo_barcode")
                     .resizable()
                     .frame(width: 90, height: 90)
             }
@@ -162,7 +182,6 @@ extension CameraView {
     // 바텀시트뷰
     var bottomSheetView : some View {
         GeometryReader{ geometryProxy -> AnyView in
-            
             let height = geometryProxy.frame(in: .global).height
             return AnyView(
                 
@@ -172,30 +191,20 @@ extension CameraView {
                         .clipShape(CustomCorner(corners: [.topLeft,.topRight], radius: 20))
                     
                     
-                    VStack(spacing: 50){
+                    VStack(){
                         Capsule()
                             .fill(Color.gray)
                             .frame(width: 60, height: 4)
                             .padding(.top)
                         
-                        VStack(spacing: 10){
-                            Text("플라스틱류")
-                                .font(.title)
-                                .foregroundColor(Color.mainGreen)
-                            
-                            HStack{
-                                Image("plasticImage1")
-                                    .resizable()
-                                    .frame(width: 150, height: 150)
-                                Image("plasticImage1")
-                                    .resizable()
-                                    .frame(width: 150, height: 150)
-                            }
-                            Text("페트병과 플라스틱 용기에 든 내용물은 깨끗이 비우고 어쩌구 저쩌구 샬라샬라 재활용을 잘해라 제발.")
-                                .font(.subheadline)
-                                .foregroundColor(.black)
-                            
-                        }
+                        
+                         if -offset > height / 2 {
+                             GuideDetailView(card: GuideCard.sampleData[3])
+                             
+
+                         }else{
+                             CardView(card: GuideCard.sampleData[3])
+                         }
                         
                         
                     }
