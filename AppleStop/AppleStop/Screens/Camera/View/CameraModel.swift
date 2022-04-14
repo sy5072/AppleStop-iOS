@@ -15,6 +15,7 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
     @Published var isTaken = false
     @Published var session = AVCaptureSession()
     @Published var alert = false
+    @Published var isToggleOn = false
     
     @Published var output = AVCapturePhotoOutput()
     @Published var preview : AVCaptureVideoPreviewLayer!
@@ -23,10 +24,12 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
     @Published var isShowingToast = false
     
     @Published var showAlert = false
-    @Published var barcodePayLoad = ""
-    
+    @Published var showBottomSheet = false
+
+   // @Published var barcodePayLoad = ""
+    @Published var productKind = ""
     @Published var picData = Data(count:0)
-    private let sessionQueue = DispatchQueue(label: "camera session queue")
+     let sessionQueue = DispatchQueue(label: "camera session queue")
     
 
 
@@ -102,7 +105,7 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
                    }
             DispatchQueue.main.async {
                 withAnimation {
-                    self.isTaken.toggle()
+                    self.isTaken = true
                 }
             }
         }
@@ -117,10 +120,11 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
             
             DispatchQueue.main.async {
                 withAnimation {
-                    self.isTaken.toggle()
+                    self.isTaken = false
                 }
                 self.isSaved = false
                 self.isShowingToast = false
+                self.showBottomSheet = false
 
             }
         }
@@ -141,13 +145,14 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
         self.picData = imageData
         
         // 바코드스캔
+        if !isToggleOn{
         guard let cgImageRef = photo.cgImageRepresentation() else {
              return print("Could not get image representation")
            }
            
            print("Scanning image")
            scanImage(cgImage: cgImageRef)
-        
+        }
     }
     
     // 캡쳐 저장
@@ -157,8 +162,9 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
             print("error")
             return}
         
-        let watermark = UIImage(named: "img_ddakchong")
-        let newImage = image.overlayWith(image: watermark ?? UIImage())
+        let watermark = UIImage(named: "img_ddakchong")!
+        let resizedwatermark = UIImage.imageResize(image: watermark, sizeChange: CGSize(width: 400, height: 400))
+        let newImage = image.overlayWith(image: resizedwatermark ?? UIImage())
         
         UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
         
@@ -180,7 +186,7 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
        }
      }
     
-    private func reportResults(results: [Any]?) {
+     func reportResults(results: [Any]?) {
        // Loop through the found results
        print("Barcode observation")
 
@@ -190,30 +196,45 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
 
        print("Number of results found: \(results.count)")
 
-       for result in results {
+    //   for result in results {
          
          // Cast the result to a barcode-observation
-         if let barcode = result as? VNBarcodeObservation {
+         if !results.isEmpty{
+         guard let barcode = results[0] as? VNBarcodeObservation else {return}
            
            if let payload = barcode.payloadStringValue {
              print("Payload: \(payload)")
                
-                   showAlert = true
-               barcodePayLoad = payload
+               findProductKinds(barcode: payload)
            }
            
-           // Print barcode-values
-          // print("Symbology: \(barcode.symbology.rawValue)")
-       
-//           if let desc = barcode.barcodeDescriptor as? CIQRCodeDescriptor {
-//             let content = String(data: desc.errorCorrectedPayload, encoding: .utf8)
-//
-//             // FIXME: This currently returns nil. I did not find any docs on how to encode the data properly so far.
-//             print("Payload: \(String(describing: content))")
-//             print("Error-Correction-Level: \(desc.errorCorrectionLevel)")
-//             print("Symbol-Version: \(desc.symbolVersion)")
-//           }
+         } else{
+             showAlert = true
          }
-       }
+   //    }
+    }
+    
+    
+    func findProductKinds(barcode : String){
+      
+            APICaller.shared.getProductName(barcode : barcode) { [weak self]  result in
+                
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let product):
+                        self?.productKind =  product.PRDLST_DCNM!
+                        print(self?.productKind)
+                        self?.showBottomSheet = true
+                        
+
+                    case .failure(let error) :
+                        print(error.localizedDescription)
+                    }
+                }
+               
+            }
+        
+          
+        
     }
 }

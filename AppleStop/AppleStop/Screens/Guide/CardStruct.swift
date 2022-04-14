@@ -82,7 +82,7 @@ extension GuideCard {
             recyclable: ["책", "A4용지"],
             unrecyclable: ["전단지", "이물질이 묻은 종이"]),
         
-        // 샘플 데이터 - 비닐
+        // 샘플 데이터 - 비닐 #3
         GuideCard(
             cardName: "비닐",
             image: ["vynyl01", "vynyl02"],
@@ -91,7 +91,7 @@ extension GuideCard {
             detailGuideLine: "비닐은 이렇게 저렇게 요렇게 붙어있는 이물질을 깨끗이 제거하고 어쩌구 저쩌구 샬라샬라 재활용을 잘해라 제발 전용 수거함에 넣어 배출합니다.",
             video: ["비디오링크05", "비디오링크06"],
             info: "비닐은 이러합니다",
-            recyclable: ["깨끗한 포장지", "뽁뽁이"],
+            recyclable: ["깨끗한 포장지", "뽁뽁이",],
             unrecyclable: ["유색비닐", "이물질이 묻은 비닐"])
     ]
 }
