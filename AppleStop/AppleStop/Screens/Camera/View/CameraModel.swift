@@ -163,7 +163,7 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
             return}
         
         let watermark = UIImage(named: "img_ddakchong")!
-        let resizedwatermark = UIImage.imageResize(image: watermark, sizeChange: CGSize(width: 200, height: 200))
+        let resizedwatermark = UIImage.imageResize(image: watermark, sizeChange: CGSize(width: 400, height: 400))
         let newImage = image.overlayWith(image: resizedwatermark ?? UIImage())
         
         UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)

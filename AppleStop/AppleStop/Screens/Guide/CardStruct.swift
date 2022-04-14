@@ -82,7 +82,7 @@ extension GuideCard {
             recyclable: ["책", "A4용지"],
             unrecyclable: ["전단지", "이물질이 묻은 종이"]),
         
-        // 샘플 데이터 - 비닐
+        // 샘플 데이터 - 비닐 #3
         GuideCard(
             cardName: "비닐",
             image: ["vynyl01", "vynyl02"],

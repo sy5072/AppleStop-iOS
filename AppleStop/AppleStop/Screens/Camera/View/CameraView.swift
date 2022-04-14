@@ -199,11 +199,11 @@ extension CameraView {
                         
                         
                          if -offset > height / 2 {
-                             GuideDetailView(card: GuideCard.sampleData[0])
+                             GuideDetailView(card: GuideCard.sampleData[3])
                              
 
                          }else{
-                             CardView(card: GuideCard.sampleData[0])
+                             CardView(card: GuideCard.sampleData[3])
                          }
                         
                         

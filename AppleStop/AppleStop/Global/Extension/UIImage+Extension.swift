@@ -17,7 +17,7 @@ extension UIImage {
         
         draw(in: CGRect(origin: CGPoint.zero, size: size))
         // edit CGPoint(x: ..., y: ...) part to adjust your watermark's position
-        image.draw(in: CGRect(origin: CGPoint(x: size.width - 200, y: size.height - 200), size: image.size))
+        image.draw(in: CGRect(origin: CGPoint(x: size.width - 450, y: size.height - 450), size: image.size))
         
         let newImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
