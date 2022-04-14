@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GuideCard: Identifiable {
+struct GuideCard: Identifiable, Hashable {
     let id:             UUID
     let cardName:       String
     var image:          [String]
