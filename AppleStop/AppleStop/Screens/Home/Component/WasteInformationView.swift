@@ -9,7 +9,11 @@ import SwiftUI
 
 struct WasteInformationView: View {
     
-    @State var weeklyWasteData: [CGFloat] = [10, 20, 30, 30, 40, 50, 0]
+    // MARK: - properties
+    
+    @State var weeklyWasteData: [CGFloat] = [70, 50, 60, 30, 40, 30, 0]
+    
+    var weeklyGoal: CGFloat = 50.0
     
     var body: some View {
         ZStack{
@@ -25,14 +29,15 @@ struct WasteInformationView: View {
                 Text("분리수거 실천도").fontWeight(.medium).font(.system(size: 14))
                 
                 HStack(spacing: 10){
-                    BarChartView(value: weeklyWasteData[0], day: "M")
-                    BarChartView(value: weeklyWasteData[1], day: "T")
-                    BarChartView(value: weeklyWasteData[2], day: "W")
-                    BarChartView(value: weeklyWasteData[3], day: "T")
-                    BarChartView(value: weeklyWasteData[4], day: "F")
-                    BarChartView(value: weeklyWasteData[5], day: "S")
-                    BarChartView(value: weeklyWasteData[6], day: "S")
+                    BarChartView(goal: weeklyGoal, value: weeklyWasteData[0], day: "M")
+                    BarChartView(goal: weeklyGoal, value: weeklyWasteData[1], day: "T")
+                    BarChartView(goal: weeklyGoal, value: weeklyWasteData[2], day: "W")
+                    BarChartView(goal: weeklyGoal, value: weeklyWasteData[3], day: "T")
+                    BarChartView(goal: weeklyGoal, value: weeklyWasteData[4], day: "F")
+                    BarChartView(goal: weeklyGoal, value: weeklyWasteData[5], day: "S")
+                    BarChartView(goal: weeklyGoal, value: weeklyWasteData[6], day: "S")
                 }.padding(.top, 6)
+                
                 
             }
         }
@@ -42,15 +47,34 @@ struct WasteInformationView: View {
 
 struct BarChartView: View {
     
-    var value: CGFloat
+    var goal: CGFloat
+    @ State var value: CGFloat
     var day: String
+    
+    @ State var startvalue = 0.0
+    
+    var animatableData: Double {
+            get {
+                self.startvalue
+            }
+            set {
+                self.startvalue = newValue
+            }
+        }
     
     var body: some View {
         VStack{
             ZStack(alignment: .bottom){
                 Capsule().frame(width: 7, height: 60).foregroundColor(.chartGrey)
-                Capsule().frame(width: 7, height: value).foregroundColor(.mainGreen)
-                
+                if startvalue>=goal {
+                    Capsule().frame(width: 7, height: 60).foregroundColor(.mainGreen)
+                } else {
+                    Capsule().frame(width: 7, height: startvalue/goal*60).foregroundColor(.iconGrey)
+                }
+            }.animation(.spring(response: 2), value: startvalue).onAppear{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        self.startvalue = value
+                    }
             }
             Text(day).padding(.top, 4).font(.system(size: 10))
         }
