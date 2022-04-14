@@ -13,13 +13,9 @@ struct CharacterCardBackView: View {
     
     @Binding var degree : Double
     
-    var characterImage = "flyingSquirrel"
-    var characterName = "하늘다람쥐"
-    var characterHashtag = "#도토리는_나에게_양보해조"
+    var user: User = defaultUser
     var characterShortInfo = "플라스틱을 혼쭐내는"
-    var characterInfo = "하늘다람쥐는 어쩌구 저쩌구 솰라솰라 어쩌구 저쩌구 하늘다람쥐 졸귀탱탱 짱귀여워 하늘 다람쥐.."
 
-    
     var body: some View {
         ZStack{
             Rectangle()
@@ -31,6 +27,9 @@ struct CharacterCardBackView: View {
                 .shadow(color: .black.opacity(0.18), radius: 2, x: 0, y: 1)
             
             VStack{
+                Spacer()
+                    .frame(height: 35)
+                
                 HStack {
                     Image(systemName: "folder.fill")
                     Spacer()
@@ -47,29 +46,32 @@ struct CharacterCardBackView: View {
                 
                 VStack(alignment: .leading) {
                     Text(characterShortInfo).font(.system(size: 20))
-                    Text(characterName)
+                    Text(user.userCharacters[user.mainCharacterIndex].name ?? "")
                         .font(.system(size: 28, weight: .bold))
                     Spacer()
                         .frame(height: 8)
-                    Text(characterInfo)
-                        .font(.system(size: 16))
+                    Text(user.userCharacters[user.mainCharacterIndex].info ?? "")
+                        .font(.system(size: 13))
                         .foregroundColor(.iconGrey)
                     Spacer()
                         .frame(height: 4)
                 }.padding(.horizontal, 26)
                 
                 Spacer()
-                    .frame(height: 10)
+            }
+            
+            VStack {
+                Spacer()
                 
-                
-                Image(characterImage).resizable().aspectRatio(contentMode: .fit)
+                user.userCharacters[user.mainCharacterIndex].image?.resizable().aspectRatio(contentMode: .fit)
                     .padding(.leading, 205)
                     .frame(height: 100)
                     .opacity(0.5)
                 
-                
-                
+                Spacer()
+                    .frame(height: 50)
             }
+            
         }.rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
 
     }

@@ -24,7 +24,6 @@
 		35A80ABE2806AF3600DD7721 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80ABD2806AF3600DD7721 /* APICaller.swift */; };
 		35A80AC02806B1B300DD7721 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80ABF2806B1B300DD7721 /* Product.swift */; };
 		5931E3E127FFD62E006B16B6 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */; };
-		5931E3E427FFDDCF006B16B6 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5931E3E327FFDDCF006B16B6 /* SDWebImageSwiftUI */; };
 		597546402803C0C700F3CD36 /* NicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5975463F2803C0C700F3CD36 /* NicknameView.swift */; };
 		59863B3C28052940002F847B /* OnboardingViewMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59863B3B28052940002F847B /* OnboardingViewMain.swift */; };
 		59F1780828051D0D00629F8B /* CustomShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */; };
@@ -34,13 +33,7 @@
 		7993A08B28055BE3001ED0B3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7993A08A28055BE3001ED0B3 /* NotificationManager.swift */; };
 		7993A08D28055EF4001ED0B3 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7993A08C28055EF4001ED0B3 /* NotificationView.swift */; };
 		79B2D9DE2804195600A0A782 /* SettingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B2D9DD2804195600A0A782 /* SettingListView.swift */; };
-		79B869F128056DBD0029BAD1 /* CardStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B869F028056DBD0029BAD1 /* CardStruct.swift */; };
-		79B869F628056DC50029BAD1 /* GuideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B869F228056DC50029BAD1 /* GuideDetailView.swift */; };
-		79B869F728056DC50029BAD1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B869F328056DC50029BAD1 /* CardView.swift */; };
-		79B869F828056DC50029BAD1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B869F428056DC50029BAD1 /* ListView.swift */; };
-		79B869F928056DC50029BAD1 /* SeachBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B869F528056DC50029BAD1 /* SeachBar.swift */; };
 		79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */; };
-		A420B60928042446008651E9 /* GuideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A420B60828042446008651E9 /* GuideDetailView.swift */; };
 		B594065127FEAC94000D3CE8 /* AppleStopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594065027FEAC94000D3CE8 /* AppleStopApp.swift */; };
 		B594065527FEAC95000D3CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B594065427FEAC95000D3CE8 /* Assets.xcassets */; };
 		B594065827FEAC95000D3CE8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B594065727FEAC95000D3CE8 /* Preview Assets.xcassets */; };
@@ -53,10 +46,13 @@
 		B594068F27FEB26F000D3CE8 /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */; };
 		B594069527FFDC08000D3CE8 /* UserInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594069427FFDC08000D3CE8 /* UserInformationView.swift */; };
 		B594069727FFDFE4000D3CE8 /* CharacterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594069627FFDFE4000D3CE8 /* CharacterCardView.swift */; };
+		B5AB062A2807EA1C00DFFA10 /* GuideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AB06292807EA1C00DFFA10 /* GuideDetailView.swift */; };
+		B5B07A532806BEB100BBBF56 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B07A522806BEB100BBBF56 /* UINavigationController+Extension.swift */; };
 		B5B1F20B2804F9630026AD0E /* ViewControllerHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F20A2804F9630026AD0E /* ViewControllerHolder.swift */; };
 		B5B1F20D2804FC970026AD0E /* BackgroundBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F20C2804FC970026AD0E /* BackgroundBlurView.swift */; };
 		B5B1F212280507350026AD0E /* WasteInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F211280507350026AD0E /* WasteInformationView.swift */; };
 		B5B1F21428050A200026AD0E /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B2D9DF28046D5A00A0A782 /* ViewRouter.swift */; };
+		B5B1F21728055E130026AD0E /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B5B1F21628055E130026AD0E /* SDWebImageSwiftUI */; };
 		B5E5ED5E2803C97A00074655 /* SeachBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED5B2803C97A00074655 /* SeachBar.swift */; };
 		B5E5ED5F2803C97A00074655 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED5C2803C97A00074655 /* CardView.swift */; };
 		B5E5ED622803C98F00074655 /* CardStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED612803C98F00074655 /* CardStruct.swift */; };
@@ -98,7 +94,6 @@
 		7993A08C28055EF4001ED0B3 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		79B2D9DD2804195600A0A782 /* SettingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListView.swift; sourceTree = "<group>"; };
 		79B2D9DF28046D5A00A0A782 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
-		A420B60828042446008651E9 /* GuideDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideDetailView.swift; sourceTree = "<group>"; };
 		B594064D27FEAC94000D3CE8 /* AppleStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B594065027FEAC94000D3CE8 /* AppleStopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleStopApp.swift; sourceTree = "<group>"; };
 		B594065427FEAC95000D3CE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +108,8 @@
 		B594068E27FEB26F000D3CE8 /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
 		B594069427FFDC08000D3CE8 /* UserInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationView.swift; sourceTree = "<group>"; };
 		B594069627FFDFE4000D3CE8 /* CharacterCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardView.swift; sourceTree = "<group>"; };
+		B5AB06292807EA1C00DFFA10 /* GuideDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideDetailView.swift; sourceTree = "<group>"; };
+		B5B07A522806BEB100BBBF56 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		B5B1F20A2804F9630026AD0E /* ViewControllerHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHolder.swift; sourceTree = "<group>"; };
 		B5B1F20C2804FC970026AD0E /* BackgroundBlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundBlurView.swift; sourceTree = "<group>"; };
 		B5B1F211280507350026AD0E /* WasteInformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WasteInformationView.swift; sourceTree = "<group>"; };
@@ -135,7 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5931E3E427FFDDCF006B16B6 /* SDWebImageSwiftUI in Frameworks */,
+				B5B1F21728055E130026AD0E /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +199,7 @@
 			children = (
 				B594068A27FEB1A6000D3CE8 /* Color+Extension.swift */,
 				35A80AA42804537600DD7721 /* UIImage+Extension.swift */,
+				B5B07A522806BEB100BBBF56 /* UINavigationController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -336,7 +334,7 @@
 				B5E5ED5C2803C97A00074655 /* CardView.swift */,
 				B5E5ED5B2803C97A00074655 /* SeachBar.swift */,
 				B594067A27FEAEF7000D3CE8 /* GuideView.swift */,
-				A420B60828042446008651E9 /* GuideDetailView.swift */,
+				B5AB06292807EA1C00DFFA10 /* GuideDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -432,7 +430,7 @@
 			);
 			name = AppleStop;
 			packageProductDependencies = (
-				5931E3E327FFDDCF006B16B6 /* SDWebImageSwiftUI */,
+				B5B1F21628055E130026AD0E /* SDWebImageSwiftUI */,
 			);
 			productName = AppleStop;
 			productReference = B594064D27FEAC94000D3CE8 /* AppleStop.app */;
@@ -463,7 +461,7 @@
 			);
 			mainGroup = B594064427FEAC94000D3CE8;
 			packageReferences = (
-				5931E3E227FFDDCF006B16B6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				B5B1F21528055E130026AD0E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = B594064E27FEAC94000D3CE8 /* Products */;
 			projectDirPath = "";
@@ -492,7 +490,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7904CF3628049459000EA6C4 /* FeedbackWrapper.swift in Sources */,
-				79B869F628056DC50029BAD1 /* GuideDetailView.swift in Sources */,
 				5931E3E127FFD62E006B16B6 /* SplashScreenView.swift in Sources */,
 				35A80AA32803264100DD7721 /* CustomCorner.swift in Sources */,
 				35A80AB02805715400DD7721 /* GuideView.swift in Sources */,
@@ -503,7 +500,6 @@
 				B5B1F20D2804FC970026AD0E /* BackgroundBlurView.swift in Sources */,
 				B5B1F212280507350026AD0E /* WasteInformationView.swift in Sources */,
 				7993A08B28055BE3001ED0B3 /* NotificationManager.swift in Sources */,
-				79B869F828056DC50029BAD1 /* ListView.swift in Sources */,
 				59F1780828051D0D00629F8B /* CustomShadowModifier.swift in Sources */,
 				35A80AB428065BA400DD7721 /* CardStruct.swift in Sources */,
 				35A80AAD280522AF00DD7721 /* SettingView.swift in Sources */,
@@ -513,11 +509,11 @@
 				B86225C32803518B0016FC71 /* CharacterCardBackView.swift in Sources */,
 				350C0C6827FFDCFE0012CBFA /* CameraModel.swift in Sources */,
 				35A80ABE2806AF3600DD7721 /* APICaller.swift in Sources */,
+				B5B07A532806BEB100BBBF56 /* UINavigationController+Extension.swift in Sources */,
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
 				35A80AAB2804FD2900DD7721 /* ToastAlertView.swift in Sources */,
 				35A80ABB28065BEF00DD7721 /* CardView.swift in Sources */,
 				B5E5ED692804545800074655 /* CharacterPopupView.swift in Sources */,
-				79B869F728056DC50029BAD1 /* CardView.swift in Sources */,
 				350C0C6A27FFDD590012CBFA /* CustomToggle.swift in Sources */,
 				B594067227FEAED0000D3CE8 /* HomeView.swift in Sources */,
 				B594069527FFDC08000D3CE8 /* UserInformationView.swift in Sources */,
@@ -526,6 +522,7 @@
 				B5B1F21428050A200026AD0E /* ViewRouter.swift in Sources */,
 				793FA13F2803E43700246AE9 /* PrivacyPolicyView.swift in Sources */,
 				B5E5ED65280404FD00074655 /* Character.swift in Sources */,
+				B5AB062A2807EA1C00DFFA10 /* GuideDetailView.swift in Sources */,
 				B594069727FFDFE4000D3CE8 /* CharacterCardView.swift in Sources */,
 				35A80ABC28065BEF00DD7721 /* ListView.swift in Sources */,
 				793FA13D2803E40500246AE9 /* ServiceTermView.swift in Sources */,
@@ -533,12 +530,8 @@
 				35A80AA728046C3E00DD7721 /* CodeGuideLineView.swift in Sources */,
 				B5E5ED622803C98F00074655 /* CardStruct.swift in Sources */,
 				B594067727FEAEE3000D3CE8 /* CameraView.swift in Sources */,
-				79B869F128056DBD0029BAD1 /* CardStruct.swift in Sources */,
-				79B869F928056DC50029BAD1 /* SeachBar.swift in Sources */,
 				35A80AAF280522FB00DD7721 /* CustomShadowModifier.swift in Sources */,
 				79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */,
-				B594067B27FEAEF7000D3CE8 /* GuideView.swift in Sources */,
-				A420B60928042446008651E9 /* GuideDetailView.swift in Sources */,
 				79B2D9DE2804195600A0A782 /* SettingListView.swift in Sources */,
 				B8F226E128007B8E004294EE /* CharacterCardFrontView.swift in Sources */,
 				35A80AC02806B1B300DD7721 /* Product.swift in Sources */,
@@ -681,7 +674,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppleStop/Preview Content\"";
-				DEVELOPMENT_TEAM = J85NQ6YL4V;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppleStop/Info.plist;
@@ -715,7 +708,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppleStop/Preview Content\"";
-				DEVELOPMENT_TEAM = J85NQ6YL4V;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppleStop/Info.plist;
@@ -765,7 +758,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5931E3E227FFDDCF006B16B6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+		B5B1F21528055E130026AD0E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
 			requirement = {
@@ -776,9 +769,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5931E3E327FFDDCF006B16B6 /* SDWebImageSwiftUI */ = {
+		B5B1F21628055E130026AD0E /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5931E3E227FFDDCF006B16B6 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			package = B5B1F21528055E130026AD0E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */

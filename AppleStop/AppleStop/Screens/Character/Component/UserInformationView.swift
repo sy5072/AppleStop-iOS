@@ -12,8 +12,8 @@ struct UserInfomationView: View {
     // MARK: - properties
     
     @Binding var mainCharacterImage: Image?
+    @AppStorage("nickname") var nickname : String = ""
     
-    var nickname: String
     var usedDate: Int
     var userLevel: Int
     var userExp: Double = 30.0

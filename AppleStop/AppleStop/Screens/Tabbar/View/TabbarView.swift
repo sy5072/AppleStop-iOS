@@ -12,56 +12,59 @@ struct TabbarView: View {
     
     @StateObject var viewRouter: ViewRouter
     
-    
+    @AppStorage("hideTabbar") var hideTabbar : Bool = false
     @State private var isPresenting = false
-
+    
     var body: some View {
-        GeometryReader{ geometry in
-            
+        ZStack {
+            VStack{
+                Spacer()
+                switch viewRouter.currentPage {
+                case .home:
+                    HomeView()
+                case .guide:
+                    GuideView()
+                case .camera:
+                    EmptyView()
+                }
+                Spacer()
+                
+                if hideTabbar {
+                    EmptyView()
+                } else {
+                    tabbarView
+                }
+            }
+            .edgesIgnoringSafeArea(.bottom)
+        }
+        
+        // TODO: - 카메라뷰를 탭바에 연결 시에 fullScreenCover 필요
+        //                .fullScreenCover(isPresented: $isPresenting) {
+        //                    NavigationView{
+        //                    }
+        //                    CameraView()
+        //                }
+    }
+    
+    var tabbarView: some View {
             ZStack {
-                VStack{
-                    Spacer()
-                    switch viewRouter.currentPage {
-                    case .home:
-                        HomeView()
-                    case .camera:
-                        CameraView()
-                    case .guide:
-                        GuideView()
-                    }
-                    Spacer()
-                    ZStack {
                         Rectangle()
-                            .frame(width: geometry.size.width, height: geometry.size.height/9)
+                            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/9)
                             .background(.white)
                             .customShadow()
                         HStack{
-                            TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: geometry.size.width/5, height: geometry.size.height/30, systemIconName: "house", tabName: "홈", isCamera: false, isCameraPressed: false)
+                            TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: UIScreen.main.bounds.size.width/5, height: UIScreen.main.bounds.size.height/30, systemIconName: "house", tabName: "홈", isCamera: false, isCameraPressed: false)
                             
-                            TabBarIcon(viewRouter: viewRouter, assignedPage: .camera, width: geometry.size.width/4, height: geometry.size.height/4, systemIconName: "", tabName: "", isCamera: true,isCameraPressed: false)
+                            TabBarIcon(viewRouter: viewRouter, assignedPage: .camera, width: UIScreen.main.bounds.size.width/4, height: UIScreen.main.bounds.size.height/4, systemIconName: "", tabName: "", isCamera: true,isCameraPressed: false)
                                 .customShadow()
                                 
-                            TabBarIcon(viewRouter: viewRouter, assignedPage: .guide, width: geometry.size.width/5, height: geometry.size.height/30, systemIconName: "book", tabName: "분리수거 가이드", isCamera: false,isCameraPressed: false)
+                            TabBarIcon(viewRouter: viewRouter, assignedPage: .guide, width: UIScreen.main.bounds.size.width/5, height: UIScreen.main.bounds.size.height/30, systemIconName: "book", tabName: "분리수거 가이드", isCamera: false,isCameraPressed: false)
                         }
-                        .frame(width: geometry.size.width, height: geometry.size.height/8)
+                        .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/8)
                         .background(.white)
-                    }
-                    
-                  
-                    
-                }
-                .edgesIgnoringSafeArea(.bottom)
             }
-        }
-
-        // TODO: - 카메라뷰를 탭바에 연결 시에 fullScreenCover 필요
-//                .fullScreenCover(isPresented: $isPresenting) {
-//                    NavigationView{
-//                    }
-//                    CameraView()
-//                }
     }
-
+    
 }
 
 struct TabbarView_Previews: PreviewProvider {
@@ -72,6 +75,11 @@ struct TabbarView_Previews: PreviewProvider {
 
 struct TabBarIcon: View {
     
+    @Environment(\.viewController) private var viewControllerHolder: UIViewController?
+    
+    private var viewController: UIViewController? {
+        self.viewControllerHolder
+    }
     @StateObject var viewRouter: ViewRouter
     let assignedPage: Page
     let width, height : CGFloat
@@ -92,20 +100,19 @@ struct TabBarIcon: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: width, height: height)
-//                    .padding(.top, 10)
+                //                    .padding(.top, 10)
                 Text(tabName)
                     .font(.system(size: 10))
-         
+                
             }
         }
         .padding(.bottom, 10)
         .onTapGesture {
-            
             if assignedPage == .camera {
                 isCameraPressed = true
 
             } else {
-            viewRouter.currentPage = assignedPage
+                viewRouter.currentPage = assignedPage
             }
         }
         .fullScreenCover(isPresented: $isCameraPressed, content: {
@@ -116,4 +123,3 @@ struct TabBarIcon: View {
         .foregroundColor(viewRouter.currentPage == assignedPage ? .charOrange : .gray)
     }
 }
- 

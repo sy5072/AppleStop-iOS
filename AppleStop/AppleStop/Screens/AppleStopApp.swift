@@ -11,6 +11,10 @@ import AVFoundation
 @main
 struct AppleStopApp: App {
     
+    // MARK: - properties
+    
+    @AppStorage("nickname") var nickname : String = ""
+    
     init() {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .white
@@ -33,8 +37,11 @@ struct AppleStopApp: App {
     
     var body: some Scene {
         WindowGroup {
-
-            TabbarView(viewRouter: ViewRouter())
+            if nickname == "" {
+                OnboardingViewMain()
+            } else {
+                TabbarView(viewRouter: ViewRouter())
+            }
         }
     }
 }
