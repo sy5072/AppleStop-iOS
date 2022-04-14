@@ -8,25 +8,68 @@
 import SwiftUI
 
 struct GuideView: View {
+    
+    @State private var searchText = ""
+    @State var searching = false
+    
+    var guideCards: [GuideCard] = GuideCard.sampleData
+    
     var body: some View {
-        ScrollView{
-            VStack(alignment: .center){
-                
-                /*
-                SearchBar(text: $searchText)
-                    .padding(.top, -30)
-                */
-                
-//                ListView(cards: GuideCard.sampleData)
-//                    .padding(.horizontal, 32)
-
+        NavigationView {
+            ZStack{
+                // 배경 색상
+                Color.backgroundGrey
+                    .ignoresSafeArea()
+                VStack{
+                    SearchBar(searchText: $searchText, searching: $searching)
+                        .padding(.horizontal, 24)
+                    GuideListView
+                    
+                }
             }
         }
     }
-}
-
-struct GuideView_Previews: PreviewProvider {
-    static var previews: some View {
-        GuideView()
+    
+    var GuideListView: some View {
+        
+        ScrollView {
+            VStack {
+                ForEach(guideCards) {
+                    // 필터링 기능이 들어가야 하는 자리
+                    //                ForEach(guideCards.card.cardName.filter({ (cardName: String) -> Bool in return
+                    //                    cardName.hasPrefix(searchText) || searchText == ""
+                    //                }), id: \.self) {
+                    
+                    card in CardView(card: card)
+                    
+                }
+                .padding(.horizontal, 24)
+            }
+            .navigationTitle(searching ? "검색하기" : "logologo")
+            .toolbar {
+                if searching {
+                    Button("Cancel") {
+                        searchText = ""
+                        withAnimation {
+                            searching = false
+                            UIApplication.shared.dismissKeyboard()
+                        }
+                    }
+                }
+            }
+            .gesture(DragGesture()
+                        .onChanged({ _ in
+                UIApplication.shared.dismissKeyboard()
+            })
+            )
+        }
+    }
+    
+    struct GuideView_Previews: PreviewProvider {
+        static var previews: some View {
+            
+            GuideView(guideCards: GuideCard.sampleData)
+            
+        }
     }
 }
