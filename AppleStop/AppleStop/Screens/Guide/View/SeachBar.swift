@@ -7,61 +7,100 @@
 
 import SwiftUI
 
-struct SearchBar: View {
-    @Binding var text: String
+struct ContentView: View {
     
-    @State private var isEditing = false
+    @State var searchText = ""
+    @State var searching = false
+    
+    let myFruits = [
+        "Apple 🍏", "Banana 🍌", "Blueberry 🫐", "Strawberry 🍓", "Avocado 🥑", "Cherries 🍒", "Mango 🥭", "Watermelon 🍉", "Grapes 🍇", "Lemon 🍋"
+    ]
+    
+    let guideCards = ["플라스틱", "종이", "비닐", "유리"]
     
     var body: some View {
-        HStack{
-            
-            TextField("분리수거 방법 검색 ...", text: $text)
-                .padding()
-                .background(Color(.systemGray6))
-                .shadow(color: .black, radius: 12, x: 0, y: 0)
-                .cornerRadius(12)
-                .overlay(
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                            .foregroundColor(.gray)
-                            .frame(
-                                minWidth: 0,
-                                maxWidth: .infinity,
-                                alignment: .leading)
-                    }
-                )
-                .padding(.leading, 8)
-            
-            if isEditing {
-                Button(action: {
-                    self.text = ""
-                }) {
-                    Image(systemName: "multiply.circle.fill")
-                        .foregroundColor(.gray)
-                        .padding(.trailing, 8)
-                }
-            }
-        }
-            
-        if isEditing {
-            Button(action: {
-                self.isEditing = false
-                self.text = ""
-            }) {
-                Text("취소")
-            }
-            .padding(.trailing, 12)
-            //.transition(.move(edge: .trailing))
+        NavigationView {
+            VStack(alignment: .leading) {
                 
+                SearchBar(searchText: $searchText, searching: $searching)
+                
+                List {
+                    ForEach(myFruits.filter({ (fruit: String) -> Bool in
+                        return fruit.hasPrefix(searchText) || searchText == ""
+                    }), id: \.self) {
+                        fruit in Text(fruit)
+                    }
+                }
+                .listStyle(GroupedListStyle())
+                .navigationTitle(searching ? "Searching" : "MyFruits")
+                .toolbar {
+                    if searching {
+                        Button("Cancel") {
+                            searchText = ""
+                            withAnimation {
+                                searching = false
+                                UIApplication.shared.dismissKeyboard()
+                            }
+                        }
+                    }
+                }
+                .gesture(DragGesture()
+                            .onChanged({ _ in
+                    UIApplication.shared.dismissKeyboard()
+                })
+                )
+            }
         }
     }
 }
 
 
+struct SearchBar: View {
+    
+    @Binding var searchText: String
+    @Binding var searching: Bool
+    
+    var body: some View {
+        ZStack {
+            Color.backgroundGrey
+                .ignoresSafeArea()
+            
+            Rectangle()
+                .foregroundColor(.white)
+            HStack {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.black)
+                TextField("분리수거 방법을 검색하세요(ex. 플라스틱)", text: $searchText) { startedEditing in
+                    if startedEditing {
+                        withAnimation {
+                            searching = true
+                        }
+                    }
+                } onCommit: {
+                    withAnimation {
+                        searching = false
+                    }
+                }
+            }
+            .padding(.leading, 12)
+        }
+        .frame(height: 40)
+        .cornerRadius(8)
+        .padding(.vertical)
+        .customShadow()
+    }
+}
+
 struct SeachBar_Previews: PreviewProvider {
     static var previews: some View {
         
-        SearchBar(text: .constant(""))
-    
+        ContentView()
+        
+    }
+}
+
+extension UIApplication {
+    func dismissKeyboard() {
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

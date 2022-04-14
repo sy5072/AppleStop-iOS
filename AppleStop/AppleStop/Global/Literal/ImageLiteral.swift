@@ -25,4 +25,10 @@ enum ImageLiteral {
     static var imgSoodal: Image = Image("img_soodal")
     static var imgSsoksae: Image = Image("img_ssoksae")
     static var imgTurtle: Image = Image("img_turtle")
+    static var plasticImage01: Image = Image("plastic01")
+    static var plasticImage02: Image = Image("plastic02")
+    static var paperImage01: Image = Image("paper01")
+    static var paperImage02: Image = Image("paper02")
+    static var vynylImage01: Image = Image("vynyl01")
+    static var vynylImage02: Image = Image("vynyl02")
 }
