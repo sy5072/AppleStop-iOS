@@ -42,7 +42,7 @@ struct OnboardingViewMain: View {
                 }
                 .tabViewStyle(PageTabViewStyle())
             }
-            //.overlay(SplashScreenView())
+            .overlay(SplashScreenView())
         }
     }
 }
