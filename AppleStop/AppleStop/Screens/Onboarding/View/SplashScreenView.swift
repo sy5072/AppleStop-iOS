@@ -10,8 +10,8 @@ import SDWebImageSwiftUI
 
 struct SplashScreenView: View {
     
-    let timer = Timer.publish(every: 1.0, on: .main, in: .common).autoconnect()
-    @State var count: Int = 3
+    let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
+    @State var count: Float = 2.0
     @State var finishedText: String? = nil //optional string
     
     //Animation Properties
@@ -39,7 +39,7 @@ struct SplashScreenView: View {
                         .aspectRatio(contentMode: .fit)
                         .opacity(startAnimation ? 1: 0)
                         .rotationEffect(Angle(degrees: self.isAnimating ? 360.0 : 0.0))
-                        .animation(.linear(duration: 5.3), value: isAnimating)
+                        .animation(.linear(duration: 2.5), value: isAnimating)
                         .onAppear {
                             self.isAnimating = true
                         }
@@ -59,11 +59,11 @@ struct SplashScreenView: View {
                 }
                 //Text Movement Accoding to Time
                 .onReceive(timer, perform: {_ in
-                    if count == 3{
+                    if count == 2.0{
                         finishedText = "Let's"
                         count -= 1
                     }
-                    else if count == 2 {
+                    else if count == 1.0 {
                         finishedText = "Let's Recycle"
                         count -= 1
                     }
@@ -93,6 +93,7 @@ struct SplashScreenView: View {
 struct SplashScreenView_Previews: PreviewProvider {
     static var previews: some View {
         //SplashScreenView()
-        OnboardingViewOne()
+        //OnboardingViewOne()
+        OnboardingViewMain()
     }
 }

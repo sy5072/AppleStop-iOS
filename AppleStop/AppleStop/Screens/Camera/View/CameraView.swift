@@ -7,7 +7,7 @@
 
 import SwiftUI
 import AVFoundation
-
+import Vision
 struct CameraView: View {
     
     // MARK: - Properties
@@ -22,25 +22,32 @@ struct CameraView: View {
     @State var lastOffset : CGFloat = 0
     @GestureState var gestureOffset : CGFloat = 0
     
-    
+    @State var naviHide = false
     
     // MARK: - CameraView
     var body: some View {
         ZStack{
             
             CameraPreview(camera: camera)
+                .navigationBarHidden(naviHide)
+                .animation(.linear(duration: 0.38))
             CodeGuideLineView()
+                    .navigationTitle("카메라")
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarTitleDisplayMode(.inline)
             
             bottomView
                 .toast(isShowing: $camera.isShowingToast)
+                .alert(isPresented: $camera.showAlert) {
+                    Alert(title: Text("바코드 번호"), message: Text("바코드 번호는 \(camera.barcodePayLoad)"), dismissButton: .default(Text("확인")))
+                }
             bottomSheetView
             
           
-        
             
-        }   .navigationTitle("카메라")
-            .navigationBarBackButtonHidden(true)
-            .navigationBarTitleDisplayMode(.inline)
+
+            
+        }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
@@ -119,31 +126,6 @@ extension CameraView {
     // 토글 및 버튼포함하는 뷰
     var bottomView : some View {
         VStack(){
-//            if camera.isTaken{
-//                HStack {
-//                    Button {
-//                        camera.reTake()
-//                    } label: {
-//                        Image(systemName: "arrow.triangle.2.circlepath.camera")
-//                            .foregroundColor(.black)
-//                            .padding()
-//                            .background(Color.white)
-//                            .clipShape(Capsule())
-//                    }
-//                    Button {
-//                        if !camera.isSaved{
-//
-//                            camera.savePic()
-//                        }
-//                    } label: {
-//                        Text(camera.isSaved ? "saved" :"save")
-//                            .foregroundColor(.black)
-//                            .padding()
-//                            .background(Color.white)
-//                            .clipShape(Capsule())
-//                    }
-//                }
-//            }
             
             Spacer()
             
@@ -199,7 +181,7 @@ extension CameraView {
                         VStack(spacing: 10){
                             Text("플라스틱류")
                                 .font(.title)
-                                .foregroundColor(.green)
+                                .foregroundColor(Color.mainGreen)
                             
                             HStack{
                                 Image("plasticImage1")
@@ -228,14 +210,16 @@ extension CameraView {
                     })
                                 .onEnded({ value in
                                     
-                                    let maxHeight = height - 70
+                                    let maxHeight = height
                                     withAnimation {
                                         
                                         if -offset > 70 && -offset < maxHeight / 2 {
                                             offset = -(maxHeight * 0.4)
+                                            naviHide = false
                                         }
                                         else if -offset > maxHeight / 2 {
                                             offset = -maxHeight
+                                            naviHide = true
                                         }
                                         else {
                                             offset = 0
@@ -257,4 +241,7 @@ extension CameraView {
     }
     
     
+    
 }
+
+
