@@ -101,12 +101,12 @@ struct HomeView: View {
                             .padding(.leading, 12)
                     }
                     
-                    Spacer()
-                    
                     NavigationLink(destination: CharacterView(),
                                    isActive: self.$pushActive) {
                         EmptyView()
                     }.hidden()
+                    
+                    Spacer()
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .onAppear {

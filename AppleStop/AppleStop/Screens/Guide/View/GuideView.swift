@@ -63,8 +63,12 @@ struct GuideView: View {
                         }
                     }
                 } else {
-                    ImageLiteral.imgBarcode
-                        .resizable()
+                    HStack {
+                        ImageLiteral.imgBarcode
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 120, height: 30)
+                    }
                 }
             }
             .onAppear {
