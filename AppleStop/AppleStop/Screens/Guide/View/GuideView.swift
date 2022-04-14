@@ -50,7 +50,7 @@ struct GuideView: View {
                 }
                 .padding(.horizontal, 24)
             }
-            .navigationTitle(searching ? "검색하기" : "logologo")
+            .navigationTitle(searching ? "검색하기" : "")
             .navigationBarTitleDisplayMode(.inline)
             .navigationViewStyle(.stack)
             .toolbar {
@@ -62,6 +62,9 @@ struct GuideView: View {
                             UIApplication.shared.dismissKeyboard()
                         }
                     }
+                } else {
+                    ImageLiteral.imgBarcode
+                        .resizable()
                 }
             }
             .onAppear {
