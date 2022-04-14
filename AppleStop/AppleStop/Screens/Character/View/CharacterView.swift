@@ -21,7 +21,7 @@ struct CharacterView: View {
     @Environment(\.viewController) private var viewControllerHolder: UIViewController?
     @Environment(\.presentationMode) var presentation
     
-    @State private var user: User = User(days: 150, level: 10, exp: 60, mainCharacterIndex: 0, userCharacters: defaultCharacter)
+    @State private var user: User = defaultUser
     
     private var viewController: UIViewController? {
         self.viewControllerHolder

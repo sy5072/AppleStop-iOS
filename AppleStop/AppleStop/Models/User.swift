@@ -14,3 +14,5 @@ struct User {
     var mainCharacterIndex: Int
     var userCharacters: [Character]
 }
+
+var defaultUser: User = User(days: 150, level: 10, exp: 60, mainCharacterIndex: 0, userCharacters: defaultCharacter)
