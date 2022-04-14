@@ -34,7 +34,7 @@ struct AppleStopApp: App {
     var body: some Scene {
         WindowGroup {
             //SplashScreenView()
-            CharacterView()
+            TabbarView(viewRouter: ViewRouter())
             
         }
     }
