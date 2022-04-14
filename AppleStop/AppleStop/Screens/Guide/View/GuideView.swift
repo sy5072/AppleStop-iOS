@@ -9,6 +9,8 @@ import SwiftUI
 
 struct GuideView: View {
     
+    @AppStorage("hideTabbar") var hideTabbar : Bool = false
+    
     @State private var searchText = ""
     @State var searching = false
     
@@ -61,6 +63,9 @@ struct GuideView: View {
                         }
                     }
                 }
+            }
+            .onAppear {
+                hideTabbar = false
             }
             .gesture(DragGesture()
                         .onChanged({ _ in
