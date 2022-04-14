@@ -12,8 +12,17 @@ struct LevelInformationView: View {
     // MARK: - properties
     
     var nickname: String
-    var userLevel: Int
-    var userExp: Double = 0.6
+    @State var userLevel: Int
+    @State var userExp: Double = 0.0
+    
+    var animatableData: Double {
+            get {
+                self.userExp
+            }
+            set {
+                self.userExp = newValue
+            }
+        }
     
     var body: some View {
         ZStack{
@@ -38,7 +47,7 @@ struct LevelInformationView: View {
 }
 
 struct DonutChartView: View {
-    var progress: CGFloat
+    @State var progress: CGFloat
     var level: Int
     
     var body: some View {
@@ -53,6 +62,10 @@ struct DonutChartView: View {
                 .foregroundColor(.mainGreen)
                 .rotationEffect(.degrees(-90))
             Text("LV.\(level)").font(.system(size: 14)).fontWeight(.semibold)
+        }.animation(.spring(response: 2), value: progress).onAppear{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    self.progress = 0.72
+                }
         }
     }
 }
