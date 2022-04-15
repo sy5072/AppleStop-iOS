@@ -13,6 +13,8 @@ struct GuideDetailView: View {
     
     // MARK: - Properties
     
+    @AppStorage("hideTabbar") var hideTabbar : Bool = false
+    
     // video thumbnail values
     let videoThumbNailSize: CGFloat = 164
     let videoThumbNailFontSize: CGFloat = 28
@@ -222,7 +224,9 @@ struct GuideDetailView: View {
             }
             
         }
-        
+        .onAppear {
+            hideTabbar = true
+        }
     }
     
     var innerView: some View {

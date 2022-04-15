@@ -16,9 +16,12 @@ struct CharacterView: View {
     // MARK: - properties
 
     @AppStorage("isLevelUp") var isLevelUp : Bool = UserDefaults.standard.bool(forKey: "isLevelUp")
-    @Environment(\.viewController) private var viewControllerHolder: UIViewController?
+    @AppStorage("hideTabbar") var hideTabbar : Bool = false
     
-    @State private var user: User = User(nickname: "연일읍분리수거왕", days: 150, level: 10, exp: 60, mainCharacterIndex: 0, userCharacters: defaultCharacter)
+    @Environment(\.viewController) private var viewControllerHolder: UIViewController?
+    @Environment(\.presentationMode) var presentation
+    
+    @State private var user: User = defaultUser
     
     private var viewController: UIViewController? {
         self.viewControllerHolder
@@ -33,7 +36,6 @@ struct CharacterView: View {
             
             ScrollView {
                 UserInfomationView(mainCharacterImage: $user.userCharacters[user.mainCharacterIndex].image,
-                                   nickname: user.nickname,
                                    usedDate: user.days,
                                    userLevel: user.level,
                                    userExp: user.exp)
@@ -50,13 +52,15 @@ struct CharacterView: View {
         .onAppear {
             isLevelUp = true
             setupNewCharacterConfiguration()
+            hideTabbar = true
         }
         .navigationTitle("캐릭터 보관함")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button(action: {
-                    print("back button")
+                    self.presentation.wrappedValue.dismiss()
                 }, label: {
                     Image(systemName: "chevron.left")
                 })

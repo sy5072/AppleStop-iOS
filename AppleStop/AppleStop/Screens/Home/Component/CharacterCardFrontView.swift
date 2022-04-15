@@ -13,11 +13,8 @@ struct CharacterCardFrontView: View {
     
     @Binding var degree : Double
     
-    var characterImage = "flyingSquirrel"
-    var characterName = "하늘다람쥐"
+    var user: User = defaultUser
     var characterShortInfo = "플라스틱을 혼쭐내는"
-    var characterHashtag = "#도토리는_나에게_양보해조"
-    
     
     var body: some View {
         ZStack{
@@ -32,8 +29,10 @@ struct CharacterCardFrontView: View {
             VStack{
                 HStack {
                     Image(systemName: "folder.fill")
+                    
                     Spacer()
                         .frame(width: 226)
+                    
                     Image(systemName: "repeat")
                     
                 }
@@ -44,17 +43,20 @@ struct CharacterCardFrontView: View {
                 Spacer()
                     .frame(height: 13)
                 
-                Image(characterImage).frame(width: 226, height: 166)
+                user.userCharacters[user.mainCharacterIndex].image?
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 226, height: 166)
                 
                 Spacer()
                     .frame(height: 26)
                 
                 VStack(alignment: .leading) {
-                    Text(characterShortInfo).font(.system(size: 20)) + Text(" ") + Text(characterName)
+                    Text(characterShortInfo).font(.system(size: 20)) + Text(" ") + Text(user.userCharacters[user.mainCharacterIndex].name ?? "")
                         .font(.system(size: 20, weight: .bold))
                     Spacer()
                         .frame(height: 8)
-                    Text(characterHashtag)
+                    Text(user.userCharacters[user.mainCharacterIndex].shortInfo ?? "")
                         .font(.system(size: 16))
                         .foregroundColor(.iconGrey)
                     Spacer()

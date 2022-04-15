@@ -8,10 +8,11 @@
 import Foundation
 
 struct User {
-    var nickname: String
     var days: Int
     var level: Int
     var exp: Double
     var mainCharacterIndex: Int
     var userCharacters: [Character]
 }
+
+var defaultUser: User = User(days: 150, level: 10, exp: 60, mainCharacterIndex: 0, userCharacters: [defaultCharacter[0], defaultCharacter[1]])

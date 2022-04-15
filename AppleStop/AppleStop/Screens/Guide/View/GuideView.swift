@@ -9,6 +9,8 @@ import SwiftUI
 
 struct GuideView: View {
     
+    @AppStorage("hideTabbar") var hideTabbar : Bool = false
+    
     @State private var searchText = ""
     @State var searching = false
     
@@ -40,12 +42,17 @@ struct GuideView: View {
                     //                    cardName.hasPrefix(searchText) || searchText == ""
                     //                }), id: \.self) {
                     
-                    card in CardView(card: card)
+                    card in
+                    NavigationLink(destination: GuideDetailView(card: card), label: {
+                        CardView(card: card)
+                    })
                     
                 }
                 .padding(.horizontal, 24)
             }
-            .navigationTitle(searching ? "검색하기" : "logologo")
+            .navigationTitle(searching ? "검색하기" : "")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationViewStyle(.stack)
             .toolbar {
                 if searching {
                     Button("Cancel") {
@@ -55,7 +62,17 @@ struct GuideView: View {
                             UIApplication.shared.dismissKeyboard()
                         }
                     }
+                } else {
+                    HStack {
+                        ImageLiteral.imgBarcode
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 120, height: 30)
+                    }
                 }
+            }
+            .onAppear {
+                hideTabbar = false
             }
             .gesture(DragGesture()
                         .onChanged({ _ in
