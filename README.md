@@ -59,7 +59,7 @@ feature/Miller
 ```
 AppleStop-iOS
   |
-  └── Havit
+  └── AppleStop
         |── Global
         │   │── Literal
         │   │── Extension
