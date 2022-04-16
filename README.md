@@ -1,4 +1,7 @@
 
+<br/>
+<br/>
+
 <div align="center"> 
   
 ![Component 5](https://user-images.githubusercontent.com/55099365/163678182-962ae0c3-4aed-4b43-9e57-447ce6aa53e4.png)
@@ -9,6 +12,9 @@
 [♻️ Presentation Keynote ♻️](https://github.com/AppleStop/AppleStop-iOS/blob/main/Sugeottakdae-keynote.zip)
   
 </div>
+
+<br/>
+<br/>
 
 
 ### 📱 Screenshots
@@ -78,12 +84,19 @@ AppleStop-iOS
   
 ### 🧑‍💻 Authors
 
-| [@compuTasha](https://github.com/compuTasha) | [@glitterer](https://github.com/glitterer) | [@sy5072](https://github.com/sy5072) | [@YoonAh-dev](https://github.com/YoonAh-dev) | [@KimDaeSeong8721](https://github.com/KimDaeSeong8721) | [@teethemoji](https://github.com/teethemoji) |
-|:---:|:---:|:---:|:---:|:---:|:---:|
-|<img width="130" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/55099365/163679179-08e7bb38-685a-432b-89ff-a25c09030591.png">|<img width="130" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/55099365/163679186-b6e43e2f-1e86-4e56-a7b0-cd7ad5d6b0fe.png">|<img width="130" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/55099365/163679185-d4a8fc59-eda2-415a-a6f5-8975003ec988.png">|<img width="130" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/55099365/163679182-bdd9a9d1-78ce-45af-b5b8-6f810ac0afdc.png">|<img width="130" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/55099365/163679183-0bf3860d-a185-4fed-bd63-52d6fd55b272.png">|<img width="130" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/55099365/163679187-46e2f82b-453d-4710-9a10-7a9fec2a7518.png">|
-| `Home` | `Onboarding` <br/> `Splash` <br/> `Nickname` | `Setting` | `Character` | `Camera` | `Guide` |               
+<div align="center"> 
+  
+| [@compuTasha](https://github.com/compuTasha) | [@glitterer](https://github.com/glitterer) | [@sy5072](https://github.com/sy5072) |
+|:---:|:---:|:---:|
+|<img width="200" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/55099365/163679179-08e7bb38-685a-432b-89ff-a25c09030591.png">|<img width="200" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/55099365/163679186-b6e43e2f-1e86-4e56-a7b0-cd7ad5d6b0fe.png">|<img width="200" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/55099365/163679185-d4a8fc59-eda2-415a-a6f5-8975003ec988.png">|
+| `Home` | `Onboarding` <br/> `Splash` <br/> `Nickname` | `Setting` |
 
+[@YoonAh-dev](https://github.com/YoonAh-dev) | [@KimDaeSeong8721](https://github.com/KimDaeSeong8721) | [@teethemoji](https://github.com/teethemoji) |
+|:---:|:---:|:---:|
+|<img width="200" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/55099365/163679182-bdd9a9d1-78ce-45af-b5b8-6f810ac0afdc.png">|<img width="200" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/55099365/163679183-0bf3860d-a185-4fed-bd63-52d6fd55b272.png">|<img width="200" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/55099365/163679187-46e2f82b-453d-4710-9a10-7a9fec2a7518.png">|
+| `Character` | `Camera` | `Guide` |
 
+</div>
 
 ### :lock_with_ink_pen: License
 
