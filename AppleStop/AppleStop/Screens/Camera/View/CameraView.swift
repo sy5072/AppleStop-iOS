@@ -31,15 +31,23 @@ struct CameraView: View {
             
             if !camera.isToggleOn{
             CodeGuideLineView()
+                    .alert(isPresented: $camera.showAlert) {
+
+                        Alert(title: Text("실패"), message: Text("바코드 인식에 실패하셨습니다."), dismissButton: .default(Text("확인")))
+
+                    }
                 
             }
             bottomView
                 .toast(isShowing: $camera.isShowingToast)
-                .alert(isPresented: $camera.showAlert) {
-                    //Alert(title: Text("바코드 번호"), message: Text("제품명은 \(camera.productKind)"), dismissButton: .default(Text("확인")))
-                    Alert(title: Text("실패"), message: Text("바코드 인식에 실패하셨습니다."), dismissButton: .default(Text("확인")))
+                .alert(isPresented: $camera.noFoundInfo) {
+
+                    Alert(title: Text("실패"), message: Text("제품 정보를 찾을 수 없습니다."), dismissButton: .default(Text("확인")))
 
                 }
+                
+             
+            
             bottomSheetView
                 
           
