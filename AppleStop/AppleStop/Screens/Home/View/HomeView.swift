@@ -47,6 +47,10 @@ struct HomeView: View {
         self.pushActive = true
     }
     
+    init(){
+      hideTabbar = false
+
+    }
     var body: some View {
         NavigationView {
             ZStack {
