@@ -109,9 +109,9 @@ struct HomeView: View {
                     Spacer()
                 }
                 .navigationBarTitleDisplayMode(.inline)
-                .onAppear {
-                    hideTabbar = false
-                }
+//                .onAppear {
+//                    hideTabbar = false
+//                }
                 
                 if self.show {
                     GeometryReader{ geometry in

@@ -28,7 +28,6 @@
 		7993A08B28055BE3001ED0B3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7993A08A28055BE3001ED0B3 /* NotificationManager.swift */; };
 		7993A08D28055EF4001ED0B3 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7993A08C28055EF4001ED0B3 /* NotificationView.swift */; };
 		79B2D9DE2804195600A0A782 /* SettingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B2D9DD2804195600A0A782 /* SettingListView.swift */; };
-
 		79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */; };
 		B594065127FEAC94000D3CE8 /* AppleStopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594065027FEAC94000D3CE8 /* AppleStopApp.swift */; };
 		B594065527FEAC95000D3CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B594065427FEAC95000D3CE8 /* Assets.xcassets */; };
@@ -524,10 +523,8 @@
 				35A80AA728046C3E00DD7721 /* CodeGuideLineView.swift in Sources */,
 				B5E5ED622803C98F00074655 /* CardStruct.swift in Sources */,
 				B594067727FEAEE3000D3CE8 /* CameraView.swift in Sources */,
-
 				35A80AAF280522FB00DD7721 /* CustomShadowModifier.swift in Sources */,
 				79FF9D8028051F27004F2964 /* CustomShadowModifier.swift in Sources */,
-				A420B60928042446008651E9 /* GuideDetailView.swift in Sources */,
 				79B2D9DE2804195600A0A782 /* SettingListView.swift in Sources */,
 				B8F226E128007B8E004294EE /* CharacterCardFrontView.swift in Sources */,
 				35A80AC02806B1B300DD7721 /* Product.swift in Sources */,
