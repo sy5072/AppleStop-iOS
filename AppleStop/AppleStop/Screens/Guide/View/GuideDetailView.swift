@@ -86,13 +86,6 @@ struct GuideDetailView: View {
                         .weight(.light)
                 )
             
-            Button("더보기") {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-            }
-            .foregroundColor(.gray)
-            .padding(.leading, 24.0)
-            .padding(.top, 2)
-            
             VStack(alignment: .center){
                 Text("함께 보면 좋은 영상")
                     .font(
@@ -143,7 +136,7 @@ struct GuideDetailView: View {
                         
                         Spacer()
                         
-                        Text("엄지맨")
+                        Text("동작구청")
                             .foregroundColor(.white)
                         
                     }
@@ -206,8 +199,12 @@ struct GuideDetailView: View {
                     .foregroundColor(.white)
                     .cornerRadius(8)
                     .padding(.leading, edgePaddingValue)
+                    .font(
+                        .system(size: 18)
+                            .weight(.medium))
                 
                 Text(card.recyclable[0])
+                    .padding(.trailing, edgePaddingValue)
             }
             .padding(.top, edgePaddingValue)
             
@@ -219,9 +216,15 @@ struct GuideDetailView: View {
                     .foregroundColor(.white)
                     .cornerRadius(8)
                     .padding(.leading, edgePaddingValue)
+                    .font(
+                        .system(size: 18)
+                            .weight(.medium))
                 
                 Text(card.unrecyclable[0])
+                    .padding(.trailing, edgePaddingValue)
+
             }
+            .padding(.bottom, edgePaddingValue)
             
         }
         .onAppear {
@@ -281,7 +284,6 @@ struct GuideDetailView: View {
         ScrollView{
             contentView
         }
-        
     }
     
 }
