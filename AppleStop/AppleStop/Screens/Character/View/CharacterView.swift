@@ -54,6 +54,7 @@ struct CharacterView: View {
             setupNewCharacterConfiguration()
             hideTabbar = true
         }
+       
         .navigationTitle("캐릭터 보관함")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)

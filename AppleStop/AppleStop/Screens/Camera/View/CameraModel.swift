@@ -24,10 +24,13 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
     @Published var isShowingToast = false
     
     @Published var showAlert = false
-    @Published var showBottomSheet = false
-
-   // @Published var barcodePayLoad = ""
+    
+    // Gestures Properties
+    @Published var offset : CGFloat = 0
+    @Published var lastOffset : CGFloat = 0
+    
     @Published var productKind = ""
+    @Published var noFoundInfo = false
     @Published var picData = Data(count:0)
      let sessionQueue = DispatchQueue(label: "camera session queue")
     
@@ -124,7 +127,6 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
                 }
                 self.isSaved = false
                 self.isShowingToast = false
-                self.showBottomSheet = false
 
             }
         }
@@ -224,10 +226,16 @@ class CameraModel : NSObject,ObservableObject,AVCapturePhotoCaptureDelegate {
                     case .success(let product):
                         self?.productKind =  product.PRDLST_DCNM!
                         print(self?.productKind)
-                        self?.showBottomSheet = true
+                        
+                        withAnimation(.easeInOut) {
+                            self?.offset = -270
+                            self?.lastOffset = self?.offset ?? 0.0
+                        }
+                        
                         
 
                     case .failure(let error) :
+                        self?.noFoundInfo = true
                         print(error.localizedDescription)
                     }
                 }

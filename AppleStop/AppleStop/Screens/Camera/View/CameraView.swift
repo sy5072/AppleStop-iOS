@@ -16,9 +16,7 @@ struct CameraView: View {
     
     @StateObject var camera = CameraModel()
     
-    // Gestures Properties
-    @State var offset : CGFloat = 0
-    @State var lastOffset : CGFloat = 0
+    // Gestures Property
     @GestureState var gestureOffset : CGFloat = 0
     
     @State var naviHide = false
@@ -33,15 +31,23 @@ struct CameraView: View {
             
             if !camera.isToggleOn{
             CodeGuideLineView()
+                    .alert(isPresented: $camera.showAlert) {
+
+                        Alert(title: Text("실패"), message: Text("바코드 인식에 실패하셨습니다."), dismissButton: .default(Text("확인")))
+
+                    }
                 
             }
             bottomView
                 .toast(isShowing: $camera.isShowingToast)
-                .alert(isPresented: $camera.showAlert) {
-                    //Alert(title: Text("바코드 번호"), message: Text("제품명은 \(camera.productKind)"), dismissButton: .default(Text("확인")))
-                    Alert(title: Text("실패"), message: Text("바코드 인식에 실패하셨습니다."), dismissButton: .default(Text("확인")))
+                .alert(isPresented: $camera.noFoundInfo) {
+
+                    Alert(title: Text("실패"), message: Text("제품 정보를 찾을 수 없습니다."), dismissButton: .default(Text("확인")))
 
                 }
+                
+             
+            
             bottomSheetView
                 
           
@@ -138,7 +144,6 @@ extension CameraView {
             .toggleStyle(MyToggle())
             
             Button {
-                camera.showBottomSheet = false
                 // 카메라 촬영
                 if camera.isToggleOn {
                     camera.takePic()
@@ -148,20 +153,20 @@ extension CameraView {
                     
                     camera.takePic()
                     
-                //FIXME: - 3초딜레이 말고 오픈API 완료하면 실행되도록
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
-                        if camera.showBottomSheet {
-                        
-                            withAnimation(.easeInOut, {
-                                print("성공")
-                                // TODO: -  디바이스 의존도 제거하기
-                                offset = -270 // 범위내 임의값
-                                lastOffset = offset
-                            })
-                        
-                        }
-                        else{print("fail")}
-                    }
+//                //FIXME: - 3초딜레이 말고 오픈API 완료하면 실행되도록
+//                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
+//                        if camera.showBottomSheet {
+//                        
+//                            withAnimation(.easeInOut, {
+//                                print("성공")
+//                                // TODO: -  디바이스 의존도 제거하기
+//                                camera.offset = -270 // 범위내 임의값
+//                                camera.lastOffset = camera.offset
+//                            })
+//                        
+//                        }
+//                        else{print("fail")}
+//                    }
                            
                            
                     
@@ -184,7 +189,6 @@ extension CameraView {
         GeometryReader{ geometryProxy -> AnyView in
             let height = geometryProxy.frame(in: .global).height
             return AnyView(
-                
                 ZStack{
                     Rectangle()
                         .foregroundColor(.white)
@@ -198,9 +202,11 @@ extension CameraView {
                             .padding(.top)
                         
                         
-                         if -offset > height / 2 {
+                        if -camera.offset > height / 2 {
+                            //FIXME: - 어느순간 가이드디테일뷰 부르면 뷰종료됨..
                              GuideDetailView(card: GuideCard.sampleData[3])
-                             
+                        //     CardView(card: GuideCard.sampleData[3])
+
 
                          }else{
                              CardView(card: GuideCard.sampleData[3])
@@ -212,7 +218,7 @@ extension CameraView {
                     
                 }
                     .offset(y: height - 70)
-                    .offset(y: -offset > 0 ? (-offset <= (height - 70) ? offset : -(height - 70)) : 0)
+                    .offset(y: -camera.offset > 0 ? (-camera.offset <= (height - 70) ? camera.offset : -(height - 70)) : 0)
                     .gesture(DragGesture().updating($gestureOffset, body: { value, out, _ in
                         out = value.translation.height
                         onChange()
@@ -222,18 +228,18 @@ extension CameraView {
                                     let maxHeight = height
                                     withAnimation {
                                         
-                                        if -offset > 70 && -offset < maxHeight / 2 {
-                                            offset = -(maxHeight * 0.4)
+                                        if -camera.offset > 70 && -camera.offset < maxHeight / 2 {
+                                            camera.offset = -(maxHeight * 0.4)
                                             naviHide = false
                                         }
-                                        else if -offset > maxHeight / 2 {
-                                            offset = -maxHeight
+                                        else if -camera.offset > maxHeight / 2 {
+                                            camera.offset = -maxHeight
                                             naviHide = true
                                         }
                                         else {
-                                            offset = 0
+                                            camera.offset = 0
                                         }
-                                        lastOffset = offset
+                                        camera.lastOffset = camera.offset
                                     }
                                 })
                             )
@@ -245,7 +251,7 @@ extension CameraView {
     // 바텀시트 변경함수
     func onChange(){
         DispatchQueue.main.async {
-            self.offset = gestureOffset + lastOffset
+            camera.offset = gestureOffset + camera.lastOffset
         }
     }
     

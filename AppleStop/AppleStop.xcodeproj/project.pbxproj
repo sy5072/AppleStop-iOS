@@ -16,11 +16,6 @@
 		35A80AAD280522AF00DD7721 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AAC280522AE00DD7721 /* SettingView.swift */; };
 		35A80AAF280522FB00DD7721 /* CustomShadowModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904CF3328047B89000EA6C4 /* CustomShadowModifier.swift */; };
 		35A80AB02805715400DD7721 /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B594067A27FEAEF7000D3CE8 /* GuideView.swift */; };
-		35A80AB428065BA400DD7721 /* CardStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AB328065BA400DD7721 /* CardStruct.swift */; };
-		35A80AB928065BEF00DD7721 /* SeachBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AB528065BEF00DD7721 /* SeachBar.swift */; };
-		35A80ABA28065BEF00DD7721 /* GuideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AB628065BEF00DD7721 /* GuideDetailView.swift */; };
-		35A80ABB28065BEF00DD7721 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AB728065BEF00DD7721 /* CardView.swift */; };
-		35A80ABC28065BEF00DD7721 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80AB828065BEF00DD7721 /* ListView.swift */; };
 		35A80ABE2806AF3600DD7721 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80ABD2806AF3600DD7721 /* APICaller.swift */; };
 		35A80AC02806B1B300DD7721 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A80ABF2806B1B300DD7721 /* Product.swift */; };
 		5931E3E127FFD62E006B16B6 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5931E3E027FFD62E006B16B6 /* SplashScreenView.swift */; };
@@ -52,7 +47,6 @@
 		B5B1F20D2804FC970026AD0E /* BackgroundBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F20C2804FC970026AD0E /* BackgroundBlurView.swift */; };
 		B5B1F212280507350026AD0E /* WasteInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B1F211280507350026AD0E /* WasteInformationView.swift */; };
 		B5B1F21428050A200026AD0E /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B2D9DF28046D5A00A0A782 /* ViewRouter.swift */; };
-		B5B1F21728055E130026AD0E /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = B5B1F21628055E130026AD0E /* SDWebImageSwiftUI */; };
 		B5E5ED5E2803C97A00074655 /* SeachBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED5B2803C97A00074655 /* SeachBar.swift */; };
 		B5E5ED5F2803C97A00074655 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED5C2803C97A00074655 /* CardView.swift */; };
 		B5E5ED622803C98F00074655 /* CardStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E5ED612803C98F00074655 /* CardStruct.swift */; };
@@ -75,11 +69,6 @@
 		35A80AA628046C3E00DD7721 /* CodeGuideLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGuideLineView.swift; sourceTree = "<group>"; };
 		35A80AAA2804FD2900DD7721 /* ToastAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastAlertView.swift; sourceTree = "<group>"; };
 		35A80AAC280522AE00DD7721 /* SettingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
-		35A80AB328065BA400DD7721 /* CardStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStruct.swift; sourceTree = "<group>"; };
-		35A80AB528065BEF00DD7721 /* SeachBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeachBar.swift; sourceTree = "<group>"; };
-		35A80AB628065BEF00DD7721 /* GuideDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideDetailView.swift; sourceTree = "<group>"; };
-		35A80AB728065BEF00DD7721 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		35A80AB828065BEF00DD7721 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		35A80ABD2806AF3600DD7721 /* APICaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		35A80ABF2806B1B300DD7721 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		35A80AC12806D80600DD7721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -132,18 +121,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5B1F21728055E130026AD0E /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35A80AC42807ECF700DD7721 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		B594064427FEAC94000D3CE8 = {
 			isa = PBXGroup;
 			children = (
 				B594064F27FEAC94000D3CE8 /* AppleStop */,
 				B594064E27FEAC94000D3CE8 /* Products */,
+				35A80AC42807ECF700DD7721 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -430,7 +426,6 @@
 			);
 			name = AppleStop;
 			packageProductDependencies = (
-				B5B1F21628055E130026AD0E /* SDWebImageSwiftUI */,
 			);
 			productName = AppleStop;
 			productReference = B594064D27FEAC94000D3CE8 /* AppleStop.app */;
@@ -461,7 +456,6 @@
 			);
 			mainGroup = B594064427FEAC94000D3CE8;
 			packageReferences = (
-				B5B1F21528055E130026AD0E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = B594064E27FEAC94000D3CE8 /* Products */;
 			projectDirPath = "";
@@ -501,18 +495,14 @@
 				B5B1F212280507350026AD0E /* WasteInformationView.swift in Sources */,
 				7993A08B28055BE3001ED0B3 /* NotificationManager.swift in Sources */,
 				59F1780828051D0D00629F8B /* CustomShadowModifier.swift in Sources */,
-				35A80AB428065BA400DD7721 /* CardStruct.swift in Sources */,
 				35A80AAD280522AF00DD7721 /* SettingView.swift in Sources */,
-				35A80ABA28065BEF00DD7721 /* GuideDetailView.swift in Sources */,
 				B8C6AE5E2801F926002CCBFE /* LevelInformationView.swift in Sources */,
-				35A80AB928065BEF00DD7721 /* SeachBar.swift in Sources */,
 				B86225C32803518B0016FC71 /* CharacterCardBackView.swift in Sources */,
 				350C0C6827FFDCFE0012CBFA /* CameraModel.swift in Sources */,
 				35A80ABE2806AF3600DD7721 /* APICaller.swift in Sources */,
 				B5B07A532806BEB100BBBF56 /* UINavigationController+Extension.swift in Sources */,
 				B594068B27FEB1A6000D3CE8 /* Color+Extension.swift in Sources */,
 				35A80AAB2804FD2900DD7721 /* ToastAlertView.swift in Sources */,
-				35A80ABB28065BEF00DD7721 /* CardView.swift in Sources */,
 				B5E5ED692804545800074655 /* CharacterPopupView.swift in Sources */,
 				350C0C6A27FFDD590012CBFA /* CustomToggle.swift in Sources */,
 				B594067227FEAED0000D3CE8 /* HomeView.swift in Sources */,
@@ -524,7 +514,6 @@
 				B5E5ED65280404FD00074655 /* Character.swift in Sources */,
 				B5AB062A2807EA1C00DFFA10 /* GuideDetailView.swift in Sources */,
 				B594069727FFDFE4000D3CE8 /* CharacterCardView.swift in Sources */,
-				35A80ABC28065BEF00DD7721 /* ListView.swift in Sources */,
 				793FA13D2803E40500246AE9 /* ServiceTermView.swift in Sources */,
 				B594068927FEB0B3000D3CE8 /* ImageLiteral.swift in Sources */,
 				35A80AA728046C3E00DD7721 /* CodeGuideLineView.swift in Sources */,
@@ -756,25 +745,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B5B1F21528055E130026AD0E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B5B1F21628055E130026AD0E /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B5B1F21528055E130026AD0E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B594064527FEAC94000D3CE8 /* Project object */;
 }
